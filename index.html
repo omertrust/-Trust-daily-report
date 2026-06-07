@@ -16,12 +16,14 @@ body { font-family: Arial, sans-serif; background: var(--off); color: var(--navy
 
 /* ── SIDEBAR ── */
 .sidebar { width: var(--sw); background: var(--navy); position: fixed; right: 0; top: 0; bottom: 0; display: flex; flex-direction: column; align-items: center; padding: 28px 14px 24px; z-index: 100; }
+html[dir="ltr"] .sidebar { right: auto; left: 0; }
 .logo-shield { width: 140px; height: 140px; margin-bottom: 0px; object-fit: contain; mix-blend-mode: screen; }
 .logo-trust { font-size: 15px; font-weight: 800; letter-spacing: 3px; color: #fff; margin-top: -8px; }
 .logo-sub { font-size: 8px; letter-spacing: 2px; color: var(--gold); text-align: center; margin-top: 1px; line-height: 1.6; text-transform: uppercase; }
 .logo-div { width: 100%; height: 1px; background: var(--gold); opacity: .2; margin: 14px 0; }
 
 .nav-btn { display: flex; align-items: center; gap: 8px; padding: 9px 12px; border-radius: 7px; cursor: pointer; width: 100%; background: none; border: none; text-align: right; transition: background .15s; }
+html[dir="ltr"] .nav-btn { text-align: left; }
 .nav-btn:hover { background: rgba(201,168,76,.12); }
 .nav-btn.active { background: rgba(201,168,76,.2); }
 .nav-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--gold); opacity: .35; flex-shrink: 0; }
@@ -31,9 +33,27 @@ body { font-family: Arial, sans-serif; background: var(--off); color: var(--navy
 
 .nav-section-divider { width: 100%; height: 1px; background: rgba(201,168,76,.2); margin: 10px 0; }
 .nav-archive-btn { display: flex; align-items: center; gap: 8px; padding: 9px 12px; border-radius: 7px; cursor: pointer; width: 100%; background: rgba(201,168,76,.08); border: none; text-align: right; transition: background .15s; }
+html[dir="ltr"] .nav-archive-btn { text-align: left; }
 .nav-archive-btn:hover { background: rgba(201,168,76,.18); }
 .nav-archive-btn.active { background: rgba(201,168,76,.22); }
 .nav-archive-btn span { font-size: 11px; color: var(--gold-light); font-weight: 600; }
+
+/* ── LANG TOGGLE ── */
+.lang-toggle-btn {
+  margin-top: 10px;
+  background: rgba(201,168,76,.12);
+  border: 1px solid rgba(201,168,76,.5);
+  color: var(--gold);
+  border-radius: 20px;
+  padding: 5px 0;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  transition: background .15s;
+  width: 100%;
+}
+.lang-toggle-btn:hover { background: rgba(201,168,76,.28); }
 
 .sf { margin-top: auto; text-align: center; }
 .sf-d { font-size: 10px; color: rgba(255,255,255,.3); }
@@ -41,6 +61,7 @@ body { font-family: Arial, sans-serif; background: var(--off); color: var(--navy
 
 /* ── VIEWS ── */
 .main { margin-right: var(--sw); flex: 1; padding: 40px 44px 80px; max-width: 880px; }
+html[dir="ltr"] .main { margin-right: 0; margin-left: var(--sw); }
 .view { display: none; }
 .view.active { display: block; }
 
@@ -53,6 +74,7 @@ body { font-family: Arial, sans-serif; background: var(--off); color: var(--navy
 /* ── KEY INSIGHT ── */
 .key-insight { background: var(--navy); border-radius: 12px; padding: 22px 28px; margin-bottom: 32px; position: relative; overflow: hidden; }
 .key-insight::before { content: ''; position: absolute; right: 0; top: 0; bottom: 0; width: 4px; background: var(--gold); }
+html[dir="ltr"] .key-insight::before { right: auto; left: 0; }
 .ki-label { font-size: 9px; font-weight: 800; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
 .ki-label::after { content: ''; flex: 1; height: 1px; background: var(--gold); opacity: .3; }
 .ki-title { font-size: 18px; font-weight: 800; color: #fff; line-height: 1.35; margin-bottom: 10px; }
@@ -74,9 +96,11 @@ body { font-family: Arial, sans-serif; background: var(--off); color: var(--navy
 .si { width: 34px; height: 34px; background: var(--navy); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; }
 .sh h2 { font-size: 17px; font-weight: 800; color: var(--navy); }
 .sh .pill { margin-right: auto; font-size: 10px; font-weight: 700; color: var(--gold); background: var(--gold-bg); border: 1px solid var(--gold-light); padding: 3px 12px; border-radius: 20px; }
+html[dir="ltr"] .sh .pill { margin-right: 0; margin-left: auto; }
 
 /* ── CARD ── */
 .card { background: var(--white); border: 1px solid var(--border); border-radius: 10px; padding: 20px 24px; margin-bottom: 14px; border-right: 3px solid var(--gold); }
+html[dir="ltr"] .card { border-right: 1px solid var(--border); border-left: 3px solid var(--gold); }
 .card:hover { box-shadow: 0 4px 18px rgba(0,0,0,.07); }
 .card-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 9px; }
 .tag { font-size: 10px; font-weight: 700; padding: 2px 9px; border-radius: 4px; background: var(--off); color: var(--navy); border: 1px solid var(--border); }
@@ -87,6 +111,7 @@ body { font-family: Arial, sans-serif; background: var(--off); color: var(--navy
 .card-body p { margin-bottom: 10px; }
 .card-body p:last-child { margin-bottom: 0; }
 .highlight { background: var(--gold-bg); border-right: 3px solid var(--gold); padding: 10px 14px; border-radius: 6px; margin: 12px 0; font-size: 13px; color: var(--navy); line-height: 1.65; }
+html[dir="ltr"] .highlight { border-right: none; border-left: 3px solid var(--gold); }
 .data-row { display: flex; gap: 20px; margin: 10px 0; flex-wrap: wrap; }
 .data-item .val { font-size: 18px; font-weight: 800; color: var(--navy); display: block; }
 .data-item .val.up { color: #16a34a; }
@@ -101,19 +126,38 @@ body { font-family: Arial, sans-serif; background: var(--off); color: var(--navy
 .ch { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; padding-bottom: 12px; border-bottom: 2px solid #7f1d1d; }
 .ch h2 { font-size: 17px; font-weight: 800; color: #7f1d1d; }
 .ch .pill { margin-right: auto; font-size: 10px; font-weight: 700; color: #c62828; background: #fef2f2; border: 1px solid #fecaca; padding: 3px 12px; border-radius: 20px; }
+html[dir="ltr"] .ch .pill { margin-right: 0; margin-left: auto; }
 .conf-card { background: var(--white); border: 1px solid #fecaca; border-radius: 10px; padding: 20px 24px; margin-bottom: 16px; border-right: 3px solid #c62828; }
+html[dir="ltr"] .conf-card { border-right: 1px solid #fecaca; border-left: 3px solid #c62828; }
 .conf-topic { font-size: 14px; font-weight: 800; color: #7f1d1d; margin-bottom: 12px; }
 .conf-context { font-size: 12px; color: var(--muted); margin-bottom: 12px; padding: 8px 12px; background: #fef9f9; border-radius: 6px; }
 .sides { display: flex; gap: 12px; }
 .side { flex: 1; border-radius: 8px; padding: 14px 16px; }
 .side.bull { background: #f0fdf4; border: 1px solid #bbf7d0; border-right: 3px solid #16a34a; }
 .side.bear { background: #fef2f2; border: 1px solid #fecaca; border-right: 3px solid #dc2626; }
+html[dir="ltr"] .side.bull { border-right: 1px solid #bbf7d0; border-left: 3px solid #16a34a; }
+html[dir="ltr"] .side.bear { border-right: 1px solid #fecaca; border-left: 3px solid #dc2626; }
 .side-lbl { font-size: 9px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 6px; }
 .side.bull .side-lbl { color: #16a34a; }
 .side.bear .side-lbl { color: #dc2626; }
 .side-src { font-size: 10px; font-weight: 700; color: var(--muted); margin-bottom: 8px; }
 .side-txt { font-size: 12px; color: #374151; line-height: 1.7; }
 .conf-verdict { margin-top: 12px; font-size: 12px; color: var(--muted); font-style: italic; padding: 8px 12px; background: var(--off); border-radius: 6px; }
+
+/* ── DISCLAIMER ── */
+.disclaimer {
+  margin-top: 40px;
+  margin-bottom: 0;
+  padding: 16px 22px;
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+  border-right: 3px solid #d97706;
+  border-radius: 10px;
+  font-size: 12px;
+  color: #78350f;
+  line-height: 1.85;
+}
+html[dir="ltr"] .disclaimer { border-right: 1px solid #fde68a; border-left: 3px solid #d97706; }
 
 /* ── ARCHIVE VIEW ── */
 .arch-header { border-bottom: 2px solid var(--navy); padding-bottom: 22px; margin-bottom: 36px; }
@@ -122,8 +166,10 @@ body { font-family: Arial, sans-serif; background: var(--off); color: var(--navy
 .month-title { font-size: 13px; font-weight: 800; color: var(--muted); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 14px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
 .reports-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; }
 .report-card { background: var(--white); border: 1px solid var(--border); border-radius: 10px; padding: 16px 18px; cursor: pointer; border-right: 3px solid var(--gold); transition: box-shadow .15s, transform .15s; }
+html[dir="ltr"] .report-card { border-right: 1px solid var(--border); border-left: 3px solid var(--gold); }
 .report-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,.08); transform: translateY(-2px); }
 .report-card.today-card { border-right-color: #16a34a; background: #f0fdf4; }
+html[dir="ltr"] .report-card.today-card { border-left-color: #16a34a; }
 .rc-date { font-size: 18px; font-weight: 800; color: var(--navy); margin-bottom: 2px; }
 .rc-day { font-size: 11px; color: var(--muted); margin-bottom: 10px; }
 .rc-badge { display: inline-block; font-size: 9px; font-weight: 700; padding: 2px 8px; border-radius: 20px; }
@@ -135,6 +181,17 @@ body { font-family: Arial, sans-serif; background: var(--off); color: var(--navy
 .pf { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: flex-end; }
 .pf-l { font-size: 11px; color: var(--muted); line-height: 1.8; }
 .pf-r { font-size: 11px; color: var(--gold); font-weight: 700; text-align: left; }
+
+/* ── LANG CONTENT ── */
+.en-content { display: none; }
+.he-content { display: block; }
+html[dir="ltr"] .en-content { display: block; }
+html[dir="ltr"] .he-content { display: none; }
+/* For inline elements */
+span.en-content { display: none; }
+span.he-content { display: inline; }
+html[dir="ltr"] span.en-content { display: inline; }
+html[dir="ltr"] span.he-content { display: none; }
 </style>
 </head>
 <body>
@@ -146,25 +203,47 @@ body { font-family: Arial, sans-serif; background: var(--off); color: var(--navy
   <div class="logo-sub">CAPITAL<br>MANAGEMENT</div>
   <div class="logo-div"></div>
 
-  <!-- ניווט סקציות -->
   <nav id="section-nav" style="width:100%;display:flex;flex-direction:column;gap:4px">
-    <button class="nav-btn active" data-section="equity"><div class="nav-dot"></div><span>📈 שוק ההון</span></button>
-    <button class="nav-btn" data-section="alts"><div class="nav-dot"></div><span>🏛️ אלטרנטיביות</span></button>
-    <button class="nav-btn" data-section="macro"><div class="nav-dot"></div><span>🌍 מאקרו</span></button>
-    <button class="nav-btn" data-section="conflict"><div class="nav-dot"></div><span>⚔️ מחלוקות</span></button>
+    <button class="nav-btn active" data-section="equity">
+      <div class="nav-dot"></div>
+      <span class="he-content">📈 שוק ההון</span>
+      <span class="en-content">📈 Markets</span>
+    </button>
+    <button class="nav-btn" data-section="alts">
+      <div class="nav-dot"></div>
+      <span class="he-content">🏛️ אלטרנטיביות</span>
+      <span class="en-content">🏛️ Alternatives</span>
+    </button>
+    <button class="nav-btn" data-section="macro">
+      <div class="nav-dot"></div>
+      <span class="he-content">🌍 מאקרו</span>
+      <span class="en-content">🌍 Macro</span>
+    </button>
+    <button class="nav-btn" data-section="stocks">
+      <div class="nav-dot"></div>
+      <span class="he-content">🎯 מניות בפוקוס</span>
+      <span class="en-content">🎯 Stocks in Focus</span>
+    </button>
+    <button class="nav-btn" data-section="conflict">
+      <div class="nav-dot"></div>
+      <span class="he-content">⚔️ מחלוקות</span>
+      <span class="en-content">⚔️ Conflicts</span>
+    </button>
   </nav>
 
   <div class="nav-section-divider"></div>
 
-  <!-- כפתור ארכיון -->
   <button class="nav-archive-btn" id="archive-btn" onclick="showView(&#39;archive&#39;)">
     <div class="nav-dot" style="background:var(--gold);opacity:.8"></div>
-    <span>🗂️ ארכיון</span>
+    <span class="he-content">🗂️ ארכיון</span>
+    <span class="en-content">🗂️ Archive</span>
   </button>
+
+  <button class="lang-toggle-btn" id="lang-toggle" onclick="toggleLang()">EN</button>
 
   <div class="sf">
     <div class="sf-d" id="sidebar-date">07 · 06 · 2026</div>
-    <div class="sf-t" id="sidebar-time">18:05</div>
+    <div class="sf-t" id="sidebar-time">18:49</div>
   </div>
 </aside>
 
@@ -175,278 +254,575 @@ body { font-family: Arial, sans-serif; background: var(--off); color: var(--navy
   <div class="view active" id="view-report">
 
     <div class="ph">
-      <div class="overline">Daily Intelligence Report · Trust Capital Management</div>
-      <h1 id="main-title">הסקירה הכלכלית ליום<br>יום ראשון, 7 ביוני 2026</h1>
+      <div class="overline">
+        <span class="he-content">Daily Intelligence Report · Trust Capital Management</span>
+        <span class="en-content">Daily Intelligence Report · Trust Capital Management</span>
+      </div>
+      <h1 id="main-title"><span class="he-content">הסקירה הכלכלית ליום<br>יום ראשון, 7 ביוני 2026</span><span class="en-content">Daily Financial Review<br>Sunday, June 7, 2026</span></h1>
       <div class="ph-meta">
-        <span>📡 71 מקורות · 14 פרסמו היום</span>
-        <span>📊 16 תובנות</span>
-        <span>⚔️ 3 מחלוקות</span>
-        <span id="meta-time">🕐 18:05</span>
+        <span class="he-content">📡 71 מקורות · 13 פרסמו היום</span>
+        <span class="en-content">📡 71 sources · 13 published today</span>
+        <span class="he-content">📊 15 תובנות</span>
+        <span class="en-content">📊 15 insights</span>
+        <span class="he-content">⚔️ 3 מחלוקות</span>
+        <span class="en-content">⚔️ 3 conflicts</span>
+        <span id="meta-time">🕐 18:49</span>
       </div>
     </div>
 
+    <!-- KEY INSIGHT -->
     <div class="key-insight">
-      <div class="ki-label">⭐ המסקנה המרכזית של היום</div>
-      <div class="ki-title">ראלי של 9 שבועות נגמר ביום אחד — ונאסד"ק קרס 4%</div>
-      <div class="ki-body">שוק המניות חווה היום את הירידה החדה ביותר מאז אפריל 2025: ה-S&amp;P 500 איבד <strong>2.64%</strong> ונסגר ב-7,383, והנאסד"ק צנח <strong>4.18%</strong>. הטריגר: דאטת תעסוקה חזקה מדי דחפה את תשואות האג"ח מעלה ומחקה את ציפיות הורדת הריבית — בדיוק כשברודקום אכזבה בתחזית שבבי ה-AI. <strong>ובמקביל:</strong> Partners Group הקפיאה פדיונות בקרן Private Credit שלה, ומשכה KKR ו-Blackstone לירידות של ~4%. זהו יום שמזכיר שהשוק היה אופטימי מדי — בתמחור ובציפיות.</div>
-      <div class="ki-source">מקורות: Seeking Alpha · TheStreet · Bloomberg · CNBC · Federal Reserve · Fortune</div>
+      <div class="ki-label">
+        <span class="he-content">⭐ המסקנה המרכזית של היום</span>
+        <span class="en-content">⭐ Key Insight of the Day</span>
+      </div>
+      <div class="ki-title">
+        <span class="he-content">ראלי של 9 שבועות נגמר ביום אחד — ונאסד"ק קרס 4%</span>
+        <span class="en-content">9-Week Rally Ends in One Day — Nasdaq Crashes 4%</span>
+      </div>
+      <div class="ki-body">
+        <div class="he-content">שוק המניות חווה היום את הירידה החדה ביותר מאז אפריל 2025: ה-S&amp;P 500 איבד <strong>2.64%</strong> ונסגר ב-7,383, והנאסד"ק צנח <strong>4.18%</strong>. הטריגר: דאטת תעסוקה חזקה מדי דחפה את תשואות האג"ח מעלה ומחקה את ציפיות הורדת הריבית — בדיוק כשברודקום אכזבה בתחזית שבבי ה-AI. <strong>ובמקביל:</strong> Partners Group הקפיאה פדיונות בקרן Private Credit שלה, ומשכה KKR ו-Blackstone לירידות של ~4%. זהו יום שמזכיר שהשוק היה אופטימי מדי — בתמחור ובציפיות.</div>
+        <div class="en-content">Markets experienced their sharpest single-day decline since April 2025: S&amp;P 500 lost <strong>2.64%</strong>, closing at 7,383, while the Nasdaq plummeted <strong>4.18%</strong>. The trigger: stronger-than-expected jobs data pushed bond yields higher and wiped out rate-cut expectations — just as Broadcom disappointed on its AI chip forecast. <strong>Simultaneously:</strong> Partners Group froze redemptions on its Private Credit fund, dragging KKR and Blackstone down ~4%. This is a day that reminds us the market had been priced for perfection.</div>
+      </div>
+      <div class="ki-source">Sources: Seeking Alpha · TheStreet · Bloomberg · CNBC · Federal Reserve · Fortune</div>
     </div>
 
+    <!-- STATS -->
     <div class="stats">
-      <div class="stat"><div class="n">71</div><div class="l">מקורות כולל</div><div class="b"></div></div>
-      <div class="stat"><div class="n">14</div><div class="l">פרסמו היום</div><div class="b"></div></div>
-      <div class="stat"><div class="n g">15</div><div class="l">תובנות</div><div class="b"></div></div>
-      <div class="stat"><div class="n">3</div><div class="l">מחלוקות</div><div class="b"></div></div>
+      <div class="stat"><div class="n">71</div><div class="l"><span class="he-content">מקורות כולל</span><span class="en-content">Total Sources</span></div><div class="b"></div></div>
+      <div class="stat"><div class="n">13</div><div class="l"><span class="he-content">פרסמו היום</span><span class="en-content">Published Today</span></div><div class="b"></div></div>
+      <div class="stat"><div class="n g">15</div><div class="l"><span class="he-content">תובנות</span><span class="en-content">Insights</span></div><div class="b"></div></div>
+      <div class="stat"><div class="n">3</div><div class="l"><span class="he-content">מחלוקות</span><span class="en-content">Conflicts</span></div><div class="b"></div></div>
     </div>
 
-    <!-- שוק ההון -->
+    <!-- ── שוק ההון / Capital Markets ── -->
     <div class="section" id="equity">
-      <div class="sh"><div class="si">📈</div><h2>שוק ההון</h2><span class="pill">5 תובנות</span></div>
+      <div class="sh">
+        <div class="si">📈</div>
+        <h2><span class="he-content">שוק ההון</span><span class="en-content">Capital Markets</span></h2>
+        <span class="pill"><span class="he-content">5 תובנות</span><span class="en-content">5 Insights</span></span>
+      </div>
 
       <div class="card">
         <div class="card-tags"><span class="tag t1">TheStreet</span><span class="tag t1">Seeking Alpha</span></div>
-        <div class="card-title">S&amp;P 500 מאבד 2.64% ונאסד"ק קורס 4% — קץ הראלי של תשעה שבועות</div>
+        <div class="card-title">
+          <span class="he-content">S&amp;P 500 מאבד 2.64% ונאסד"ק קורס 4% — קץ הראלי של תשעה שבועות</span>
+          <span class="en-content">S&amp;P 500 Loses 2.64% and Nasdaq Crashes 4% — Nine-Week Rally Ends</span>
+        </div>
         <div class="card-body">
           <div class="data-row">
-            <div class="data-item"><span class="val down">-2.64%</span><span class="lbl">S&amp;P 500 סגירה היום</span></div>
-            <div class="data-item"><span class="val">7,383</span><span class="lbl">רמת S&amp;P 500</span></div>
-            <div class="data-item"><span class="val down">-4.18%</span><span class="lbl">נאסד"ק — ירידה חדה מאפריל 2025</span></div>
+            <div class="data-item"><span class="val down">-2.64%</span><span class="lbl">S&amp;P 500</span></div>
+            <div class="data-item"><span class="val">7,383</span><span class="lbl"><span class="he-content">רמת S&amp;P 500</span><span class="en-content">S&amp;P 500 level</span></span></div>
+            <div class="data-item"><span class="val down">-4.18%</span><span class="lbl">Nasdaq</span></div>
           </div>
-          <p>תשעה שבועות של ראלי נגמרו היום בצורה חדה. ה-S&amp;P 500 ירד 2.64% לסגירה ב-7,383 — הדאו ספג 695 נקודות ירידה, והנאסד"ק קרס 4.18% בירידה שלא ראינו מאז אפריל 2025. מה הצית את זה? שני גורמים שפגשו זה את זה ברגע לא טוב: דאטת תעסוקה של מאי שהייתה חזקה בהרבה מהציפיות, ו-Broadcom שבאותו זמן לא הצליחה להעלות את תחזית שבבי ה-AI שלה.</p>
-          <p>השילוב הזה הפעיל את המנגנון שהשוק חשש ממנו: תעסוקה חזקה → הפד לא יוריד ריבית מהר → תשואות אג"ח עולות → מניות צמיחה ספגו. חמישה מתוך שנים עשר אינדיקטורים של Seeking Alpha מציגים כעת "צהוב" — אזהרה על שלב שיא אפשרי.</p>
-          <div class="highlight">⚠️ השוק נסחר ב-7,600 לפני שלושה ימים בלבד. ירידה של 3% בשבוע אחד אחרי ראלי ארוך היא תזכורת ברורה: בתמחור הנוכחי אין מרחב לאכזבות — ולו קטנות.</div>
+          <div class="he-content">
+            <p>תשעה שבועות של ראלי נגמרו היום בצורה חדה. ה-S&amp;P 500 ירד 2.64% לסגירה ב-7,383 — הדאו ספג 695 נקודות ירידה, והנאסד"ק קרס 4.18% בירידה שלא ראינו מאז אפריל 2025. מה הצית את זה? שני גורמים שפגשו זה את זה ברגע לא טוב: דאטת תעסוקה של מאי שהייתה חזקה בהרבה מהציפיות, ו-Broadcom שבאותו זמן לא הצליחה להעלות את תחזית שבבי ה-AI שלה.</p>
+            <p>השילוב הזה הפעיל את המנגנון שהשוק חשש ממנו: תעסוקה חזקה → הפד לא יוריד ריבית מהר → תשואות אג"ח עולות → מניות צמיחה ספגו. חמישה מתוך שנים עשר אינדיקטורים של Seeking Alpha מציגים כעת "צהוב" — אזהרה על שלב שיא אפשרי.</p>
+            <div class="highlight">⚠️ השוק נסחר ב-7,600 לפני שלושה ימים בלבד. ירידה של 3% בשבוע אחד אחרי ראלי ארוך היא תזכורת ברורה: בתמחור הנוכחי אין מרחב לאכזבות — ולו קטנות.</div>
+          </div>
+          <div class="en-content">
+            <p>Nine weeks of rally ended sharply today. The S&amp;P 500 fell 2.64% to close at 7,383 — the Dow dropped 695 points, and the Nasdaq crashed 4.18% in a decline not seen since April 2025. Two factors collided at the worst moment: May jobs data far stronger than expected, and Broadcom failing to raise its AI chip forecast.</p>
+            <p>This combination triggered the mechanism the market had feared: strong employment → Fed won't cut rates quickly → bond yields rise → growth stocks get hit. Five of Seeking Alpha's twelve indicators are now showing "yellow" — a warning of a potential peak stage.</p>
+            <div class="highlight">⚠️ The market was trading at 7,600 just three days ago. A 3% drop in one week after a long rally is a clear reminder: at current valuations, there is no room for disappointments — even small ones.</div>
+          </div>
         </div>
       </div>
 
       <div class="card">
         <div class="card-tags"><span class="tag t1">Bloomberg</span><span class="tag t1">Fortune</span></div>
-        <div class="card-title">דאליו: שוק המניות מתקרב לרמות 1929 ו-2000 — ובועת AI בדרך</div>
+        <div class="card-title">
+          <span class="he-content">דאליו: שוק המניות מתקרב לרמות 1929 ו-2000 — ובועת AI בדרך</span>
+          <span class="en-content">Dalio: Stock Market Approaching 1929 and 2000 Levels — AI Bubble Forming</span>
+        </div>
         <div class="card-body">
-          <p>ב-3 ביוני, שלושה ימים לפני הקריסה של היום, Ray Dalio אמר ל-Bloomberg Television שהשוק האמריקאי מתקרב לרמות הערכה שנראו לפני שני הקריסות הגדולות בהיסטוריה — 1929 ו-2000. הוא לא קרא לקריסה מיידית, אבל אמר בפירוש שהפרמיה בסיכון נמוכה מדי ביחס לסיכונים המבניים.</p>
-          <p>לגבי ה-AI, דאליו הכיר בכוחה הטרנספורמטיבי — אבל אמר שלחץ תחרותי מכריח חברות להוציא הוצאות עצומות ללא נקודת סיום ברורה, ומשקיעים מבלבלים בין ההבטחה של הטכנולוגיה לבין שווי המניות הנוכחי. <strong>בניסוח שלו:</strong> "AI ישנה את העולם — אבל זה לא אומר שהמניות של היום מגלמות תמחור הגיוני."</p>
+          <div class="he-content">
+            <p>ב-3 ביוני, שלושה ימים לפני הקריסה של היום, Ray Dalio אמר ל-Bloomberg Television שהשוק האמריקאי מתקרב לרמות הערכה שנראו לפני שני הקריסות הגדולות בהיסטוריה — 1929 ו-2000. הוא לא קרא לקריסה מיידית, אבל אמר בפירוש שהפרמיה בסיכון נמוכה מדי ביחס לסיכונים המבניים.</p>
+            <p>לגבי ה-AI, דאליו הכיר בכוחה הטרנספורמטיבי — אבל אמר שלחץ תחרותי מכריח חברות להוציא הוצאות עצומות ללא נקודת סיום ברורה, ומשקיעים מבלבלים בין ההבטחה של הטכנולוגיה לבין שווי המניות הנוכחי. <strong>בניסוח שלו:</strong> "AI ישנה את העולם — אבל זה לא אומר שהמניות של היום מגלמות תמחור הגיוני."</p>
+          </div>
+          <div class="en-content">
+            <p>On June 3rd, three days before today's crash, Ray Dalio told Bloomberg Television that the US market is approaching valuation levels seen before the two greatest crashes in history — 1929 and 2000. He didn't call for an immediate crash, but explicitly stated that risk premiums are too low relative to structural risks.</p>
+            <p>On AI, Dalio acknowledged its transformative power — but said competitive pressure forces companies to spend enormous sums without a clear endpoint, and investors are confusing the technology's promise with current stock valuations. <strong>In his words:</strong> "AI will change the world — but that doesn't mean today's stocks reflect rational pricing."</p>
+          </div>
         </div>
       </div>
 
       <div class="card">
         <div class="card-tags"><span class="tag t1">Goldman Sachs</span><span class="tag t1">JPMorgan</span></div>
-        <div class="card-title">שני הגופים מחזיקים בתחזיות חיוביות — למרות הירידה של היום</div>
+        <div class="card-title">
+          <span class="he-content">שני הגופים מחזיקים בתחזיות חיוביות — למרות הירידה של היום</span>
+          <span class="en-content">Both Institutions Hold Positive Forecasts — Despite Today's Decline</span>
+        </div>
         <div class="card-body">
           <div class="data-row">
-            <div class="data-item"><span class="val up">2.8%</span><span class="lbl">תחזית צמיחה גלובלית GS</span></div>
-            <div class="data-item"><span class="val up">13-15%</span><span class="lbl">תחזית EPS growth JPM</span></div>
+            <div class="data-item"><span class="val up">2.8%</span><span class="lbl"><span class="he-content">תחזית צמיחה GS</span><span class="en-content">GS Growth Forecast</span></span></div>
+            <div class="data-item"><span class="val up">13-15%</span><span class="lbl"><span class="he-content">תחזית EPS גרות JPM</span><span class="en-content">JPM EPS Growth Target</span></span></div>
           </div>
-          <p>Goldman Sachs ממשיכים לצפות לצמיחה גלובלית של 2.8% ב-2026, מעל קונסנזוס של 2.5%. הם constructive על מניות אבל מציינים שהתשואות יהיו נמוכות מ-2025. JPMorgan מציגים תמונה אופטימית יותר: ה-AI Super Cycle אמור להניע צמיחת רווחים של 13-15% לפחות בשנתיים הקרובות.</p>
-          <p>מה שמעניין הוא הפער בין שני הגופים לבין דאליו — GS ו-JPM מסתכלים על הנתונים הפונדמנטליים וממשיכים אופטימיים; דאליו מסתכל על המבנה הכלכלי ארוך הטווח ומזהיר. שניהם יכולים להיות צודקים בטווח זמן שונה.</p>
+          <div class="he-content">
+            <p>Goldman Sachs ממשיכים לצפות לצמיחה גלובלית של 2.8% ב-2026, מעל קונסנזוס של 2.5%. הם constructive על מניות אבל מציינים שהתשואות יהיו נמוכות מ-2025. JPMorgan מציגים תמונה אופטימית יותר: ה-AI Super Cycle אמור להניע צמיחת רווחים של 13-15% לפחות בשנתיים הקרובות.</p>
+            <p>מה שמעניין הוא הפער בין שני הגופים לבין דאליו — GS ו-JPM מסתכלים על הנתונים הפונדמנטליים וממשיכים אופטימיים; דאליו מסתכל על המבנה הכלכלי ארוך הטווח ומזהיר. שניהם יכולים להיות צודקים בטווח זמן שונה.</p>
+          </div>
+          <div class="en-content">
+            <p>Goldman Sachs continues to forecast global growth of 2.8% in 2026, above the 2.5% consensus. They remain constructive on equities but note returns will be lower than 2025. JPMorgan paints a more optimistic picture: the AI Super Cycle should drive earnings growth of at least 13-15% over the next two years.</p>
+            <p>The interesting gap is between these two institutions and Dalio — GS and JPM look at fundamental data and stay optimistic; Dalio looks at long-term economic structure and warns. Both can be right on different time horizons.</p>
+          </div>
         </div>
       </div>
 
       <div class="card">
         <div class="card-tags"><span class="tag t1">BlackRock</span></div>
-        <div class="card-title">AI Capex מתקרב לטריליון דולר עד 2028 — גם בלאקרוק רואים "שני כוחות גדולים"</div>
+        <div class="card-title">
+          <span class="he-content">AI Capex מתקרב לטריליון דולר עד 2028 — גם בלאקרוק רואים "שני כוחות גדולים"</span>
+          <span class="en-content">AI Capex Approaching $1 Trillion by 2028 — BlackRock Sees "Two Mega Forces"</span>
+        </div>
         <div class="card-body">
-          <p>BlackRock מנסחים את האתגר של 2026 כהתנגשות בין שני Mega Forces: ה-AI Buildout מצד אחד, והפיצול הגיאופוליטי מצד שני. ה-Capex המתוכנן על AI מתקרב ל-$1 טריליון בשנה עד 2028 — מספר שמשנה את כל חישובי הביקוש לחשמל, שבבים ותשתיות.</p>
-          <div class="highlight">💡 BlackRock: Private Markets קריטיות לפיתוח תשתיות ה-AI — Private Credit ו-Digital Infrastructure מציגים פוטנציאל צמיחה גדול גם בסביבת תנודתיות.</div>
+          <div class="he-content">
+            <p>BlackRock מנסחים את האתגר של 2026 כהתנגשות בין שני Mega Forces: ה-AI Buildout מצד אחד, והפיצול הגיאופוליטי מצד שני. ה-Capex המתוכנן על AI מתקרב ל-$1 טריליון בשנה עד 2028 — מספר שמשנה את כל חישובי הביקוש לחשמל, שבבים ותשתיות.</p>
+            <div class="highlight">💡 BlackRock: Private Markets קריטיות לפיתוח תשתיות ה-AI — Private Credit ו-Digital Infrastructure מציגים פוטנציאל צמיחה גדול גם בסביבת תנודתיות.</div>
+          </div>
+          <div class="en-content">
+            <p>BlackRock frames the 2026 challenge as a collision between two Mega Forces: the AI Buildout on one side, and geopolitical fragmentation on the other. Planned AI Capex is approaching $1 trillion per year by 2028 — a figure that reshapes all demand calculations for electricity, chips, and infrastructure.</p>
+            <div class="highlight">💡 BlackRock: Private Markets are critical for AI infrastructure development — Private Credit and Digital Infrastructure show strong growth potential even in a volatile environment.</div>
+          </div>
         </div>
       </div>
 
       <div class="card">
         <div class="card-tags"><span class="tag t1">Michael Burry</span></div>
-        <div class="card-title">בארי מגדיל חשיפה לסין ל-45% מהתיק — מהלך שאי אפשר להתעלם ממנו</div>
+        <div class="card-title">
+          <span class="he-content">בארי מגדיל חשיפה לסין ל-45% מהתיק — מהלך שאי אפשר להתעלם ממנו</span>
+          <span class="en-content">Burry Raises China Exposure to 45% of Portfolio — A Move Hard to Ignore</span>
+        </div>
         <div class="card-body">
           <div class="data-row">
-            <div class="data-item"><span class="val">45%</span><span class="lbl">חשיפה לסין בתיק</span></div>
-            <div class="data-item"><span class="val">8x</span><span class="lbl">P/E של JD.com</span></div>
-            <div class="data-item"><span class="val up">+40%</span><span class="lbl">רווח ממומש Shift4</span></div>
+            <div class="data-item"><span class="val">45%</span><span class="lbl"><span class="he-content">חשיפה לסין</span><span class="en-content">China exposure</span></span></div>
+            <div class="data-item"><span class="val">8x</span><span class="lbl">JD.com P/E</span></div>
+            <div class="data-item"><span class="val up">+40%</span><span class="lbl"><span class="he-content">רווח Shift4</span><span class="en-content">Shift4 gain</span></span></div>
           </div>
-          <p>הגשת 13F ל-Q1 2026 של Scion Asset Management חושפת תמונה מעניינת: בארי הגדיל את הפוזיציות שלו ב-JD.com ו-Alibaba עד שסין מהווה כמעט מחצית מהתיק כולו. JD.com נסחרת ב-P/E של 8x — שבר מהתמחור ההיסטורי שלה שעמד על 30-40x. בארי מוכן להיות לא נוח ולא בקונצנזוס כשהוא מאמין בנתון.</p>
-          <p>במקביל הוא מימש לחלוטין את Shift4 Payments לאחר עלייה של 40% תוך 9 חודשים. התיק שלו כולל כיום 8 מניות בלבד — גישת High Conviction שמאלצת אותו להיות בטוח עמוקות בכל בחירה. בארי לא מגוון; הוא מרכז.</p>
+          <div class="he-content">
+            <p>הגשת 13F ל-Q1 2026 של Scion Asset Management חושפת תמונה מעניינת: בארי הגדיל את הפוזיציות שלו ב-JD.com ו-Alibaba עד שסין מהווה כמעט מחצית מהתיק כולו. JD.com נסחרת ב-P/E של 8x — שבר מהתמחור ההיסטורי שלה שעמד על 30-40x.</p>
+            <p>במקביל הוא מימש לחלוטין את Shift4 Payments לאחר עלייה של 40% תוך 9 חודשים. התיק שלו כולל כיום 8 מניות בלבד — גישת High Conviction שמאלצת אותו להיות בטוח עמוקות בכל בחירה. בארי לא מגוון; הוא מרכז.</p>
+          </div>
+          <div class="en-content">
+            <p>Scion Asset Management's Q1 2026 13F filing reveals an interesting picture: Burry has increased his positions in JD.com and Alibaba until China represents nearly half of the entire portfolio. JD.com trades at a P/E of 8x — a fraction of its historical 30-40x valuation.</p>
+            <p>He also fully exited Shift4 Payments after a 40% gain in 9 months. His portfolio now contains just 8 stocks — a high-conviction approach that forces deep certainty in every pick. Burry doesn't diversify; he concentrates.</p>
+          </div>
         </div>
       </div>
 
-      <div class="consensus"><strong>הערכתנו:</strong> יום קשה שממחיש שהשוק בנה ציפיות גבוהות מדי. דאליו אמר את זה לפני שלושה ימים — והשוק הוכיח אותו היום. JPM ו-GS ממשיכים אופטימיים לטווח הבינוני, אבל הירידה של היום היא תזכורת שתמחור גבוה לא סולח לאכזבות.</div>
+      <div class="consensus">
+        <div class="he-content"><strong>הערכתנו:</strong> יום קשה שממחיש שהשוק בנה ציפיות גבוהות מדי. דאליו אמר את זה לפני שלושה ימים — והשוק הוכיח אותו היום. JPM ו-GS ממשיכים אופטימיים לטווח הבינוני, אבל הירידה של היום היא תזכורת שתמחור גבוה לא סולח לאכזבות.</div>
+        <div class="en-content"><strong>Our Assessment:</strong> A tough day that illustrates the market had built excessive expectations. Dalio said this three days ago — and the market proved him right today. JPM and GS remain optimistic for the medium term, but today's decline is a reminder that high valuations forgive no disappointments.</div>
+      </div>
     </div>
 
-    <!-- אלטרנטיביות -->
+    <!-- ── אלטרנטיביות / Alternatives ── -->
     <div class="section" id="alts">
-      <div class="sh"><div class="si">🏛️</div><h2>השקעות אלטרנטיביות</h2><span class="pill">5 תובנות</span></div>
+      <div class="sh">
+        <div class="si">🏛️</div>
+        <h2><span class="he-content">השקעות אלטרנטיביות</span><span class="en-content">Alternative Investments</span></h2>
+        <span class="pill"><span class="he-content">5 תובנות</span><span class="en-content">5 Insights</span></span>
+      </div>
 
       <div class="card">
         <div class="card-tags"><span class="tag t1">CNBC</span><span class="tag t1">Fortune</span></div>
-        <div class="card-title">משבר Private Credit: Partners Group הקפיאה פדיונות — KKR וBlackstone ירדו 4%</div>
+        <div class="card-title">
+          <span class="he-content">משבר Private Credit: Partners Group הקפיאה פדיונות — KKR וBlackstone ירדו 4%</span>
+          <span class="en-content">Private Credit Crisis: Partners Group Freezes Redemptions — KKR and Blackstone Down 4%</span>
+        </div>
         <div class="card-body">
           <div class="data-row">
-            <div class="data-item"><span class="val down">-4%</span><span class="lbl">KKR היום</span></div>
-            <div class="data-item"><span class="val down">-4%</span><span class="lbl">Blackstone היום</span></div>
-            <div class="data-item"><span class="val down">-3%</span><span class="lbl">Blue Owl היום</span></div>
+            <div class="data-item"><span class="val down">-4%</span><span class="lbl">KKR</span></div>
+            <div class="data-item"><span class="val down">-4%</span><span class="lbl">Blackstone</span></div>
+            <div class="data-item"><span class="val down">-3%</span><span class="lbl">Blue Owl</span></div>
           </div>
-          <p>חדשות לא נעימות מעולם ה-Private Credit: Switzerland's Partners Group הודיעה על הגבלת פדיונות באחד מקרנותיה — וזה הספיק כדי למשוך את כל סקטור הפרייבט אקוויטי כלפי מטה. KKR ו-Blackstone ירדו כ-4% כל אחת, Blue Owl ירדה 3%. זהו הד לנושא רחב יותר: ה-Private Credit, שוק של $1.8 טריליון, עובר 2026 סוערת.</p>
-          <p>הסיפור המלא: BlackRock TCP ספגה מחיקות של $35 מיליון ברבעון הראשון, הפחיתה NAV ב-19% בינואר, ועוד 5% בהמשך. Apollo שוקלת למכור את קרן $3 מיליארד MidCap Financial. זה לא משבר מערכתי — אבל זו תזכורת שגם "הנכסים האלטרנטיביים הבטוחים" יכולים לאכזב.</p>
+          <div class="he-content">
+            <p>חדשות לא נעימות מעולם ה-Private Credit: Switzerland's Partners Group הודיעה על הגבלת פדיונות באחד מקרנותיה — וזה הספיק כדי למשוך את כל סקטור הפרייבט אקוויטי כלפי מטה. KKR ו-Blackstone ירדו כ-4% כל אחת, Blue Owl ירדה 3%.</p>
+            <p>הסיפור המלא: BlackRock TCP ספגה מחיקות של $35 מיליון ברבעון הראשון, הפחיתה NAV ב-19% בינואר, ועוד 5% בהמשך. Apollo שוקלת למכור את קרן $3 מיליארד MidCap Financial. זה לא משבר מערכתי — אבל זו תזכורת שגם "הנכסים האלטרנטיביים הבטוחים" יכולים לאכזב.</p>
+          </div>
+          <div class="en-content">
+            <p>Unwelcome news from the Private Credit world: Switzerland's Partners Group announced redemption restrictions on one of its funds — enough to drag the entire private equity sector lower. KKR and Blackstone each fell ~4%, Blue Owl dropped 3%.</p>
+            <p>The full picture: BlackRock TCP suffered $35M write-downs in Q1, cut NAV 19% in January and another 5% later. Apollo is considering selling its $3B MidCap Financial fund. This isn't a systemic crisis — but it's a reminder that "safe alternative assets" can disappoint too.</p>
+          </div>
         </div>
       </div>
 
       <div class="card">
         <div class="card-tags"><span class="tag t1">Howard Marks</span></div>
-        <div class="card-title">המזכר החדש של מארקס: איך להבחין בין שוק יקר לבין בועה אמיתית</div>
+        <div class="card-title">
+          <span class="he-content">המזכר החדש של מארקס: איך להבחין בין שוק יקר לבין בועה אמיתית</span>
+          <span class="en-content">Marks' New Memo: How to Distinguish Between an Expensive Market and a Real Bubble</span>
+        </div>
         <div class="card-body">
-          <p>אחת השאלות שהשוק שואל כל הזמן היא האם ה-AI הוא בועה. מארקס מנסה לענות עליה בצורה מדויקת: לדעתו, לא — אבל "יקר" ו"בועה" הן מילים שונות לחלוטין. בועה דורשת לוגיקה מעגלית ("יעלה כי יעלה"), מינוף מופרז וספקולציה רחבה. אלה לא קיימים ברמה מסוכנת כיום.</p>
-          <p>הנקודה החכמה שלו היא ה-Second-Level Thinking: "כולם יודעים שה-AI ישנה הכל. השאלה היא מי ישלם ומי ירוויח." מארקס מאמין שחברות ה-Infrastructure — ספקיות חשמל, חברות קירור, מפעילי Data Centers — עשויות להרוויח יותר מחברות ה-AI עצמן, ובתמחור הרבה יותר סביר.</p>
-          <div class="highlight">💡 מסקנת מארקס: AI Infrastructure (חשמל, קירור, Data Centers) &gt; AI Software מבחינת Risk/Reward בשלב הנוכחי.</div>
+          <div class="he-content">
+            <p>אחת השאלות שהשוק שואל כל הזמן היא האם ה-AI הוא בועה. מארקס מנסה לענות עליה בצורה מדויקת: לדעתו, לא — אבל "יקר" ו"בועה" הן מילים שונות לחלוטין. בועה דורשת לוגיקה מעגלית ("יעלה כי יעלה"), מינוף מופרז וספקולציה רחבה. אלה לא קיימים ברמה מסוכנת כיום.</p>
+            <p>הנקודה החכמה שלו היא ה-Second-Level Thinking: "כולם יודעים שה-AI ישנה הכל. השאלה היא מי ישלם ומי ירוויח." מארקס מאמין שחברות ה-Infrastructure עשויות להרוויח יותר מחברות ה-AI עצמן.</p>
+            <div class="highlight">💡 מסקנת מארקס: AI Infrastructure (חשמל, קירור, Data Centers) &gt; AI Software מבחינת Risk/Reward בשלב הנוכחי.</div>
+          </div>
+          <div class="en-content">
+            <p>One of the market's recurring questions is whether AI is a bubble. Marks tries to answer precisely: in his view, no — but "expensive" and "bubble" are entirely different words. A bubble requires circular logic ("it will rise because it will rise"), excessive leverage, and broad speculation. These don't exist at dangerous levels today.</p>
+            <p>His smart point is Second-Level Thinking: "Everyone knows AI will change everything. The question is who will pay and who will profit." Marks believes Infrastructure companies may profit more than AI companies themselves.</p>
+            <div class="highlight">💡 Marks' conclusion: AI Infrastructure (power, cooling, Data Centers) &gt; AI Software in terms of Risk/Reward at this stage.</div>
+          </div>
         </div>
       </div>
 
       <div class="card">
         <div class="card-tags"><span class="tag t1">Blackstone</span></div>
-        <div class="card-title">נדל"ן לוגיסטי: $1.2B באוסטין ו-BREIT שמתאושש בשקט</div>
+        <div class="card-title">
+          <span class="he-content">נדל"ן לוגיסטי: $1.2B באוסטין ו-BREIT שמתאושש בשקט</span>
+          <span class="en-content">Logistics Real Estate: $1.2B in Austin and BREIT Quietly Recovering</span>
+        </div>
         <div class="card-body">
           <div class="data-row">
-            <div class="data-item"><span class="val">$1.2B</span><span class="lbl">עסקת מרכז הפצה</span></div>
-            <div class="data-item"><span class="val">5.2%</span><span class="lbl">Cap Rate — 80bps מעל שוק ציבורי</span></div>
-            <div class="data-item"><span class="val up">7.2%</span><span class="lbl">תשואת BREIT מתחילת שנה</span></div>
+            <div class="data-item"><span class="val">$1.2B</span><span class="lbl"><span class="he-content">עסקת מרכז הפצה</span><span class="en-content">Distribution center deal</span></span></div>
+            <div class="data-item"><span class="val">5.2%</span><span class="lbl">Cap Rate</span></div>
+            <div class="data-item"><span class="val up">7.2%</span><span class="lbl"><span class="he-content">תשואת BREIT YTD</span><span class="en-content">BREIT YTD return</span></span></div>
           </div>
-          <p>Blackstone Real Estate השלימה רכישה משמעותית — מרכז הפצה באוסטין, טקסס ב-$1.2 מיליארד. ה-Cap Rate של 5.2% גבוה ב-80 נקודות בסיס ממקבילות בשוק הציבורי, מה שמשקף את הפרמיה שבלאקסטון מצפה לקבל על אחזקה ישירה.</p>
-          <p>מה שמעניין יותר הוא BREIT — הקרן הפרטית לנדל"ן שעברה תקופה קשה ב-2024 עם גל פדיונות. כיום הפדיונות ירדו ב-40% מהשיא, והקרן מציגה תשואה של 7.2% מתחילת השנה. זהו שיפור מהותי שמסמן שהמשקיעים חוזרים לאמון בנדל"ן הפרטי.</p>
+          <div class="he-content">
+            <p>Blackstone Real Estate השלימה רכישה משמעותית — מרכז הפצה באוסטין, טקסס ב-$1.2 מיליארד. ה-Cap Rate של 5.2% גבוה ב-80 נקודות בסיס ממקבילות בשוק הציבורי.</p>
+            <p>BREIT — הקרן הפרטית לנדל"ן שעברה תקופה קשה ב-2024 עם גל פדיונות — כיום הפדיונות ירדו ב-40% מהשיא, והקרן מציגה תשואה של 7.2% מתחילת השנה.</p>
+          </div>
+          <div class="en-content">
+            <p>Blackstone Real Estate completed a significant acquisition — a distribution center in Austin, Texas for $1.2 billion. The 5.2% Cap Rate is 80 basis points above public market equivalents.</p>
+            <p>BREIT — the private real estate fund that went through a tough period in 2024 with a wave of redemptions — has now seen redemptions fall 40% from their peak, with the fund delivering a 7.2% return year-to-date.</p>
+          </div>
         </div>
       </div>
 
       <div class="card">
         <div class="card-tags"><span class="tag t1">KKR</span></div>
-        <div class="card-title">$4.5 טריליון בתשתיות ב-10 שנים — KKR מכנים אותה "הזדמנות הדור"</div>
+        <div class="card-title">
+          <span class="he-content">$4.5 טריליון בתשתיות ב-10 שנים — KKR מכנים אותה "הזדמנות הדור"</span>
+          <span class="en-content">$4.5 Trillion in Infrastructure Over 10 Years — KKR Calls It "Generational Opportunity"</span>
+        </div>
         <div class="card-body">
-          <p>הדוח שKKR פרסמו היום מנתח את מה שהם מכנים Infrastructure Super Cycle: הביקוש לחשמל עבור מרכזי AI לבד צפוי לגדול פי שלושה עד 2030, ובסך הכל נדרשות השקעות של $4.5 טריליון בתשתיות גלובליות בעשור הקרוב.</p>
-          <p>ה-insight החכם של KKR הוא לא להשקיע ישירות בחברות AI, אלא ב"כלי הנשק של המלחמה" — ספקיות חשמל אזוריות, חברות קירור תעשייתי כמו Vertiv ו-Eaton, ומפעילי Data Centers כמו Equinix ו-Digital Realty. אלה מרוויחות ללא קשר לשאלה איזו חברת AI תנצח בסוף.</p>
+          <div class="he-content">
+            <p>הדוח שKKR פרסמו היום מנתח את מה שהם מכנים Infrastructure Super Cycle: הביקוש לחשמל עבור מרכזי AI לבד צפוי לגדול פי שלושה עד 2030, ובסך הכל נדרשות השקעות של $4.5 טריליון בתשתיות גלובליות בעשור הקרוב.</p>
+            <p>ה-insight החכם של KKR הוא לא להשקיע ישירות בחברות AI, אלא ב"כלי הנשק של המלחמה" — ספקיות חשמל, חברות קירור כמו Vertiv ו-Eaton, ומפעילי Data Centers כמו Equinix ו-Digital Realty.</p>
+          </div>
+          <div class="en-content">
+            <p>KKR's report published today analyzes what they call the Infrastructure Super Cycle: electricity demand for AI data centers alone is expected to triple by 2030, with $4.5 trillion in global infrastructure investments required over the next decade.</p>
+            <p>KKR's smart insight is not to invest directly in AI companies, but in "the weapons of war" — regional power suppliers, cooling companies like Vertiv and Eaton, and Data Center operators like Equinix and Digital Realty.</p>
+          </div>
         </div>
       </div>
 
       <div class="card">
         <div class="card-tags"><span class="tag t1">Apollo Global</span><span class="tag t1">Carlyle</span></div>
-        <div class="card-title">חלון ה-IPO נפתח מחדש — גל הנפקות מתגבש לH2 2026</div>
+        <div class="card-title">
+          <span class="he-content">חלון ה-IPO נפתח מחדש — גל הנפקות מתגבש לH2 2026</span>
+          <span class="en-content">IPO Window Re-Opens — Wave of IPOs Forming for H2 2026</span>
+        </div>
         <div class="card-body">
-          <p>Apollo ו-Carlyle הצטרפו השבוע לKKR והכריזו על כוונות הנפקה בחצי השנה השנייה של 2026. שוק ה-IPO שהיה קפוא ברובו מאז 2022 מתחיל להראות סימני חיים אמיתיים — לא רק שמועות.</p>
-          <div class="highlight">📌 נקודה חשובה: כשגופי פרייבט אקוויטי גדולים מחליטים למכור — הם בעצם מסמנים שהתמחור הציבורי גבוה מספיק כדי להצדיק יציאה. זה קטליזטור פוטנציאלי לגל רחב יותר של הנפקות בשוק.</div>
+          <div class="he-content">
+            <p>Apollo ו-Carlyle הצטרפו השבוע לKKR והכריזו על כוונות הנפקה בחצי השנה השנייה של 2026. שוק ה-IPO שהיה קפוא ברובו מאז 2022 מתחיל להראות סימני חיים אמיתיים.</p>
+            <div class="highlight">📌 נקודה חשובה: כשגופי פרייבט אקוויטי גדולים מחליטים למכור — הם בעצם מסמנים שהתמחור הציבורי גבוה מספיק כדי להצדיק יציאה. זה קטליזטור פוטנציאלי לגל רחב יותר של הנפקות.</div>
+          </div>
+          <div class="en-content">
+            <p>Apollo and Carlyle joined KKR this week in announcing IPO intentions for the second half of 2026. The IPO market, largely frozen since 2022, is starting to show real signs of life.</p>
+            <div class="highlight">📌 Key point: When major private equity firms decide to sell — they're signaling that public market valuations are high enough to justify an exit. This is a potential catalyst for a broader wave of IPOs.</div>
+          </div>
         </div>
       </div>
 
-      <div class="consensus"><strong>הערכתנו:</strong> הכסף המוסדי הגדול זז ל-Private Markets, ולא בלי סיבה. הפרמיה אמיתית, ו-ABL, לוגיסטיקה ותשתיות AI הם שלושת הנושאים שחוזרים שוב ושוב אצל כל הגופים הגדולים. חלון ה-IPO מוסיף הזדמנות לחשיפה לנכסים שלא היו נגישים שנים.</div>
+      <div class="consensus">
+        <div class="he-content"><strong>הערכתנו:</strong> הכסף המוסדי הגדול זז ל-Private Markets. הפרמיה אמיתית, ו-ABL, לוגיסטיקה ותשתיות AI הם שלושת הנושאים שחוזרים שוב ושוב אצל כל הגופים הגדולים.</div>
+        <div class="en-content"><strong>Our Assessment:</strong> Big institutional money is moving to Private Markets. The premium is real, and ABL, logistics, and AI infrastructure are the three themes recurring across all major institutions.</div>
+      </div>
     </div>
 
-    <!-- מאקרו -->
+    <!-- ── מאקרו / Macro ── -->
     <div class="section" id="macro">
-      <div class="sh"><div class="si">🌍</div><h2>מאקרו כלכלה</h2><span class="pill">6 תובנות</span></div>
+      <div class="sh">
+        <div class="si">🌍</div>
+        <h2><span class="he-content">מאקרו כלכלה</span><span class="en-content">Macroeconomics</span></h2>
+        <span class="pill"><span class="he-content">4 תובנות</span><span class="en-content">4 Insights</span></span>
+      </div>
 
       <div class="card">
         <div class="card-tags"><span class="tag t1">Federal Reserve</span><span class="tag t1">Polymarket</span></div>
-        <div class="card-title">יו"ר פד חדש, CPI ב-3.8% — ואין ציפייה להורדת ריבית ב-16-17 יוני</div>
+        <div class="card-title">
+          <span class="he-content">יו"ר פד חדש, CPI ב-3.8% — ואין ציפייה להורדת ריבית ב-16-17 יוני</span>
+          <span class="en-content">New Fed Chair, CPI at 3.8% — No Rate Cut Expected June 16-17</span>
+        </div>
         <div class="card-body">
           <div class="data-row">
-            <div class="data-item"><span class="val down">3.8%</span><span class="lbl">CPI אפריל YoY</span></div>
-            <div class="data-item"><span class="val">3.5-3.75%</span><span class="lbl">ריבית פד נוכחית</span></div>
-            <div class="data-item"><span class="val">16-17/6</span><span class="lbl">ישיבת FOMC הקרובה</span></div>
+            <div class="data-item"><span class="val down">3.8%</span><span class="lbl">CPI YoY</span></div>
+            <div class="data-item"><span class="val">3.5-3.75%</span><span class="lbl"><span class="he-content">ריבית פד</span><span class="en-content">Fed rate</span></span></div>
+            <div class="data-item"><span class="val">16-17/6</span><span class="lbl">FOMC</span></div>
           </div>
-          <p>שינוי גדול שלא כולם שמו לב אליו: קווין וורש החליף את ג'ירום פאוול כיו"ר הפד ב-15 במאי. זהו שינוי שמוסיף אי-ודאות מדינית לתמונה כבר מורכבת. הריבית עומדת על 3.5-3.75% מאז ישיבת אפריל, ושוק ה-Polymarket מגלם כמעט אפס סיכוי להורדה בישיבה הקרובה ב-16-17 יוני.</p>
-          <p>למה? כי ה-CPI של אפריל עמד על 3.8% — גבוה ממה שהיה צפוי, ובחלקו הגדול בגלל עלייה של 17.9% במחירי האנרגיה. זה לא המצב שבו הפד מרגיש בנוח להוריד ריבית. וורש, שנחשב לניצי יותר מפאוול, כנראה לא ימהר להפתיע.</p>
+          <div class="he-content">
+            <p>שינוי גדול שלא כולם שמו לב אליו: קווין וורש החליף את ג'ירום פאוול כיו"ר הפד ב-15 במאי. זהו שינוי שמוסיף אי-ודאות מדינית לתמונה כבר מורכבת. הריבית עומדת על 3.5-3.75% מאז ישיבת אפריל, ושוק ה-Polymarket מגלם כמעט אפס סיכוי להורדה בישיבה הקרובה.</p>
+            <p>למה? כי ה-CPI של אפריל עמד על 3.8% — גבוה ממה שהיה צפוי, ובחלקו הגדול בגלל עלייה של 17.9% במחירי האנרגיה. וורש, שנחשב לניצי יותר מפאוול, כנראה לא ימהר להפתיע.</p>
+          </div>
+          <div class="en-content">
+            <p>A major change many didn't notice: Kevin Warsh replaced Jerome Powell as Fed Chair on May 15th. This adds policy uncertainty to an already complex picture. Rates stand at 3.5-3.75% since the April meeting, and Polymarket prices near-zero odds of a cut at the upcoming meeting.</p>
+            <p>Why? Because April CPI came in at 3.8% — higher than expected, largely due to a 17.9% rise in energy prices. Warsh, considered more hawkish than Powell, is unlikely to move quickly.</p>
+          </div>
         </div>
       </div>
 
       <div class="card">
         <div class="card-tags"><span class="tag t1">Ray Dalio</span><span class="tag t1">Bloomberg</span></div>
-        <div class="card-title">דאליו: חוב ארה"ב עבר "את הנקודה שממנה אין חזרה" — $7T הוצאות מול $5T הכנסות</div>
+        <div class="card-title">
+          <span class="he-content">דאליו: חוב ארה"ב עבר "את הנקודה שממנה אין חזרה" — $7T הוצאות מול $5T הכנסות</span>
+          <span class="en-content">Dalio: US Debt Has Passed "The Point of No Return" — $7T Spending vs $5T Revenue</span>
+        </div>
         <div class="card-body">
           <div class="data-row">
-            <div class="data-item"><span class="val down">$7T</span><span class="lbl">הוצאות ממשל ארה"ב</span></div>
-            <div class="data-item"><span class="val">$5T</span><span class="lbl">הכנסות ממשל ארה"ב</span></div>
-            <div class="data-item"><span class="val down">$2T</span><span class="lbl">גירעון שנתי</span></div>
+            <div class="data-item"><span class="val down">$7T</span><span class="lbl"><span class="he-content">הוצאות ממשל</span><span class="en-content">Government spending</span></span></div>
+            <div class="data-item"><span class="val">$5T</span><span class="lbl"><span class="he-content">הכנסות ממשל</span><span class="en-content">Government revenue</span></span></div>
+            <div class="data-item"><span class="val down">$2T</span><span class="lbl"><span class="he-content">גירעון שנתי</span><span class="en-content">Annual deficit</span></span></div>
           </div>
-          <p>דאליו הופיע בפני Summit של Forbes וקבע שארה"ב עברה את הסף הקריטי של החוב — מצב שעלול לאלץ את הפד לנקוט מדיניות דומה לשנות ה-30: ריביות מלאכותית נמוכות כדי לשמור על עלויות המימון של הממשל בגבולות סבירים.</p>
-          <p>ה-gap פשוט: $7T הוצאות מול $5T הכנסות. $2T גירעון שנתי. לשם הקשר, זה 7.5% מהתמ"ג — רמה שהיסטורית מתואמת עם ירידה ארוכת טווח של ערך המטבע. דאליו לא קורא לקריסה; הוא מדבר על תהליך ש<strong>כבר מתרחש</strong>.</p>
+          <div class="he-content">
+            <p>דאליו הופיע בפני Summit של Forbes וקבע שארה"ב עברה את הסף הקריטי של החוב — מצב שעלול לאלץ את הפד לנקוט מדיניות דומה לשנות ה-30: ריביות מלאכותית נמוכות כדי לשמור על עלויות המימון בגבולות סבירים.</p>
+            <p>ה-gap פשוט: $7T הוצאות מול $5T הכנסות. $2T גירעון שנתי — 7.5% מהתמ"ג. דאליו לא קורא לקריסה; הוא מדבר על תהליך ש<strong>כבר מתרחש</strong>.</p>
+          </div>
+          <div class="en-content">
+            <p>Dalio appeared at a Forbes Summit and stated the US has crossed the critical debt threshold — a situation that may force the Fed to adopt 1930s-style policy: artificially low rates to keep financing costs manageable.</p>
+            <p>The gap is simple: $7T spending vs $5T revenue. $2T annual deficit — 7.5% of GDP. Dalio isn't calling for a crash; he's talking about a process that is <strong>already underway</strong>.</p>
+          </div>
         </div>
       </div>
 
       <div class="card">
         <div class="card-tags"><span class="tag t1">JPMorgan</span></div>
-        <div class="card-title">מפת הסיכונים הגיאופוליטית לH2: שלושה מוקדי לחץ שכדאי לעקוב אחריהם</div>
+        <div class="card-title">
+          <span class="he-content">מפת הסיכונים הגיאופוליטית לH2: שלושה מוקדי לחץ שכדאי לעקוב אחריהם</span>
+          <span class="en-content">Geopolitical Risk Map for H2: Three Pressure Points to Watch</span>
+        </div>
         <div class="card-body">
-          <p>JPMorgan פרסמו עדכון גיאופוליטי רבעוני עם שלושה מוקדים שמציגים סיכון אמיתי בחצי השנה הקרוב: <strong>טאיוואן</strong> — פעילות צבאית סינית מוגברת מגדילה את ההסתברות לאירוע בשוגג; <strong>מזרח תיכון</strong> — חוסר יציבות מתמשך שמאיים על זרימת הנפט במיצר הורמוז; <strong>אירופה</strong> — בחירות בגרמניה ובצרפת עלולות להביא לאי-יציבות פוליטית שתשפיע על גוש האירו.</p>
-          <div class="highlight">🛡️ ההמלצה של JPMorgan: גידור חלקי דרך אופציות על ה-S&amp;P, שמירה על מזומן בשיעור 5-7% מהתיק, וחשיפה מתונה לזהב ונפט כגידור אירועי קצה.</div>
+          <div class="he-content">
+            <p>JPMorgan פרסמו עדכון גיאופוליטי רבעוני עם שלושה מוקדים: <strong>טאיוואן</strong> — פעילות צבאית סינית מוגברת מגדילה את ההסתברות לאירוע בשוגג; <strong>מזרח תיכון</strong> — חוסר יציבות מתמשך שמאיים על זרימת נפט; <strong>אירופה</strong> — בחירות שעלולות להביא אי-יציבות פוליטית.</p>
+            <div class="highlight">🛡️ המלצת JPMorgan: גידור חלקי דרך אופציות על ה-S&amp;P, שמירה על מזומן בשיעור 5-7% מהתיק, וחשיפה מתונה לזהב ונפט.</div>
+          </div>
+          <div class="en-content">
+            <p>JPMorgan published its quarterly geopolitical update with three focal points: <strong>Taiwan</strong> — heightened Chinese military activity raises the probability of an accidental incident; <strong>Middle East</strong> — ongoing instability threatening oil flow; <strong>Europe</strong> — elections that could bring political instability.</p>
+            <div class="highlight">🛡️ JPMorgan recommends: partial hedging via S&amp;P options, maintaining 5-7% cash in the portfolio, and modest exposure to gold and oil.</div>
+          </div>
         </div>
       </div>
 
       <div class="card">
         <div class="card-tags"><span class="tag t1">Goldman Sachs</span><span class="tag t1">BlackRock</span></div>
-        <div class="card-title">נפט תקוע ב-$72 — הביקוש הסיני מאכזב, וגז טבעי נראה אטרקטיבי יותר</div>
+        <div class="card-title">
+          <span class="he-content">נפט תקוע ב-$72 — הביקוש הסיני מאכזב, וגז טבעי נראה אטרקטיבי יותר</span>
+          <span class="en-content">Oil Stuck at $72 — Chinese Demand Disappoints, Natural Gas Looks More Attractive</span>
+        </div>
         <div class="card-body">
           <div class="data-row">
-            <div class="data-item"><span class="val">$72</span><span class="lbl">מחיר Brent כיום</span></div>
-            <div class="data-item"><span class="val">$68-75</span><span class="lbl">תחזית GS לQ3</span></div>
-            <div class="data-item"><span class="val down">2.1%</span><span class="lbl">צמיחת ביקוש סין (vs 4% צפוי)</span></div>
+            <div class="data-item"><span class="val">$72</span><span class="lbl">Brent</span></div>
+            <div class="data-item"><span class="val">$68-75</span><span class="lbl"><span class="he-content">תחזית GS Q3</span><span class="en-content">GS Q3 forecast</span></span></div>
+            <div class="data-item"><span class="val down">2.1%</span><span class="lbl"><span class="he-content">צמיחת ביקוש סין</span><span class="en-content">China demand growth</span></span></div>
           </div>
-          <p>הנפט תקוע ומאכזב. OPEC+ ניסה לתמוך במחיר, אבל הביקוש מסין גדל רק 2.1% לעומת 4% שהיה צפוי — פער משמעותי. גולדמן מורידים את תחזית Q3 לטווח של $68-75, מה שמשקף סביבה של היצע ביקוש מאוזן יחסית ללא צמיחת ביקוש חזקה.</p>
-          <p>BlackRock מציעים כיוון מעניין לעקוף את הבעיה: גז טבעי, ובמיוחד LNG. הביקוש האירופי לגז טבעי ממשיך לגדול כתחליף לגז הרוסי, ושוק ה-LNG יציב יותר ופחות תלוי בסין. Cheniere Energy ו-QatarEnergy מוצגות כחשיפות מועדפות.</p>
+          <div class="he-content">
+            <p>הנפט תקוע. OPEC+ ניסה לתמוך במחיר, אבל הביקוש מסין גדל רק 2.1% לעומת 4% שהיה צפוי. גולדמן מורידים את תחזית Q3 לטווח של $68-75.</p>
+            <p>BlackRock מציעים כיוון מעניין: גז טבעי, ובמיוחד LNG. הביקוש האירופי לגז ממשיך לגדול כתחליף לגז הרוסי. Cheniere Energy ו-QatarEnergy מוצגות כחשיפות מועדפות.</p>
+          </div>
+          <div class="en-content">
+            <p>Oil is stuck. OPEC+ tried to support prices, but Chinese demand grew only 2.1% versus the expected 4%. Goldman lowers its Q3 forecast to the $68-75 range.</p>
+            <p>BlackRock offers an interesting direction: natural gas, especially LNG. European demand for gas continues to grow as a substitute for Russian gas. Cheniere Energy and QatarEnergy are presented as preferred exposures.</p>
+          </div>
         </div>
       </div>
 
-      <div class="consensus"><strong>הערכתנו:</strong> יום התעסוקה החזק של היום, בשילוב עם CPI ב-3.8% ויו"ר פד חדש שמוכר כניצי — מוחק את ציפיות הריבית הנמוכה לשנה הקרובה. דאליו אמר שהחוב עבר את הנקודה שממנה אין חזרה. הירידה של היום היא אות קטן לתמונה גדולה.</div>
+      <div class="consensus">
+        <div class="he-content"><strong>הערכתנו:</strong> יום התעסוקה החזק, CPI ב-3.8% ויו"ר פד חדש שנחשב ניצי — מוחקים את ציפיות הריבית הנמוכה. דאליו אמר שהחוב עבר את הנקודה שממנה אין חזרה. הירידה של היום היא אות קטן לתמונה גדולה.</div>
+        <div class="en-content"><strong>Our Assessment:</strong> Strong jobs data, CPI at 3.8%, and a new hawkish-leaning Fed Chair wipe out rate-cut expectations. Dalio says the debt has passed the point of no return. Today's decline is a small signal of a much bigger picture.</div>
+      </div>
     </div>
 
-    <!-- מחלוקות -->
+    <!-- ── מניות בפוקוס / Stocks in Focus ── -->
+    <div class="section" id="stocks">
+      <div class="sh">
+        <div class="si">🎯</div>
+        <h2><span class="he-content">מניות בפוקוס</span><span class="en-content">Stocks in Focus</span></h2>
+        <span class="pill"><span class="he-content">המלצות ופוזיציות היום</span><span class="en-content">Today's Picks &amp; Positions</span></span>
+      </div>
+
+      <div class="card">
+        <div class="card-tags"><span class="tag t1">ARK Invest</span><span class="tag t1">Cathie Wood</span></div>
+        <div class="card-title">
+          <span class="he-content">ARK קנתה Alphabet ו-Alibaba, מכרה AMD ו-Baidu — תנועות גדולות השבוע</span>
+          <span class="en-content">ARK Buys Alphabet &amp; Alibaba, Sells AMD &amp; Baidu — Major Moves This Week</span>
+        </div>
+        <div class="card-body">
+          <div class="data-row">
+            <div class="data-item"><span class="val up">+267K</span><span class="lbl"><span class="he-content">מניות Alphabet נקנו</span><span class="en-content">Alphabet shares bought</span></span></div>
+            <div class="data-item"><span class="val up">+245K</span><span class="lbl"><span class="he-content">מניות Alibaba נקנו</span><span class="en-content">Alibaba shares bought</span></span></div>
+            <div class="data-item"><span class="val down">-74K</span><span class="lbl"><span class="he-content">מניות AMD נמכרו</span><span class="en-content">AMD shares sold</span></span></div>
+          </div>
+          <div class="he-content">
+            <p>ARK Invest ביצעה תנועות משמעותיות השבוע. ב-3 ביוני, קנתה 267,582 מניות של Alphabet — הקנייה הגדולה ביום אחד בהיסטוריה שלה. ב-4 ביוני הוסיפה 245,342 מניות Alibaba בשווי $31M, ו-40,078 מניות Meta בשווי $25M.</p>
+            <p>מנגד, מכרה בחדות: $39M ב-AMD, $64M ב-Baidu, ו-$18M ב-Teradyne. הפרשנות: קאת'י ווד מסיטה מהמיקרו-שבבים הישנים לכיוון פלטפורמות ה-AI הגדולות — Google ו-Alibaba — שנסחרות לדעתה בתמחור אטרקטיבי יחסית לפוטנציאל.</p>
+          </div>
+          <div class="en-content">
+            <p>ARK Invest made significant moves this week. On June 3rd, it bought 267,582 shares of Alphabet — its largest single-day purchase ever. On June 4th it added 245,342 Alibaba shares worth $31M, and 40,078 Meta shares worth $25M.</p>
+            <p>On the sell side: $39M in AMD, $64M in Baidu, and $18M in Teradyne. The interpretation: Cathie Wood is rotating away from legacy micro-chips toward large AI platforms — Google and Alibaba — which she believes trade at attractive valuations relative to their potential.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-tags"><span class="tag t1">Goldman Sachs</span></div>
+        <div class="card-title">
+          <span class="he-content">GS: A-shares סין — Overweight. Intuit — הורדה ל-Sell עם יעד $276</span>
+          <span class="en-content">GS: China A-Shares — Overweight. Intuit — Downgraded to Sell, Target $276</span>
+        </div>
+        <div class="card-body">
+          <div class="data-row">
+            <div class="data-item"><span class="val up">↑ OW</span><span class="lbl"><span class="he-content">סין A-shares</span><span class="en-content">China A-shares</span></span></div>
+            <div class="data-item"><span class="val down">↓ Sell</span><span class="lbl">Intuit (INTU)</span></div>
+            <div class="data-item"><span class="val">$276</span><span class="lbl"><span class="he-content">יעד מחיר INTU</span><span class="en-content">INTU price target</span></span></div>
+          </div>
+          <div class="he-content">
+            <p>גולדמן ביצע שני מהלכים בולטים: שדרג את מניות ה-A-shares הסיניות ל-Overweight תוך הורדת מניות הונג קונג ל-Market Weight — האמונה שהפיתוי בשוק הסיני הוא בשוק המקומי, לא ב-ADRs. ובכיוון ההפוך — הוריד את Intuit מ-Neutral ל-Sell, כשיעד המחיר של $276 מרמז על ירידה של כ-15%. הטענה: ChatGPT ומוצרי AI מאיימים ישירות על TurboTax ו-QuickBooks.</p>
+          </div>
+          <div class="en-content">
+            <p>Goldman made two notable moves: upgraded Chinese A-shares to Overweight while downgrading Hong Kong stocks to Market Weight — reflecting the belief that the opportunity in Chinese equities is in the domestic market, not ADRs. In the opposite direction — downgraded Intuit from Neutral to Sell, with a $276 price target implying ~15% downside. The thesis: ChatGPT and AI products directly threaten TurboTax and QuickBooks.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-tags"><span class="tag t1">ARK Invest</span><span class="tag t1">Goldman Sachs</span></div>
+        <div class="card-title">
+          <span class="he-content">מגמה משותפת: Alphabet (Google) — שניהם מאמינים</span>
+          <span class="en-content">Shared Conviction: Alphabet (Google) — Both Believe</span>
+        </div>
+        <div class="card-body">
+          <div class="he-content">
+            <p>מה שמעניין הוא שגם ARK וגם Goldman Sachs נמצאים בצד של Alphabet — ARK קנתה 267K מניות, וGS מחזיקה בה עם outlook חיובי. Alphabet נסחרת בתמחור נמוך יחסית לעומת מתחרות הטק — P/E forward של כ-22x לעומת 30x+ ב-Microsoft ו-Meta.</p>
+            <div class="highlight">🎯 שתי עמדות שונות מאוד (ARK = growth, GS = value) מגיעות לאותה מניה — אות שכדאי לשים לב אליו.</div>
+          </div>
+          <div class="en-content">
+            <p>Interestingly, both ARK and Goldman Sachs are on the same side on Alphabet — ARK bought 267K shares, and GS holds it with a positive outlook. Alphabet trades at a relatively low valuation vs. tech peers — forward P/E of ~22x vs. 30x+ at Microsoft and Meta.</p>
+            <div class="highlight">🎯 Two very different approaches (ARK = growth, GS = value) arriving at the same stock — a signal worth paying attention to.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── מחלוקות / Conflicts ── -->
     <div class="section" id="conflict">
-      <div class="ch"><div class="si" style="background:#7f1d1d">⚔️</div><h2>עמדות מנוגדות</h2><span class="pill">3 מחלוקות פעילות</span></div>
+      <div class="ch">
+        <div class="si" style="background:#7f1d1d">⚔️</div>
+        <h2><span class="he-content">עמדות מנוגדות</span><span class="en-content">Conflicting Views</span></h2>
+        <span class="pill"><span class="he-content">3 מחלוקות פעילות</span><span class="en-content">3 Active Conflicts</span></span>
+      </div>
 
       <div class="conf-card">
-        <div class="conf-topic">⚡ מחלוקת #1 — הפד יוריד ריבית ב-Q3 או Q4? (עקבית שלושה דוחות ברציפות)</div>
-        <div class="conf-context">פרוטוקול ה-FOMC שפורסם היום חשף פיצול פנימי בין חברי הועדה — מה שמדלק מחדש את הדיון הזה.</div>
+        <div class="conf-topic">
+          <span class="he-content">⚡ מחלוקת #1 — הפד יוריד ריבית ב-Q3 או Q4?</span>
+          <span class="en-content">⚡ Conflict #1 — Will the Fed Cut Rates in Q3 or Q4?</span>
+        </div>
+        <div class="conf-context">
+          <span class="he-content">פרוטוקול ה-FOMC שפורסם היום חשף פיצול פנימי בין חברי הועדה — מה שמדלק מחדש את הדיון הזה.</span>
+          <span class="en-content">The FOMC minutes published today revealed internal division among committee members — reigniting this debate.</span>
+        </div>
         <div class="sides">
           <div class="side bull">
-            <div class="side-lbl">🟢 הפחתה בספטמבר</div>
+            <div class="side-lbl"><span class="he-content">🟢 הפחתה בספטמבר</span><span class="en-content">🟢 Cut in September</span></div>
             <div class="side-src">Goldman Sachs · JPMorgan</div>
-            <div class="side-txt">ה-PCE יורד בעקביות גם אם לאט. שוק העבודה מאוזן ולא מייצר לחצי שכר. הפד יצטרך לתת אות של ביטחון לשוק לפני סוף השנה — ספטמבר הוא חלון הזמן הסביר ביותר.</div>
+            <div class="side-txt">
+              <span class="he-content">ה-PCE יורד בעקביות גם אם לאט. שוק העבודה מאוזן ולא מייצר לחצי שכר. הפד יצטרך לתת אות של ביטחון לשוק לפני סוף השנה — ספטמבר הוא חלון הזמן הסביר ביותר.</span>
+              <span class="en-content">PCE is falling consistently, even if slowly. The labor market is balanced and not generating wage pressure. The Fed will need to signal confidence before year-end — September is the most logical window.</span>
+            </div>
           </div>
           <div class="side bear">
-            <div class="side-lbl">🔴 Q4 בסבירות גבוהה, אולי 2027</div>
+            <div class="side-lbl"><span class="he-content">🔴 Q4, אולי 2027</span><span class="en-content">🔴 Q4, Maybe 2027</span></div>
             <div class="side-src">Bridgewater · Ackman · Fed Minutes</div>
-            <div class="side-txt">PCE ב-2.7% הוא 35% מעל היעד. ה-Minutes מראים שהפד מפוצל ולא ממהר. הפחתה בספטמבר תהיה מסוכנת — אם האינפלציה תחזור, זה ייראה כטעות מדינית גדולה.</div>
+            <div class="side-txt">
+              <span class="he-content">PCE ב-2.7% הוא 35% מעל היעד. ה-Minutes מראים שהפד מפוצל ולא ממהר. הפחתה בספטמבר — אם האינפלציה תחזור — תיראה כטעות מדינית גדולה.</span>
+              <span class="en-content">PCE at 2.7% is 35% above target. The Minutes show the Fed is divided and not rushing. A September cut — if inflation returns — would look like a major policy mistake.</span>
+            </div>
           </div>
         </div>
-        <div class="conf-verdict">📌 נקודת הכרעה: נתוני CPI ביוני (15/6). מתחת ל-3.0% — GS צודקים ויש הפחתה בספטמבר. מעל — Bridgewater נכונים ו-Q4 הוא תרחיש הבסיס.</div>
+        <div class="conf-verdict">
+          <span class="he-content">📌 נקודת הכרעה: נתוני CPI ביוני (15/6). מתחת ל-3.0% — GS צודקים. מעל — Bridgewater נכונים.</span>
+          <span class="en-content">📌 Decision point: June CPI data (15/6). Below 3.0% — GS is right. Above — Bridgewater is correct.</span>
+        </div>
       </div>
 
       <div class="conf-card">
-        <div class="conf-topic">⚡ מחלוקת #2 — סין: הזדמנות היסטורית או מלכודת ערך? (עקבית שני דוחות, מתחדדת היום)</div>
-        <div class="conf-context">בארי הגדיל את החשיפה לסין ל-45% מהתיק היום — מהלך שמחריף את המחלוקת עם הגישה הזהירה של JPM ו-BlackRock.</div>
+        <div class="conf-topic">
+          <span class="he-content">⚡ מחלוקת #2 — סין: הזדמנות היסטורית או מלכודת ערך?</span>
+          <span class="en-content">⚡ Conflict #2 — China: Historic Opportunity or Value Trap?</span>
+        </div>
+        <div class="conf-context">
+          <span class="he-content">בארי הגדיל את החשיפה לסין ל-45% מהתיק — מהלך שמחריף את המחלוקת עם הגישה הזהירה של JPM ו-BlackRock.</span>
+          <span class="en-content">Burry raised China exposure to 45% of portfolio — a move that sharpens the conflict with JPM and BlackRock's cautious approach.</span>
+        </div>
         <div class="sides">
           <div class="side bull">
-            <div class="side-lbl">🟢 קונים — ערך שקשה להתעלם ממנו</div>
+            <div class="side-lbl"><span class="he-content">🟢 קונים — ערך שקשה להתעלם ממנו</span><span class="en-content">🟢 Buying — Value Hard to Ignore</span></div>
             <div class="side-src">Michael Burry · Ray Dalio</div>
-            <div class="side-txt">P/E של 8-10x לעומת 28x בארה"ב — הנחה של 65-70%. הרגולציה הסינית עיקרה את עצמה. דאליו: "תיק בלי סין מחסיר חצי מהעולם." בארי כבר מצביע ברגליים.</div>
+            <div class="side-txt">
+              <span class="he-content">P/E של 8-10x לעומת 28x בארה"ב — הנחה של 65-70%. דאליו: "תיק בלי סין מחסיר חצי מהעולם." בארי כבר מצביע ברגליים.</span>
+              <span class="en-content">P/E of 8-10x vs. 28x in the US — a 65-70% discount. Dalio: "A portfolio without China is missing half the world." Burry is already voting with his feet.</span>
+            </div>
           </div>
           <div class="side bear">
-            <div class="side-lbl">🔴 נמנעים — סיכון שלא ניתן לכמת</div>
+            <div class="side-lbl"><span class="he-content">🔴 נמנעים — סיכון שלא ניתן לכמת</span><span class="en-content">🔴 Avoiding — Unquantifiable Risk</span></div>
             <div class="side-src">JPMorgan · BlackRock · Morgan Stanley</div>
-            <div class="side-txt">Regulatory risk שחוזר, סיכון גיאופוליטי מול טאיוואן, וחוסר שקיפות בנתוני מאקרו. הודו ואינדונזיה מציעות צמיחה דומה עם פחות סיכון מבני. למה לקחת את ה-headache הסיני?</div>
+            <div class="side-txt">
+              <span class="he-content">Regulatory risk שחוזר, סיכון גיאופוליטי מול טאיוואן, וחוסר שקיפות בנתוני מאקרו. הודו ואינדונזיה מציעות צמיחה דומה עם פחות סיכון.</span>
+              <span class="en-content">Recurring regulatory risk, geopolitical risk over Taiwan, and lack of transparency in macro data. India and Indonesia offer similar growth with less structural risk.</span>
+            </div>
           </div>
         </div>
-        <div class="conf-verdict">📌 שתי העמדות לגיטימיות ומבוססות — הן תלויות באופק ההשקעה ובסבילות לסיכון שאינו ניתן לכימות. מחלוקת שתמשיך ללוות אותנו.</div>
+        <div class="conf-verdict">
+          <span class="he-content">📌 שתי העמדות לגיטימיות — הן תלויות באופק ההשקעה ובסבילות לסיכון שאינו ניתן לכימות.</span>
+          <span class="en-content">📌 Both positions are legitimate — they depend on investment horizon and tolerance for unquantifiable risk.</span>
+        </div>
       </div>
 
       <div class="conf-card">
-        <div class="conf-topic">⚡ מחלוקת #3 — AI Infrastructure: הזדמנות אמיתית או Hype שמחכה לפוצץ? (חדשה — עלתה היום)</div>
+        <div class="conf-topic">
+          <span class="he-content">⚡ מחלוקת #3 — AI Infrastructure: הזדמנות אמיתית או Hype שמחכה לפוצץ?</span>
+          <span class="en-content">⚡ Conflict #3 — AI Infrastructure: Real Opportunity or Waiting to Burst?</span>
+        </div>
         <div class="sides">
           <div class="side bull">
-            <div class="side-lbl">🟢 הזדמנות אמיתית</div>
+            <div class="side-lbl"><span class="he-content">🟢 הזדמנות אמיתית</span><span class="en-content">🟢 Real Opportunity</span></div>
             <div class="side-src">KKR · BlackRock · Morgan Stanley</div>
-            <div class="side-txt">Microsoft, Google ו-Amazon הכריזו על $300 מיליארד Capex ב-2026. זה לא ספקולציה — אלה הזמנות קיימות. חברות ה-Infrastructure נסחרות ב-P/E סביר ומרוויחות מהמחזור ללא תלות במי ינצח.</div>
+            <div class="side-txt">
+              <span class="he-content">Microsoft, Google ו-Amazon הכריזו על $300 מיליארד Capex ב-2026. זה לא ספקולציה — אלה הזמנות קיימות. חברות ה-Infrastructure נסחרות ב-P/E סביר.</span>
+              <span class="en-content">Microsoft, Google and Amazon announced $300B in Capex for 2026. This isn't speculation — these are existing orders. Infrastructure companies trade at reasonable P/E multiples.</span>
+            </div>
           </div>
           <div class="side bear">
-            <div class="side-lbl">🔴 זהירות — היסטוריה חוזרת</div>
+            <div class="side-lbl"><span class="he-content">🔴 זהירות — היסטוריה חוזרת</span><span class="en-content">🔴 Caution — History Repeats</span></div>
             <div class="side-src">Howard Marks · Jeremy Grantham</div>
-            <div class="side-txt">גם בבועת הדוט-קום האינטרנט היה ממשי לחלוטין — ובכל זאת 80% מהחברות פשטו רגל. Nvidia נסחרת ב-35x מכירות, שזה תמחור שמניח תרחיש מושלם ומגלם אפס מרחב לטעות.</div>
+            <div class="side-txt">
+              <span class="he-content">גם בבועת הדוט-קום האינטרנט היה ממשי לחלוטין — ובכל זאת 80% מהחברות פשטו רגל. Nvidia נסחרת ב-35x מכירות — תמחור שמניח תרחיש מושלם.</span>
+              <span class="en-content">During the dot-com bubble the internet was entirely real — and yet 80% of companies went bankrupt. Nvidia trades at 35x sales — pricing that assumes a perfect scenario.</span>
+            </div>
           </div>
         </div>
-        <div class="conf-verdict">📌 גישת הביניים — Infrastructure כן, Software AI ישירות בזהירות — נראית הנבונה ביותר לשלב הנוכחי. מארקס מנסח את זה הכי טוב.</div>
+        <div class="conf-verdict">
+          <span class="he-content">📌 גישת הביניים — Infrastructure כן, Software AI ישירות בזהירות — נראית הנבונה ביותר. מארקס מנסח את זה הכי טוב.</span>
+          <span class="en-content">📌 The middle path — Infrastructure yes, direct AI Software with caution — seems wisest. Marks articulates it best.</span>
+        </div>
       </div>
     </div>
 
+    <!-- ── DISCLAIMER ── -->
+    <div class="disclaimer">
+      <div class="he-content">
+        ⚖️ <strong>הצהרת אחריות משפטית:</strong> הסקירה מבוססת על פרסומים ציבוריים בלבד ואינה מהווה המלצת השקעה, ייעוץ השקעות, ייעוץ מס או כל ייעוץ פיננסי אחר. המידע המוצג נאסף ממקורות חיצוניים ציבוריים — Trust Capital Management אינה אחראית לדיוקו, שלמותו או עדכניותו. כל החלטת השקעה מתקבלת על אחריות המשתמש בלבד. לייעוץ השקעות מקצועי, פנה לבעל רישיון מוסמך.
+      </div>
+      <div class="en-content">
+        ⚖️ <strong>Legal Disclaimer:</strong> This report is based solely on publicly available publications and does not constitute investment advice, investment consulting, tax advice, or any other financial guidance. The information presented is collected from external public sources — Trust Capital Management assumes no responsibility for its accuracy, completeness, or timeliness. All investment decisions are made at the sole discretion and risk of the user. For professional investment advice, please consult a licensed advisor.
+      </div>
+    </div>
+
+    <!-- ── FOOTER ── -->
     <div class="pf">
-      <div class="pf-l" id="footer-left">GS · JPM · BlackRock · Morgan Stanley · KKR · Blackstone · Apollo · Bridgewater · Oaktree · Ackman · Dalio · Burry · Fed<br>Financial Intelligence Agent · Trust Capital Management<br>נוצר ב-18:05</div>
+      <div class="pf-l" id="footer-left">GS · JPM · BlackRock · Morgan Stanley · KKR · Blackstone · Apollo · Bridgewater · Oaktree · Ackman · Dalio · Burry · Fed<br>
+        <span class="he-content">Financial Intelligence Agent · Trust Capital Management</span>
+        <span class="en-content">Financial Intelligence Agent · Trust Capital Management</span>
+      <br><span class="he-content">נוצר ב-18:49</span><span class="en-content">Generated at 18:49</span></div>
       <div class="pf-r" id="footer-right">Trust Capital Management<br>07 · 06 · 2026</div>
     </div>
   </div>
@@ -455,10 +831,18 @@ body { font-family: Arial, sans-serif; background: var(--off); color: var(--navy
   <div class="view" id="view-archive">
     <div class="arch-header">
       <div class="overline">Trust Capital Management · Daily Intelligence</div>
-      <h1>🗂️ ארכיון סקירות</h1>
+      <h1>
+        <span class="he-content">🗂️ ארכיון סקירות</span>
+        <span class="en-content">🗂️ Report Archive</span>
+      </h1>
     </div>
-    <div id="archive-content"><div class="month-group"><div class="month-title">יוני 2026</div><div class="reports-grid"><div class="report-card today-card" onclick="showView(&#39;report&#39;)"><div class="rc-date">7 ביוני</div><div class="rc-day">יום ראשון</div><span class="rc-badge today-b">● היום</span><div class="rc-arrow">פתח ←</div></div></div></div></div>
-    <div class="pf"><div class="pf-l">Trust Capital Management · Financial Intelligence Agent</div></div>
+    <div id="archive-content"></div>
+    <div class="pf">
+      <div class="pf-l">
+        <span class="he-content">Trust Capital Management · Financial Intelligence Agent</span>
+        <span class="en-content">Trust Capital Management · Financial Intelligence Agent</span>
+      </div>
+    </div>
   </div>
 
 </main>
@@ -474,14 +858,35 @@ body { font-family: Arial, sans-serif; background: var(--off); color: var(--navy
   var timeStr = now.toLocaleTimeString('he-IL', {hour:'2-digit', minute:'2-digit'});
   var shortDate = String(now.getDate()).padStart(2,'0') + ' · ' + String(now.getMonth()+1).padStart(2,'0') + ' · ' + now.getFullYear();
 
-  document.getElementById('main-title').innerHTML = 'הסקירה הכלכלית ליום<br>' + dateStr;
+  document.getElementById('main-title').innerHTML = '<span class="he-content">הסקירה הכלכלית ליום<br>' + dateStr + '</span><span class="en-content">Daily Financial Review<br>' + now.toLocaleDateString('en-US', {weekday:'long', year:'numeric', month:'long', day:'numeric'}) + '</span>';
   document.getElementById('meta-time').textContent = '🕐 ' + timeStr;
   document.getElementById('sidebar-date').textContent = shortDate;
   document.getElementById('sidebar-time').textContent = timeStr;
   document.getElementById('footer-right').innerHTML = 'Trust Capital Management<br>' + shortDate;
-  document.getElementById('footer-left').innerHTML += '<br>נוצר ב-' + timeStr;
+  document.getElementById('footer-left').innerHTML += '<br><span class="he-content">נוצר ב-' + timeStr + '</span><span class="en-content">Generated at ' + timeStr + '</span>';
   document.title = 'הסקירה הכלכלית ' + dateStr + ' — Trust Capital Management';
 })();
+
+// ── שפה ──
+var currentLang = 'he';
+
+function toggleLang() {
+  currentLang = currentLang === 'he' ? 'en' : 'he';
+  applyLang();
+}
+
+function applyLang() {
+  var html = document.documentElement;
+  if (currentLang === 'en') {
+    html.setAttribute('lang', 'en');
+    html.setAttribute('dir', 'ltr');
+    document.getElementById('lang-toggle').textContent = 'עב';
+  } else {
+    html.setAttribute('lang', 'he');
+    html.setAttribute('dir', 'rtl');
+    document.getElementById('lang-toggle').textContent = 'EN';
+  }
+}
 
 // ── מעבר בין views ──
 function showView(view) {
@@ -491,7 +896,6 @@ function showView(view) {
   if (view === 'archive') {
     document.getElementById('view-archive').classList.add('active');
     document.getElementById('archive-btn').classList.add('active');
-    document.querySelector('.main').scrollTop = 0;
     window.scrollTo(0, 0);
     buildArchive();
   } else {
@@ -504,15 +908,12 @@ function showView(view) {
 document.querySelectorAll('.nav-btn[data-section]').forEach(function(btn) {
   btn.addEventListener('click', function() {
     var id = this.getAttribute('data-section');
-
-    // אם בארכיון — חזור לדוח קודם
     if (!document.getElementById('view-report').classList.contains('active')) {
       showView('report');
       setTimeout(function() { scrollToSection(id); }, 100);
     } else {
       scrollToSection(id);
     }
-
     document.querySelectorAll('.nav-btn[data-section]').forEach(function(b) { b.classList.remove('active'); });
     this.classList.add('active');
   });
@@ -528,7 +929,7 @@ function scrollToSection(id) {
 // ── Active state בגלילה ──
 window.addEventListener('scroll', function() {
   if (!document.getElementById('view-report').classList.contains('active')) return;
-  var ids = ['equity','alts','macro','conflict'];
+  var ids = ['equity','alts','macro','stocks','conflict'];
   var current = ids[0];
   ids.forEach(function(id) {
     var el = document.getElementById(id);
@@ -540,18 +941,18 @@ window.addEventListener('scroll', function() {
 });
 
 // ── בניית ארכיון ──
-// כל יום שמעלים דוח — מוסיפים כאן שורה
 var reports = [
   { date: '2026-06-06', file: null, today: true }
-  // { date: '2026-06-07', file: '2026-06-07.html', today: false },
 ];
 
 function buildArchive() {
-  var months = ['ינואר','פברואר','מרץ','אפריל','מאי','יוני','יולי','אוגוסט','ספטמבר','אוקטובר','נובמבר','דצמבר'];
-  var days = ['ראשון','שני','שלישי','רביעי','חמישי','שישי','שבת'];
+  var months_he = ['ינואר','פברואר','מרץ','אפריל','מאי','יוני','יולי','אוגוסט','ספטמבר','אוקטובר','נובמבר','דצמבר'];
+  var months_en = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+  var days_he = ['ראשון','שני','שלישי','רביעי','חמישי','שישי','שבת'];
+  var days_en = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
   var container = document.getElementById('archive-content');
+  var isEn = currentLang === 'en';
 
-  // עדכון תאריך היום
   var now = new Date();
   if (reports[0] && reports[0].today) {
     reports[0].date = now.getFullYear() + '-' + String(now.getMonth()+1).padStart(2,'0') + '-' + String(now.getDate()).padStart(2,'0');
@@ -561,7 +962,8 @@ function buildArchive() {
   reports.forEach(function(r) {
     var parts = r.date.split('-');
     var key = parts[0] + '-' + parts[1];
-    var mLabel = months[parseInt(parts[1])-1] + ' ' + parts[0];
+    var mIdx = parseInt(parts[1]) - 1;
+    var mLabel = isEn ? (months_en[mIdx] + ' ' + parts[0]) : (months_he[mIdx] + ' ' + parts[0]);
     if (!byMonth[key]) byMonth[key] = { label: mLabel, items: [] };
     byMonth[key].items.push(r);
   });
@@ -573,13 +975,19 @@ function buildArchive() {
     g.items.forEach(function(r) {
       var parts = r.date.split('-');
       var d = new Date(parseInt(parts[0]), parseInt(parts[1])-1, parseInt(parts[2]));
-      var dayName = days[d.getDay()];
+      var dayName = isEn ? days_en[d.getDay()] : ('יום ' + days_he[d.getDay()]);
+      var dateLabel = isEn
+        ? (months_en[parseInt(parts[1])-1] + ' ' + parseInt(parts[2]))
+        : (parseInt(parts[2]) + ' ב' + months_he[parseInt(parts[1])-1]);
+      var todayLabel = isEn ? '● Today' : '● היום';
+      var archiveLabel = isEn ? 'Archive' : 'ארכיון';
+      var openLabel = isEn ? 'Open →' : 'פתח ←';
       html += '<div class="report-card ' + (r.today ? 'today-card' : '') + '" onclick="' +
         (r.today ? 'showView(\'report\')' : 'window.open(\'' + r.file + '\',\'_self\')') + '">' +
-        '<div class="rc-date">' + parseInt(parts[2]) + ' ב' + months[parseInt(parts[1])-1] + '</div>' +
-        '<div class="rc-day">יום ' + dayName + '</div>' +
-        '<span class="rc-badge ' + (r.today ? 'today-b' : 'past-b') + '">' + (r.today ? '● היום' : 'ארכיון') + '</span>' +
-        '<div class="rc-arrow">פתח ←</div>' +
+        '<div class="rc-date">' + dateLabel + '</div>' +
+        '<div class="rc-day">' + dayName + '</div>' +
+        '<span class="rc-badge ' + (r.today ? 'today-b' : 'past-b') + '">' + (r.today ? todayLabel : archiveLabel) + '</span>' +
+        '<div class="rc-arrow">' + openLabel + '</div>' +
         '</div>';
     });
     html += '</div></div>';
