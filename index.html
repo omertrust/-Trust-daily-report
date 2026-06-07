@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0230)file:///Users/ilanalaluf/Library/Application%20Support/Claude/local-agent-mode-sessions/052fdd81-8a4a-46d3-9e37-0dfb18de7009/0d68d2b7-6bb9-48f8-9661-3eaa13c30995/local_0e1bac80-7f6c-4e95-a12d-6346ff29b16d/outputs/daily_report.html -->
+<!-- saved from url=(0223)file:///Users/ilanalaluf/Library/Application%20Support/Claude/local-agent-mode-sessions/052fdd81-8a4a-46d3-9e37-0dfb18de7009/0d68d2b7-6bb9-48f8-9661-3eaa13c30995/local_0e1bac80-7f6c-4e95-a12d-6346ff29b16d/outputs/index.html -->
 <html lang="he" dir="rtl"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,114 +8,133 @@
 :root { color-scheme: light; }
 * { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
-  --navy: #0d1b2a;
-  --gold: #c9a84c;
-  --gold-light: #e8d49a;
-  --gold-bg: #fdf6e3;
-  --white: #ffffff;
-  --off: #f5f6f8;
-  --muted: #6b7280;
-  --border: #e5e7eb;
-  --sw: 180px;
+  --navy: #0d1b2a; --gold: #c9a84c; --gold-light: #e8d49a;
+  --gold-bg: #fdf6e3; --white: #fff; --off: #f5f6f8;
+  --muted: #6b7280; --border: #e5e7eb; --sw: 180px;
 }
 body { font-family: Arial, sans-serif; background: var(--off); color: var(--navy); display: flex; min-height: 100vh; }
 
 /* ── SIDEBAR ── */
 .sidebar { width: var(--sw); background: var(--navy); position: fixed; right: 0; top: 0; bottom: 0; display: flex; flex-direction: column; align-items: center; padding: 28px 14px 24px; z-index: 100; }
-.logo-shield { width: 68px; height: 80px; margin-bottom: 10px; }
-.logo-trust { font-size: 15px; font-weight: 800; letter-spacing: 3px; color: #fff; font-family: Arial, sans-serif; }
-.logo-sub { font-size: 8px; letter-spacing: 2px; color: var(--gold); text-align: center; margin-top: 2px; line-height: 1.6; text-transform: uppercase; font-family: Arial, sans-serif; }
-.logo-div { width: 1px; height: 22px; background: var(--gold); opacity: .5; margin: 12px auto; }
-.nav-link { display: flex; align-items: center; gap: 8px; padding: 9px 12px; border-radius: 7px; cursor: pointer; text-decoration: none; width: 100%; border: none; background: none; transition: background .15s; }
-.nav-link:hover { background: rgba(201,168,76,.12); }
-.nav-link.active { background: rgba(201,168,76,.2); }
+.logo-shield { width: 64px; height: 76px; margin-bottom: 8px; }
+.logo-trust { font-size: 15px; font-weight: 800; letter-spacing: 3px; color: #fff; }
+.logo-sub { font-size: 8px; letter-spacing: 2px; color: var(--gold); text-align: center; margin-top: 2px; line-height: 1.6; text-transform: uppercase; }
+.logo-div { width: 100%; height: 1px; background: var(--gold); opacity: .2; margin: 14px 0; }
+
+.nav-btn { display: flex; align-items: center; gap: 8px; padding: 9px 12px; border-radius: 7px; cursor: pointer; width: 100%; background: none; border: none; text-align: right; transition: background .15s; }
+.nav-btn:hover { background: rgba(201,168,76,.12); }
+.nav-btn.active { background: rgba(201,168,76,.2); }
 .nav-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--gold); opacity: .35; flex-shrink: 0; }
-.nav-link.active .nav-dot { opacity: 1; }
-.nav-link span { font-size: 11px; color: rgba(255,255,255,.5); font-family: Arial, sans-serif; }
-.nav-link.active span { color: var(--gold-light); font-weight: 700; }
+.nav-btn.active .nav-dot { opacity: 1; }
+.nav-btn span { font-size: 11px; color: rgba(255,255,255,.5); }
+.nav-btn.active span { color: var(--gold-light); font-weight: 700; }
+
+.nav-section-divider { width: 100%; height: 1px; background: rgba(201,168,76,.2); margin: 10px 0; }
+.nav-archive-btn { display: flex; align-items: center; gap: 8px; padding: 9px 12px; border-radius: 7px; cursor: pointer; width: 100%; background: rgba(201,168,76,.08); border: none; text-align: right; transition: background .15s; }
+.nav-archive-btn:hover { background: rgba(201,168,76,.18); }
+.nav-archive-btn.active { background: rgba(201,168,76,.22); }
+.nav-archive-btn span { font-size: 11px; color: var(--gold-light); font-weight: 600; }
+
 .sf { margin-top: auto; text-align: center; }
-.sf-d { font-size: 10px; color: rgba(255,255,255,.3); letter-spacing: .5px; font-family: Arial, sans-serif; }
-.sf-t { font-size: 9px; color: var(--gold); opacity: .6; margin-top: 3px; font-family: Arial, sans-serif; }
+.sf-d { font-size: 10px; color: rgba(255,255,255,.3); }
+.sf-t { font-size: 9px; color: var(--gold); opacity: .6; margin-top: 3px; }
 
-/* ── MAIN ── */
+/* ── VIEWS ── */
 .main { margin-right: var(--sw); flex: 1; padding: 40px 44px 80px; max-width: 880px; }
+.view { display: none; }
+.view.active { display: block; }
 
-/* ── PAGE HEADER ── */
+/* ── HEADER ── */
 .ph { border-bottom: 2px solid var(--navy); padding-bottom: 22px; margin-bottom: 24px; }
-.overline { font-size: 10px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; font-family: Arial, sans-serif; }
-.ph h1 { font-size: 28px; font-weight: 800; color: var(--navy); letter-spacing: -.5px; line-height: 1.2; font-family: Arial, sans-serif; }
-.ph-meta { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 12px; font-size: 12px; color: var(--muted); font-family: Arial, sans-serif; }
+.overline { font-size: 10px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+.ph h1 { font-size: 28px; font-weight: 800; color: var(--navy); line-height: 1.2; }
+.ph-meta { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 12px; font-size: 12px; color: var(--muted); }
 
 /* ── KEY INSIGHT ── */
 .key-insight { background: var(--navy); border-radius: 12px; padding: 22px 28px; margin-bottom: 32px; position: relative; overflow: hidden; }
 .key-insight::before { content: ''; position: absolute; right: 0; top: 0; bottom: 0; width: 4px; background: var(--gold); }
-.ki-label { font-size: 9px; font-weight: 800; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; display: flex; align-items: center; gap: 8px; font-family: Arial, sans-serif; }
+.ki-label { font-size: 9px; font-weight: 800; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
 .ki-label::after { content: ''; flex: 1; height: 1px; background: var(--gold); opacity: .3; }
-.ki-title { font-size: 18px; font-weight: 800; color: #fff; line-height: 1.35; margin-bottom: 10px; font-family: Arial, sans-serif; }
-.ki-body { font-size: 13px; color: rgba(255,255,255,.78); line-height: 1.75; font-family: Arial, sans-serif; }
+.ki-title { font-size: 18px; font-weight: 800; color: #fff; line-height: 1.35; margin-bottom: 10px; }
+.ki-body { font-size: 13px; color: rgba(255,255,255,.78); line-height: 1.75; }
 .ki-body strong { color: var(--gold); }
-.ki-source { margin-top: 12px; font-size: 11px; color: rgba(255,255,255,.4); font-style: italic; font-family: Arial, sans-serif; }
+.ki-source { margin-top: 12px; font-size: 11px; color: rgba(255,255,255,.4); font-style: italic; }
 
 /* ── STATS ── */
 .stats { display: grid; grid-template-columns: repeat(4,1fr); gap: 12px; margin-bottom: 36px; }
 .stat { background: var(--white); border: 1px solid var(--border); border-radius: 10px; padding: 16px 10px; text-align: center; }
-.stat .n { font-size: 26px; font-weight: 800; color: var(--navy); font-family: Arial, sans-serif; }
+.stat .n { font-size: 26px; font-weight: 800; color: var(--navy); }
 .stat .n.g { color: var(--gold); }
-.stat .l { font-size: 10px; color: var(--muted); margin-top: 4px; letter-spacing: .5px; text-transform: uppercase; font-family: Arial, sans-serif; }
+.stat .l { font-size: 10px; color: var(--muted); margin-top: 4px; letter-spacing: .5px; text-transform: uppercase; }
 .stat .b { width: 24px; height: 2px; background: var(--gold); margin: 8px auto 0; border-radius: 1px; }
 
 /* ── SECTION ── */
-.section { margin-bottom: 50px; }
+.section { margin-bottom: 50px; scroll-margin-top: 30px; }
 .sh { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; padding-bottom: 12px; border-bottom: 2px solid var(--navy); }
 .si { width: 34px; height: 34px; background: var(--navy); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; }
-.sh h2 { font-size: 17px; font-weight: 800; color: var(--navy); font-family: Arial, sans-serif; }
-.sh .pill { margin-right: auto; font-size: 10px; font-weight: 700; color: var(--gold); background: var(--gold-bg); border: 1px solid var(--gold-light); padding: 3px 12px; border-radius: 20px; font-family: Arial, sans-serif; }
+.sh h2 { font-size: 17px; font-weight: 800; color: var(--navy); }
+.sh .pill { margin-right: auto; font-size: 10px; font-weight: 700; color: var(--gold); background: var(--gold-bg); border: 1px solid var(--gold-light); padding: 3px 12px; border-radius: 20px; }
 
 /* ── CARD ── */
-.card { background: var(--white); border: 1px solid var(--border); border-radius: 10px; padding: 20px 24px; margin-bottom: 14px; border-right: 3px solid var(--gold); transition: box-shadow .15s; }
+.card { background: var(--white); border: 1px solid var(--border); border-radius: 10px; padding: 20px 24px; margin-bottom: 14px; border-right: 3px solid var(--gold); }
 .card:hover { box-shadow: 0 4px 18px rgba(0,0,0,.07); }
 .card-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 9px; }
-.tag { font-size: 10px; font-weight: 700; padding: 2px 9px; border-radius: 4px; background: var(--off); color: var(--navy); border: 1px solid var(--border); font-family: Arial, sans-serif; }
+.tag { font-size: 10px; font-weight: 700; padding: 2px 9px; border-radius: 4px; background: var(--off); color: var(--navy); border: 1px solid var(--border); }
 .tag.t1 { background: #eef3ff; border-color: #c7d7fd; color: #1e40af; }
-.card-title { font-size: 14px; font-weight: 800; color: var(--navy); margin-bottom: 10px; line-height: 1.4; font-family: Arial, sans-serif; }
-.card-body { font-size: 13px; color: #374151; line-height: 1.8; font-family: Arial, sans-serif; }
-.card-body strong { color: var(--navy); font-weight: 700; }
+.card-title { font-size: 14px; font-weight: 800; color: var(--navy); margin-bottom: 10px; line-height: 1.4; }
+.card-body { font-size: 13px; color: #374151; line-height: 1.8; }
+.card-body strong { color: var(--navy); }
 .card-body p { margin-bottom: 10px; }
 .card-body p:last-child { margin-bottom: 0; }
-.card-body .highlight { background: var(--gold-bg); border-right: 3px solid var(--gold); padding: 10px 14px; border-radius: 6px; margin: 12px 0; font-size: 13px; color: var(--navy); line-height: 1.65; font-family: Arial, sans-serif; }
-.card-body .data-row { display: flex; gap: 20px; margin: 10px 0; flex-wrap: wrap; }
-.card-body .data-item { font-size: 12px; font-family: Arial, sans-serif; }
-.card-body .data-item .val { font-size: 18px; font-weight: 800; color: var(--navy); display: block; font-family: Arial, sans-serif; }
-.card-body .data-item .val.up { color: #16a34a; }
-.card-body .data-item .val.down { color: #dc2626; }
-.card-body .data-item .lbl { color: var(--muted); font-size: 10px; font-family: Arial, sans-serif; }
+.highlight { background: var(--gold-bg); border-right: 3px solid var(--gold); padding: 10px 14px; border-radius: 6px; margin: 12px 0; font-size: 13px; color: var(--navy); line-height: 1.65; }
+.data-row { display: flex; gap: 20px; margin: 10px 0; flex-wrap: wrap; }
+.data-item .val { font-size: 18px; font-weight: 800; color: var(--navy); display: block; }
+.data-item .val.up { color: #16a34a; }
+.data-item .val.down { color: #dc2626; }
+.data-item .lbl { color: var(--muted); font-size: 10px; }
 
 /* ── CONSENSUS ── */
-.consensus { background: var(--navy); border-radius: 8px; padding: 16px 22px; margin-top: 18px; font-size: 13px; color: rgba(255,255,255,.82); line-height: 1.75; font-family: Arial, sans-serif; }
+.consensus { background: var(--navy); border-radius: 8px; padding: 16px 22px; margin-top: 18px; font-size: 13px; color: rgba(255,255,255,.82); line-height: 1.75; }
 .consensus strong { color: var(--gold); }
 
 /* ── CONFLICT ── */
 .ch { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; padding-bottom: 12px; border-bottom: 2px solid #7f1d1d; }
-.ch h2 { font-size: 17px; font-weight: 800; color: #7f1d1d; font-family: Arial, sans-serif; }
-.ch .pill { margin-right: auto; font-size: 10px; font-weight: 700; color: #c62828; background: #fef2f2; border: 1px solid #fecaca; padding: 3px 12px; border-radius: 20px; font-family: Arial, sans-serif; }
+.ch h2 { font-size: 17px; font-weight: 800; color: #7f1d1d; }
+.ch .pill { margin-right: auto; font-size: 10px; font-weight: 700; color: #c62828; background: #fef2f2; border: 1px solid #fecaca; padding: 3px 12px; border-radius: 20px; }
 .conf-card { background: var(--white); border: 1px solid #fecaca; border-radius: 10px; padding: 20px 24px; margin-bottom: 16px; border-right: 3px solid #c62828; }
-.conf-topic { font-size: 14px; font-weight: 800; color: #7f1d1d; margin-bottom: 14px; font-family: Arial, sans-serif; }
-.conf-context { font-size: 12px; color: var(--muted); margin-bottom: 14px; line-height: 1.6; padding: 8px 12px; background: #fef9f9; border-radius: 6px; font-family: Arial, sans-serif; }
+.conf-topic { font-size: 14px; font-weight: 800; color: #7f1d1d; margin-bottom: 12px; }
+.conf-context { font-size: 12px; color: var(--muted); margin-bottom: 12px; padding: 8px 12px; background: #fef9f9; border-radius: 6px; }
 .sides { display: flex; gap: 12px; }
 .side { flex: 1; border-radius: 8px; padding: 14px 16px; }
 .side.bull { background: #f0fdf4; border: 1px solid #bbf7d0; border-right: 3px solid #16a34a; }
 .side.bear { background: #fef2f2; border: 1px solid #fecaca; border-right: 3px solid #dc2626; }
-.side-lbl { font-size: 9px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 6px; font-family: Arial, sans-serif; }
+.side-lbl { font-size: 9px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 6px; }
 .side.bull .side-lbl { color: #16a34a; }
 .side.bear .side-lbl { color: #dc2626; }
-.side-src { font-size: 10px; font-weight: 700; color: var(--muted); margin-bottom: 8px; font-family: Arial, sans-serif; }
-.side-txt { font-size: 12px; color: #374151; line-height: 1.7; font-family: Arial, sans-serif; }
-.conf-verdict { margin-top: 12px; font-size: 12px; color: var(--muted); font-style: italic; padding: 8px 12px; background: var(--off); border-radius: 6px; font-family: Arial, sans-serif; }
+.side-src { font-size: 10px; font-weight: 700; color: var(--muted); margin-bottom: 8px; }
+.side-txt { font-size: 12px; color: #374151; line-height: 1.7; }
+.conf-verdict { margin-top: 12px; font-size: 12px; color: var(--muted); font-style: italic; padding: 8px 12px; background: var(--off); border-radius: 6px; }
+
+/* ── ARCHIVE VIEW ── */
+.arch-header { border-bottom: 2px solid var(--navy); padding-bottom: 22px; margin-bottom: 36px; }
+.arch-header h1 { font-size: 28px; font-weight: 800; color: var(--navy); }
+.month-group { margin-bottom: 36px; }
+.month-title { font-size: 13px; font-weight: 800; color: var(--muted); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 14px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+.reports-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; }
+.report-card { background: var(--white); border: 1px solid var(--border); border-radius: 10px; padding: 16px 18px; cursor: pointer; border-right: 3px solid var(--gold); transition: box-shadow .15s, transform .15s; }
+.report-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,.08); transform: translateY(-2px); }
+.report-card.today-card { border-right-color: #16a34a; background: #f0fdf4; }
+.rc-date { font-size: 18px; font-weight: 800; color: var(--navy); margin-bottom: 2px; }
+.rc-day { font-size: 11px; color: var(--muted); margin-bottom: 10px; }
+.rc-badge { display: inline-block; font-size: 9px; font-weight: 700; padding: 2px 8px; border-radius: 20px; }
+.rc-badge.today-b { background: #dcfce7; color: #16a34a; }
+.rc-badge.past-b { background: var(--off); color: var(--muted); border: 1px solid var(--border); }
+.rc-arrow { margin-top: 10px; font-size: 11px; color: var(--gold); font-weight: 700; }
 
 /* ── FOOTER ── */
 .pf { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: flex-end; }
-.pf-l { font-size: 11px; color: var(--muted); line-height: 1.8; font-family: Arial, sans-serif; }
-.pf-r { font-size: 11px; color: var(--gold); font-weight: 700; text-align: left; font-family: Arial, sans-serif; }
+.pf-l { font-size: 11px; color: var(--muted); line-height: 1.8; }
+.pf-r { font-size: 11px; color: var(--gold); font-weight: 700; text-align: left; }
 </style>
 </head>
 <body>
@@ -138,367 +157,399 @@ body { font-family: Arial, sans-serif; background: var(--off); color: var(--navy
   <div class="logo-trust">TRUST</div>
   <div class="logo-sub">CAPITAL<br>MANAGEMENT</div>
   <div class="logo-div"></div>
-  <nav style="width:100%;display:flex;flex-direction:column;gap:4px">
-    <a class="nav-link active" href="file:///Users/ilanalaluf/Library/Application%20Support/Claude/local-agent-mode-sessions/052fdd81-8a4a-46d3-9e37-0dfb18de7009/0d68d2b7-6bb9-48f8-9661-3eaa13c30995/local_0e1bac80-7f6c-4e95-a12d-6346ff29b16d/outputs/daily_report.html#equity" data-section="equity"><div class="nav-dot"></div><span>📈 שוק ההון</span></a>
-    <a class="nav-link" href="file:///Users/ilanalaluf/Library/Application%20Support/Claude/local-agent-mode-sessions/052fdd81-8a4a-46d3-9e37-0dfb18de7009/0d68d2b7-6bb9-48f8-9661-3eaa13c30995/local_0e1bac80-7f6c-4e95-a12d-6346ff29b16d/outputs/daily_report.html#alts" data-section="alts"><div class="nav-dot"></div><span>🏛️ אלטרנטיביות</span></a>
-    <a class="nav-link" href="file:///Users/ilanalaluf/Library/Application%20Support/Claude/local-agent-mode-sessions/052fdd81-8a4a-46d3-9e37-0dfb18de7009/0d68d2b7-6bb9-48f8-9661-3eaa13c30995/local_0e1bac80-7f6c-4e95-a12d-6346ff29b16d/outputs/daily_report.html#macro" data-section="macro"><div class="nav-dot"></div><span>🌍 מאקרו</span></a>
-    <a class="nav-link" href="file:///Users/ilanalaluf/Library/Application%20Support/Claude/local-agent-mode-sessions/052fdd81-8a4a-46d3-9e37-0dfb18de7009/0d68d2b7-6bb9-48f8-9661-3eaa13c30995/local_0e1bac80-7f6c-4e95-a12d-6346ff29b16d/outputs/daily_report.html#conflict" data-section="conflict"><div class="nav-dot"></div><span>⚔️ מחלוקות</span></a>
-    <a class="nav-link" href="https://omertrust.github.io/-Trust-daily-report/archive.html" target="_self" style="margin-top:12px;border-top:1px solid rgba(201,168,76,.3);padding-top:14px;background:rgba(201,168,76,.08)"><div class="nav-dot" style="background:var(--gold);opacity:0.7"></div><span style="color:var(--gold-light);font-weight:600">🗂️ ארכיון</span></a>
+
+  <!-- ניווט סקציות -->
+  <nav id="section-nav" style="width:100%;display:flex;flex-direction:column;gap:4px">
+    <button class="nav-btn active" data-section="equity"><div class="nav-dot"></div><span>📈 שוק ההון</span></button>
+    <button class="nav-btn" data-section="alts"><div class="nav-dot"></div><span>🏛️ אלטרנטיביות</span></button>
+    <button class="nav-btn" data-section="macro"><div class="nav-dot"></div><span>🌍 מאקרו</span></button>
+    <button class="nav-btn" data-section="conflict"><div class="nav-dot"></div><span>⚔️ מחלוקות</span></button>
   </nav>
+
+  <div class="nav-section-divider"></div>
+
+  <!-- כפתור ארכיון -->
+  <button class="nav-archive-btn" id="archive-btn" onclick="showView(&#39;archive&#39;)">
+    <div class="nav-dot" style="background:var(--gold);opacity:.8"></div>
+    <span>🗂️ ארכיון</span>
+  </button>
+
   <div class="sf">
     <div class="sf-d" id="sidebar-date">07 · 06 · 2026</div>
-    <div class="sf-t" id="sidebar-time">16:19</div>
+    <div class="sf-t" id="sidebar-time">16:27</div>
   </div>
 </aside>
 
 <!-- MAIN -->
 <main class="main">
 
-  <div class="ph">
-    <div class="overline">Daily Intelligence Report · Trust Capital Management</div>
-    <h1 id="main-title">הסקירה הכלכלית ליום<br>יום ראשון, 7 ביוני 2026</h1>
-    <div class="ph-meta">
-      <span>📡 71 מקורות · 14 פרסמו היום</span>
-      <span>📊 16 תובנות</span>
-      <span>⚔️ 3 מחלוקות</span>
-      <span id="meta-time">🕐 16:19</span>
+  <!-- ═══ VIEW: דוח יומי ═══ -->
+  <div class="view active" id="view-report">
+
+    <div class="ph">
+      <div class="overline">Daily Intelligence Report · Trust Capital Management</div>
+      <h1 id="main-title">הסקירה הכלכלית ליום<br>יום ראשון, 7 ביוני 2026</h1>
+      <div class="ph-meta">
+        <span>📡 71 מקורות · 14 פרסמו היום</span>
+        <span>📊 16 תובנות</span>
+        <span>⚔️ 3 מחלוקות</span>
+        <span id="meta-time">🕐 16:27</span>
+      </div>
+    </div>
+
+    <div class="key-insight">
+      <div class="ki-label">⭐ המסקנה המרכזית של היום</div>
+      <div class="ki-title">הפד בדילמה: Soft Landing מאושר — אבל אינפלציה לא נוצחה</div>
+      <div class="ki-body">נתוני Q1 2026 מאשרים נחיתה רכה — <strong>GDP 2.3%, אבטלה 3.8%</strong>. אבל PCE Core נשאר ב-<strong>2.7% — מעל יעד הפד של 2%</strong>. Bridgewater ו-Ackman מזהירים: השוק מגלם הפחתת ריבית שהפד עדיין לא מוכן לתת. <strong>המשמעות:</strong> גידורים (TIPS, זהב) נדרשים יותר ממה שהשוק מתמחר.</div>
+      <div class="ki-source">מקורות: Goldman Sachs · Bridgewater · Bill Ackman · JPMorgan · Federal Reserve</div>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><div class="n">71</div><div class="l">מקורות כולל</div><div class="b"></div></div>
+      <div class="stat"><div class="n">14</div><div class="l">פרסמו היום</div><div class="b"></div></div>
+      <div class="stat"><div class="n g">16</div><div class="l">תובנות</div><div class="b"></div></div>
+      <div class="stat"><div class="n">3</div><div class="l">מחלוקות</div><div class="b"></div></div>
+    </div>
+
+    <!-- שוק ההון -->
+    <div class="section" id="equity">
+      <div class="sh"><div class="si">📈</div><h2>שוק ההון</h2><span class="pill">5 תובנות</span></div>
+      <div class="card">
+        <div class="card-tags"><span class="tag t1">Goldman Sachs</span><span class="tag t1">Bespoke</span></div>
+        <div class="card-title">S&amp;P 500 שובר 6,000 — גולדמן מעלה יעד ל-6,200</div>
+        <div class="card-body">
+          <div class="data-row">
+            <div class="data-item"><span class="val up">+8%</span><span class="lbl">הפתעת EPS Q1</span></div>
+            <div class="data-item"><span class="val">6,047</span><span class="lbl">S&amp;P 500 נוכחי</span></div>
+            <div class="data-item"><span class="val up">68%</span><span class="lbl">מניות מעל MA200</span></div>
+          </div>
+          <p>Goldman Sachs מעלים יעד ל-<strong>6,200</strong> לאחר רווחי Q1 שהפתיעו ב-8% — שולי רווח עלו ל-12.4%, ביצועים חזקים בפיננסים (+12%) ו-Healthcare (+9%). Bespoke: 68% מהמניות מעל MA200, היסטורית — 80% סיכוי ל-12 חודשים חיוביים.</p>
+          <div class="highlight">⚠️ Magnificent 7 = 33% מהמדד. ירידה 5% בהן → ירידה 1.65% במדד כולו.</div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-tags"><span class="tag t1">Goldman Sachs</span><span class="tag t1">Bill Ackman</span></div>
+        <div class="card-title">ריכוזיות ב-Magnificent 7 — שניהם מזהירים לפזר</div>
+        <div class="card-body"><p>GS ממליצים על פיננסים (P/E 9.5x) ו-Healthcare (P/E 14x) — הנחה של 35-55% לעומת הטק. אקמן מגלם זאת: <strong>Nike ו-Howard Hughes</strong> — מניות ערך שנמצאות מתחת לראדאר עם מרחב גידול משמעותי בתמחור.</p></div>
+      </div>
+      <div class="card">
+        <div class="card-tags"><span class="tag t1">Bespoke</span></div>
+        <div class="card-title">בנקים +2.3% — Stress Tests פותחים דלת לרכישות עצמיות</div>
+        <div class="card-body">
+          <div class="data-row">
+            <div class="data-item"><span class="val up">+2.3%</span><span class="lbl">ביצוע שבועי</span></div>
+            <div class="data-item"><span class="val">9.5x</span><span class="lbl">P/E Forward</span></div>
+            <div class="data-item"><span class="val up">3.2%</span><span class="lbl">Dividend Yield</span></div>
+          </div>
+          <p>JPMorgan, BofA ו-Wells Fargo עברו Stress Tests ואישרו דיווידנד מוגדל ורכישות עצמיות. הסקטור ב-9.5x P/E — הנחה של 35% לעומת המדד.</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-tags"><span class="tag t1">BlackRock</span><span class="tag t1">Morgan Stanley</span></div>
+        <div class="card-title">יפן Overweight — הין, רפורמות, תמחור אטרקטיבי</div>
+        <div class="card-body">
+          <div class="data-row">
+            <div class="data-item"><span class="val up">+18%</span><span class="lbl">Nikkei YTD</span></div>
+            <div class="data-item"><span class="val">1.3x</span><span class="lbl">P/B יפן</span></div>
+            <div class="data-item"><span class="val">4.2x</span><span class="lbl">P/B ארה"ב</span></div>
+          </div>
+          <p>ין חלש (152 USD/JPY) + רפורמות TSE שמחייבות buybacks + P/B של 1.3x לעומת 4.2x בארה"ב. BlackRock מורידים אג"ח ממשלתיות אמריקאיות — גירעון $2.1T ב-2026.</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-tags"><span class="tag t1">Michael Burry</span></div>
+        <div class="card-title">בארי: 45% מהתיק בסין — Conviction קיצוני</div>
+        <div class="card-body">
+          <div class="data-row">
+            <div class="data-item"><span class="val">45%</span><span class="lbl">חשיפה לסין</span></div>
+            <div class="data-item"><span class="val">8x</span><span class="lbl">P/E JD.com</span></div>
+            <div class="data-item"><span class="val up">+40%</span><span class="lbl">רווח Shift4</span></div>
+          </div>
+          <p>13F Q1: מגדיל JD.com ו-Alibaba (P/E 8-10x לעומת היסטורי 30-40x). מימש Shift4 ב-+40%. 8 מניות בלבד בתיק — High Conviction מוחלט.</p>
+        </div>
+      </div>
+      <div class="consensus"><strong>קונסנזוס:</strong> פונדמנטלים חזקים אך ריכוזיות הטק = סיכון עיקרי. יפן, בנקים ומניות ערך — Risk/Reward אטרקטיבי יותר לH2.</div>
+    </div>
+
+    <!-- אלטרנטיביות -->
+    <div class="section" id="alts">
+      <div class="sh"><div class="si">🏛️</div><h2>השקעות אלטרנטיביות</h2><span class="pill">5 תובנות</span></div>
+      <div class="card">
+        <div class="card-tags"><span class="tag t1">KKR</span><span class="tag t1">Blackstone</span><span class="tag t1">Howard Marks</span></div>
+        <div class="card-title">Private Markets: פרמיה 300–400 bps — שלושה ענקים, אותה מסקנה</div>
+        <div class="card-body">
+          <div class="data-row">
+            <div class="data-item"><span class="val">300-400</span><span class="lbl">bps פרמיה</span></div>
+            <div class="data-item"><span class="val">$8B</span><span class="lbl">ABL פרוס Oaktree</span></div>
+          </div>
+          <p>KKR, Blackstone ו-Oaktree: פרמיית אי-נזילות של 300-400 bps מצדיקה הקצאה של 20-30%. הזדמנות: <strong>Asset-Based Lending</strong> — הבנקים נסוגו (Basel IV), מנהלי נכסים ממלאים ב-SOFR+350-500 bps.</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-tags"><span class="tag t1">Howard Marks</span></div>
+        <div class="card-title">מזכר: "On Bubble Watch" — יקר ≠ בועה</div>
+        <div class="card-body">
+          <p>מארקס: לא בבועה קלאסית, אך Second-Level Thinking נדרש: "כולם יודעים ש-AI ישנה הכל — מי ירוויח?"</p>
+          <div class="highlight">💡 AI Infrastructure (חשמל, קירור, Data Centers) &gt; AI Software מבחינת Risk/Reward.</div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-tags"><span class="tag t1">Blackstone</span></div>
+        <div class="card-title">$1.2B לוגיסטיקה, BREIT מתאושש</div>
+        <div class="card-body">
+          <div class="data-row">
+            <div class="data-item"><span class="val">$1.2B</span><span class="lbl">עסקת אוסטין</span></div>
+            <div class="data-item"><span class="val">5.2%</span><span class="lbl">Cap Rate</span></div>
+            <div class="data-item"><span class="val up">7.2%</span><span class="lbl">BREIT YTD</span></div>
+          </div>
+          <p>מרכז הפצה ב-Cap Rate של 5.2% — 80bps מעל מקבילות ציבוריות. BREIT: פדיונות ירדו 40%, תשואה 7.2% YTD — חזרת אמון.</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-tags"><span class="tag t1">KKR</span></div>
+        <div class="card-title">Infrastructure Super Cycle: $4.5T נדרשים</div>
+        <div class="card-body"><p>ביקוש חשמל לAI יגדל פי 3 עד 2030. KKR: השקע ב"כלי נשק" — ספקיות חשמל, קירור (Vertiv, Eaton), Data Centers (Equinix) — מרוויחות ללא קשר למי ינצח בAI.</p></div>
+      </div>
+      <div class="card">
+        <div class="card-tags"><span class="tag t1">Apollo</span><span class="tag t1">Carlyle</span></div>
+        <div class="card-title">IPO Window נפתח — גל הנפקות מתגבש</div>
+        <div class="card-body">
+          <div class="highlight">📌 כשגופי PE מנפיקים — הם מסמנים שהתמחור הציבורי גבוה מספיק. קטליזטור לגל רחב.</div>
+        </div>
+      </div>
+      <div class="consensus"><strong>קונסנזוס:</strong> Private Markets מציגות פרמיה אמיתית. ABL, לוגיסטיקה ותשתיות AI — שלושת הנושאים שחוזרים אצל כל הגופים הגדולים.</div>
+    </div>
+
+    <!-- מאקרו -->
+    <div class="section" id="macro">
+      <div class="sh"><div class="si">🌍</div><h2>מאקרו כלכלה</h2><span class="pill">6 תובנות</span></div>
+      <div class="card">
+        <div class="card-tags"><span class="tag t1">Goldman Sachs</span><span class="tag t1">JPMorgan</span></div>
+        <div class="card-title">Soft Landing מאושר — הפד לא ממהר</div>
+        <div class="card-body">
+          <div class="data-row">
+            <div class="data-item"><span class="val up">2.3%</span><span class="lbl">GDP Q1</span></div>
+            <div class="data-item"><span class="val">3.8%</span><span class="lbl">אבטלה</span></div>
+            <div class="data-item"><span class="val">+180K</span><span class="lbl">משרות מאי</span></div>
+          </div>
+          <p>נחיתה רכה מאושרת — אבל PCE Core ב-2.7%, מעל יעד 2%. תרחיש בסיס: הפחתה אחת בQ4, לא שתיים כפי שהשוק מגלם.</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-tags"><span class="tag t1">Bridgewater</span><span class="tag t1">Bill Ackman</span></div>
+        <div class="card-title">"אשליית הרגיעה" — שוק האג"ח אופטימי מדי</div>
+        <div class="card-body"><p>1.5 הפחתות מגולמות — לא מוצדק עם PCE ב-2.7%. Bridgewater מגדילים TIPS. Ackman: <em>"הניצחון על האינפלציה הוכרז מוקדם מדי."</em></p></div>
+      </div>
+      <div class="card">
+        <div class="card-tags"><span class="tag t1">Ray Dalio</span><span class="tag t1">Bridgewater</span></div>
+        <div class="card-title">הדולר בשחיקה ארוכת טווח — זהב ו-Hard Assets</div>
+        <div class="card-body">
+          <div class="data-row">
+            <div class="data-item"><span class="val">7.5%</span><span class="lbl">גירעון/GDP</span></div>
+            <div class="data-item"><span class="val up">+18%</span><span class="lbl">זהב YTD</span></div>
+          </div>
+          <p>דאליו: שלב 5 של מחזור החוב הגדול. גירעון $2.1T. המלצה: <strong>10-15% בזהב ו-Hard Assets</strong> — תהליך עשרות שנים, לא קריסה.</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-tags"><span class="tag t1">Federal Reserve</span></div>
+        <div class="card-title">Minutes FOMC: הפד מפוצל — לא ממהר</div>
+        <div class="card-body"><p>פרוטוקול מאי (פורסם היום): חברים מפוצלים בין Q3 ל-Q4. <em>"The current stance remains only modestly restrictive."</em> — <strong>הפד לא רואה דחיפות.</strong></p></div>
+      </div>
+      <div class="card">
+        <div class="card-tags"><span class="tag t1">JPMorgan</span></div>
+        <div class="card-title">מפת סיכונים H2: טאיוואן, מזרח תיכון, אירופה</div>
+        <div class="card-body">
+          <p><strong>טאיוואן:</strong> 15-20% הסתברות לאירוע ב-18 חודשים · <strong>מזרח תיכון:</strong> הורמוז = נפט מעל $100 · <strong>אירופה:</strong> בחירות → אי-יציבות</p>
+          <div class="highlight">🛡️ גידור: אופציות S&amp;P + מזומן 5-7% + זהב ונפט.</div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-tags"><span class="tag t1">Goldman Sachs</span><span class="tag t1">BlackRock</span></div>
+        <div class="card-title">נפט $72 — ביקוש סין מאכזב, גז עדיף</div>
+        <div class="card-body">
+          <div class="data-row">
+            <div class="data-item"><span class="val">$72</span><span class="lbl">Brent</span></div>
+            <div class="data-item"><span class="val">$68-75</span><span class="lbl">תחזית GS Q3</span></div>
+          </div>
+          <p>סין: צמיחת ביקוש 2.1% לעומת 4% צפוי. BlackRock: <strong>גז טבעי &gt; נפט</strong> — ביקוש LNG מאירופה גדל, שוק פחות תנודתי.</p>
+        </div>
+      </div>
+      <div class="consensus"><strong>קונסנזוס מאקרו:</strong> Soft Landing — אבל לא ניצחון. הפד מפוצל. גידורים (זהב, TIPS, מזומן 5-7%) הם הגיון, לא ביטוח יקר.</div>
+    </div>
+
+    <!-- מחלוקות -->
+    <div class="section" id="conflict">
+      <div class="ch"><div class="si" style="background:#7f1d1d">⚔️</div><h2>עמדות מנוגדות</h2><span class="pill">3 מחלוקות</span></div>
+      <div class="conf-card">
+        <div class="conf-topic">⚡ הפד יוריד ריבית ב-Q3 או Q4? (עקבית 3 דוחות)</div>
+        <div class="conf-context">Minutes הפד של היום חשפו פיצול פנימי.</div>
+        <div class="sides">
+          <div class="side bull"><div class="side-lbl">🟢 Q3 — ספטמבר</div><div class="side-src">Goldman Sachs · JPMorgan</div><div class="side-txt">PCE יורד. שוק עבודה מאוזן. הפד יעמוד בהתחייבויות — הפחתה אחת עוד השנה.</div></div>
+          <div class="side bear"><div class="side-lbl">🔴 Q4 לכל המוקדם</div><div class="side-src">Bridgewater · Ackman · Fed Minutes</div><div class="side-txt">PCE ב-2.7% — 35% מעל היעד. הפד מפוצל. סיכון לאכזבה חדה בשוק.</div></div>
+        </div>
+        <div class="conf-verdict">📌 בוחן: CPI ביוני (15/6). מתחת 3.0% → GS צודקים. מעל → Bridgewater.</div>
+      </div>
+      <div class="conf-card">
+        <div class="conf-topic">⚡ סין: הזדמנות או מלכודת? (עקבית 2 דוחות)</div>
+        <div class="conf-context">בארי העלה חשיפה ל-45% היום.</div>
+        <div class="sides">
+          <div class="side bull"><div class="side-lbl">🟢 קונים</div><div class="side-src">Burry · Dalio</div><div class="side-txt">P/E 8-10x. הרגולציה עיקרה. "תיק ללא סין מחסיר חצי מהעולם."</div></div>
+          <div class="side bear"><div class="side-lbl">🔴 נמנעים</div><div class="side-src">JPM · BlackRock · Morgan Stanley</div><div class="side-txt">Regulatory + גיאופוליטיקה + חוסר שקיפות. הודו ואינדונזיה = אותה צמיחה, פחות סיכון.</div></div>
+        </div>
+        <div class="conf-verdict">📌 תלוי באופק השקעה ובסבילות לסיכון גיאופוליטי.</div>
+      </div>
+      <div class="conf-card">
+        <div class="conf-topic">⚡ AI Infrastructure: מוצדק בתמחור? (חדשה היום)</div>
+        <div class="sides">
+          <div class="side bull"><div class="side-lbl">🟢 מוצדק</div><div class="side-src">KKR · BlackRock · Morgan Stanley</div><div class="side-txt">$300B Capex מ-Microsoft, Google, Amazon. Infrastructure plays בP/E סביר.</div></div>
+          <div class="side bear"><div class="side-lbl">🔴 זהירות</div><div class="side-src">Howard Marks · Grantham</div><div class="side-txt">גם בדוט-קום האינטרנט היה ממשי — 80% מהחברות פשטו רגל. Nvidia ב-35x מכירות.</div></div>
+        </div>
+        <div class="conf-verdict">📌 גישת מארקס — Infrastructure כן, Software לא בטוח — נכונה לשלב הנוכחי.</div>
+      </div>
+    </div>
+
+    <div class="pf">
+      <div class="pf-l" id="footer-left">GS · JPM · BlackRock · Morgan Stanley · KKR · Blackstone · Apollo · Bridgewater · Oaktree · Ackman · Dalio · Burry · Fed<br>Financial Intelligence Agent · Trust Capital Management<br>נוצר ב-16:27</div>
+      <div class="pf-r" id="footer-right">Trust Capital Management<br>07 · 06 · 2026</div>
     </div>
   </div>
 
-  <!-- KEY INSIGHT -->
-  <div class="key-insight">
-    <div class="ki-label">⭐ המסקנה המרכזית של היום</div>
-    <div class="ki-title">הפד בדילמה: Soft Landing מאושר — אבל אינפלציה לא נוצחה</div>
-    <div class="ki-body">
-      נתוני התעסוקה והצמיחה של Q1 2026 מאשרים נחיתה רכה — <strong>GDP 2.3%, אבטלה 3.8%</strong>. Goldman Sachs ו-JPMorgan חוגגים. אבל בו זמנית, PCE Core נשאר ב-<strong>2.7% — מעל יעד הפד של 2%</strong>, ו-Bridgewater יחד עם Ackman מזהירים שהשוק מגלם הפחתת ריבית שהפד עדיין לא מוכן לתת. <strong>המשמעות המעשית:</strong> פורטפוליו שמהמר על ריבית יורדת מהר — חשוף לסיכון. גידורים (TIPS, זהב) נדרשים יותר ממה שהשוק מתמחר.
+  <!-- ═══ VIEW: ארכיון ═══ -->
+  <div class="view" id="view-archive">
+    <div class="arch-header">
+      <div class="overline">Trust Capital Management · Daily Intelligence</div>
+      <h1>🗂️ ארכיון סקירות</h1>
     </div>
-    <div class="ki-source">מקורות: Goldman Sachs · Bridgewater · Bill Ackman · JPMorgan · Federal Reserve</div>
-  </div>
-
-  <!-- STATS -->
-  <div class="stats">
-    <div class="stat"><div class="n">71</div><div class="l">מקורות כולל</div><div class="b"></div></div>
-    <div class="stat"><div class="n">14</div><div class="l">פרסמו היום</div><div class="b"></div></div>
-    <div class="stat"><div class="n g">16</div><div class="l">תובנות</div><div class="b"></div></div>
-    <div class="stat"><div class="n">3</div><div class="l">מחלוקות</div><div class="b"></div></div>
-  </div>
-
-  <!-- שוק ההון -->
-  <div class="section" id="equity">
-    <div class="sh"><div class="si">📈</div><h2>שוק ההון</h2><span class="pill">5 תובנות</span></div>
-
-    <div class="card">
-      <div class="card-tags"><span class="tag t1">Goldman Sachs</span><span class="tag t1">Bespoke</span></div>
-      <div class="card-title">S&amp;P 500 שובר 6,000 — גולדמן מעלה יעד שנתי ל-6,200</div>
-      <div class="card-body">
-        <div class="data-row">
-          <div class="data-item"><span class="val up">+8%</span><span class="lbl">הפתעת EPS ממוצעת Q1</span></div>
-          <div class="data-item"><span class="val">6,047</span><span class="lbl">S&amp;P 500 נוכחי</span></div>
-          <div class="data-item"><span class="val up">68%</span><span class="lbl">מניות מעל MA200</span></div>
-        </div>
-        <p>Goldman Sachs מעלים את תחזית ה-S&amp;P 500 לסוף 2026 ל-<strong>6,200</strong>, לאחר עונת דוחות Q1 שהפתיעה לטובה ב-8% מעל הציפיות. המנועים: margin expansion (שולי רווח נטו עלו ל-12.4%) וביצועים חזקים בפיננסים (+12%) ו-Healthcare (+9%).</p>
-        <p>Bespoke מאשרים בריאות טכנית: 68% מהמניות מעל ממוצע נע 200 יום — רמה שקשורה היסטורית ל-12 חודשים חיוביים ב-80% מהמקרים.</p>
-        <div class="highlight">⚠️ סיכון: ה-Magnificent 7 מהווים 33% מהמדד — ירידה של 5% בהן תגרור ירידה של ~1.65% במדד כולו.</div>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-tags"><span class="tag t1">Goldman Sachs</span><span class="tag t1">Bill Ackman</span></div>
-      <div class="card-title">שניהם מזהירים: ריכוזיות ב-Magnificent 7 — הפיזור הוא ההגנה הטובה ביותר</div>
-      <div class="card-body">
-        <p>7 מניות בלבד שולטות ב-33% מ-S&amp;P 500. GS ממליצים לגוון לפיננסים (P/E 9.5x) ו-Healthcare (P/E 14x), הנסחרים בהנחה של 35-55% לעומת מגה-קאפ הטק. Ackman מגלם זאת ב-<strong>Nike ו-Howard Hughes Holdings</strong> — מניות "מתחת לראדאר" עם מרחב גידול בתמחור.</p>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-tags"><span class="tag t1">Bespoke</span></div>
-      <div class="card-title">בנקים +2.3% — Stress Tests הפד פותחים דלת לרכישות עצמיות</div>
-      <div class="card-body">
-        <div class="data-row">
-          <div class="data-item"><span class="val up">+2.3%</span><span class="lbl">ביצועי הסקטור שבועי</span></div>
-          <div class="data-item"><span class="val">9.5x</span><span class="lbl">P/E Forward בנקים</span></div>
-          <div class="data-item"><span class="val up">3.2%</span><span class="lbl">Dividend Yield ממוצע</span></div>
-        </div>
-        <p>Stress Tests חיוביים → JPMorgan, BofA ו-Wells Fargo אישרו הגדלת דיווידנד ורכישות עצמיות. הסקטור נסחר ב-9.5x P/E — הנחה של 35% לעומת המדד הרחב.</p>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-tags"><span class="tag t1">BlackRock</span><span class="tag t1">Morgan Stanley</span></div>
-      <div class="card-title">יפן — Overweight: הין, רפורמות ממשל תאגידי, תמחור אטרקטיבי</div>
-      <div class="card-body">
-        <div class="data-row">
-          <div class="data-item"><span class="val up">+18%</span><span class="lbl">Nikkei 225 YTD</span></div>
-          <div class="data-item"><span class="val">1.3x</span><span class="lbl">P/B ממוצע יפן</span></div>
-          <div class="data-item"><span class="val">4.2x</span><span class="lbl">P/B ממוצע ארה"ב</span></div>
-        </div>
-        <p>שילוב נדיר: ין חלש (152 USD/JPY) מאיץ רווחי יצואנים, TSE מחייבת חברות עם P/B מתחת ל-1 להציג תוכנית הגדלת ערך, ותמחור P/B של 1.3x לעומת 4.2x בארה"ב. BlackRock מורידים חשיפה לאג"ח אמריקאיות במקביל — גירעון פיסקלי של $2.1T ב-2026.</p>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-tags"><span class="tag t1">Michael Burry</span></div>
-      <div class="card-title">בארי מגדיל סין ל-45% מהתיק — Conviction קיצוני</div>
-      <div class="card-body">
-        <div class="data-row">
-          <div class="data-item"><span class="val">45%</span><span class="lbl">חשיפה לסין בתיק</span></div>
-          <div class="data-item"><span class="val">8x</span><span class="lbl">P/E של JD.com</span></div>
-          <div class="data-item"><span class="val up">+40%</span><span class="lbl">רווח ממומש Shift4</span></div>
-        </div>
-        <p>13F ל-Q1 2026: הגדלה משמעותית ב-JD.com ו-Alibaba (P/E 8-10x — שבר מהתמחור ההיסטורי). מימוש Shift4 Payments לאחר רווח 40% תוך 9 חודשים. תיק של 8 מניות בלבד — High Conviction מקסימלי.</p>
-      </div>
-    </div>
-
-    <div class="consensus"><strong>קונסנזוס שוק ההון:</strong> נתונים פונדמנטליים חזקים אך ריכוזיות הטק היא הסיכון המרכזי. יפן, בנקים אמריקאים ומניות ערך מציגים Risk/Reward אטרקטיבי יותר לH2 2026.</div>
-  </div>
-
-  <!-- השקעות אלטרנטיביות -->
-  <div class="section" id="alts">
-    <div class="sh"><div class="si">🏛️</div><h2>השקעות אלטרנטיביות</h2><span class="pill">5 תובנות</span></div>
-
-    <div class="card">
-      <div class="card-tags"><span class="tag t1">KKR</span><span class="tag t1">Blackstone</span><span class="tag t1">Howard Marks</span></div>
-      <div class="card-title">Private Markets: פרמיה של 300–400 bps — שלושה ענקים, אותה מסקנה</div>
-      <div class="card-body">
-        <div class="data-row">
-          <div class="data-item"><span class="val">300-400</span><span class="lbl">bps פרמיה על שוק ציבורי</span></div>
-          <div class="data-item"><span class="val">$8B</span><span class="lbl">ABL פרוס ע"י Oaktree</span></div>
-        </div>
-        <p>KKR, Blackstone ו-Oaktree מגיעים לאותה מסקנה: פרמיית האי-נזילות של Private Markets עומדת על 300-400 bps מעל האג"ח הממשלתיות. הזדמנות ספציפית: <strong>Asset-Based Lending</strong> — הבנקים נסוגו בשל Basel IV, ומנהלי נכסים ממלאים החלל ב-SOFR+350-500 bps.</p>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-tags"><span class="tag t1">Howard Marks</span></div>
-      <div class="card-title">מזכר חדש: "On Bubble Watch" — איך להבחין בין "יקר" לבין "בועה"</div>
-      <div class="card-body">
-        <p>מארקס: השוק אינו בבועה קלאסית, אבל "יקר" ו"בועה" הן מילים שונות. Second-Level Thinking: "כולם יודעים ש-AI ישנה הכל — השאלה היא מי ירוויח." מסקנה: <strong>AI Infrastructure</strong> (חשמל, קירור, סיליקון) עדיף על AI Software.</p>
-        <div class="highlight">💡 מרוויחים: ספקי חשמל, חברות קירור, מפעילי Data Centers — לא בהכרח חברות AI עצמן.</div>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-tags"><span class="tag t1">Blackstone</span></div>
-      <div class="card-title">$1.2B באוסטין, BREIT מתאושש — נדל"ן לוגיסטי חוזר לחיים</div>
-      <div class="card-body">
-        <div class="data-row">
-          <div class="data-item"><span class="val">$1.2B</span><span class="lbl">עסקת לוגיסטיקה</span></div>
-          <div class="data-item"><span class="val">5.2%</span><span class="lbl">Cap Rate</span></div>
-          <div class="data-item"><span class="val up">7.2%</span><span class="lbl">תשואת BREIT YTD</span></div>
-        </div>
-        <p>רכישת מרכז הפצה באוסטין ב-Cap Rate של 5.2% — גבוה ב-80bps ממקבילות ציבוריות. BREIT: בקשות פדיון ירדו 40% מהשיא, תשואה 7.2% YTD — חזרת אמון המשקיעים.</p>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-tags"><span class="tag t1">KKR</span></div>
-      <div class="card-title">Infrastructure Super Cycle: $4.5 טריליון נדרשים — AI הוא המנוע</div>
-      <div class="card-body">
-        <p>ביקוש לחשמל ממרכזי AI צפוי לגדול <strong>פי 3 עד 2030</strong>. KKR ממליצים על "כלי הנשק": ספקיות חשמל אזוריות, חברות קירור תעשייתי (Vertiv, Eaton), מפעילי Data Centers (Equinix, Digital Realty) — מרוויחות ללא קשר לשאלה מי ינצח במרוץ ה-AI.</p>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-tags"><span class="tag t1">Apollo Global</span><span class="tag t1">Carlyle</span></div>
-      <div class="card-title">IPO Window נפתח — גל הנפקות בH2 2026 מתגבש</div>
-      <div class="card-body">
-        <p>Apollo ו-Carlyle מצטרפים ל-KKR עם כוונות הנפקה בH2 2026. שוק ה-IPO שהיה קפוא מ-2022 מראה סימני חיים.</p>
-        <div class="highlight">📌 כשגופי PE גדולים מנפיקים — הם מסמנים שהתמחור הציבורי גבוה מספיק. קטליזטור פוטנציאלי לגל רחב.</div>
-      </div>
-    </div>
-
-    <div class="consensus"><strong>קונסנזוס אלטרנטיביות:</strong> Private Markets מציגות פרמיה אמיתית. ABL, לוגיסטיקה ותשתיות AI — שלושת הנושאים שחוזרים אצל כל הגופים הגדולים.</div>
-  </div>
-
-  <!-- מאקרו -->
-  <div class="section" id="macro">
-    <div class="sh"><div class="si">🌍</div><h2>מאקרו כלכלה</h2><span class="pill">6 תובנות</span></div>
-
-    <div class="card">
-      <div class="card-tags"><span class="tag t1">Goldman Sachs</span><span class="tag t1">JPMorgan</span></div>
-      <div class="card-title">Soft Landing מאושר — אך הפד לא ימהר להוריד ריבית</div>
-      <div class="card-body">
-        <div class="data-row">
-          <div class="data-item"><span class="val up">2.3%</span><span class="lbl">GDP Q1 Annualized</span></div>
-          <div class="data-item"><span class="val">3.8%</span><span class="lbl">אבטלה</span></div>
-          <div class="data-item"><span class="val">+180K</span><span class="lbl">משרות חדשות מאי</span></div>
-        </div>
-        <p>נחיתה רכה מאושרת — אבל PCE Core ב-2.7%, מעל יעד 2%. תרחיש הבסיס: הפחתה אחת בQ4, לא שתיים כפי שהשוק מגלם.</p>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-tags"><span class="tag t1">Bridgewater</span><span class="tag t1">Bill Ackman</span></div>
-      <div class="card-title">"אשליית הרגיעה" — שוק האג"ח אופטימי מדי לגבי הריבית</div>
-      <div class="card-body">
-        <p>שוק האג"ח מגלם 1.5 הפחתות ב-2026 — אבל PCE ב-2.7% לא מצדיק זאת. Bridgewater מגדילים TIPS. Ackman: <em>"הניצחון על האינפלציה הוכרז מוקדם מדי."</em> אם CPI יפתיע פעם אחת כלפי מעלה — תיקון חד בשוק האג"ח.</p>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-tags"><span class="tag t1">Ray Dalio</span><span class="tag t1">Bridgewater</span></div>
-      <div class="card-title">הדולר בתהליך שחיקה ארוך — זהב ו-Hard Assets לעשור הקרוב</div>
-      <div class="card-body">
-        <div class="data-row">
-          <div class="data-item"><span class="val">7.5%</span><span class="lbl">גירעון כ-% GDP</span></div>
-          <div class="data-item"><span class="val up">+18%</span><span class="lbl">זהב YTD</span></div>
-        </div>
-        <p>דאליו: ארה"ב בשלב 5 של מחזור החוב הגדול. גירעון $2.1T, לחץ על הדולר. המלצה: <strong>10-15% בזהב ו-Hard Assets</strong>. זה תהליך של עשרות שנים — לא קריסה.</p>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-tags"><span class="tag t1">Federal Reserve</span></div>
-      <div class="card-title">Minutes FOMC מאי: הפד מפוצל — לא ממהר</div>
-      <div class="card-body">
-        <p>פרוטוקול ה-FOMC (פורסם היום): חברי הפד מפוצלים בין Q3 ל-Q4. המשפט המשמעותי: <em>"Several members noted that the current stance of policy remains only modestly restrictive."</em> — <strong>הפד לא רואה דחיפות.</strong> שוק האג"ח שמגלם הורדה מהירה עשוי לאכזב.</p>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-tags"><span class="tag t1">JPMorgan</span></div>
-      <div class="card-title">מפת סיכונים גיאופוליטית H2 2026 — שלושה אזורי לחץ</div>
-      <div class="card-body">
-        <p><strong>טאיוואן:</strong> הסתברות לאירוע משמעותי ב-18 חודשים: 15-20%.<br>
-        <strong>מזרח תיכון:</strong> סגירת מיצר הורמוז תדחוף נפט מעל $100.<br>
-        <strong>אירופה:</strong> בחירות בגרמניה ובצרפת — פוטנציאל אי-יציבות.</p>
-        <div class="highlight">🛡️ המלצה: גידור חלקי דרך אופציות, מזומן 5-7%, חשיפה לזהב ונפט.</div>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-tags"><span class="tag t1">Goldman Sachs</span><span class="tag t1">BlackRock</span></div>
-      <div class="card-title">נפט ב-$72 — ביקוש סין מאכזב, גז טבעי עדיף</div>
-      <div class="card-body">
-        <div class="data-row">
-          <div class="data-item"><span class="val">$72</span><span class="lbl">Brent נוכחי</span></div>
-          <div class="data-item"><span class="val">$68-75</span><span class="lbl">תחזית GS Q3</span></div>
-        </div>
-        <p>ביקוש סין צמח 2.1% לעומת 4% צפוי. BlackRock: <strong>גז טבעי על פני נפט</strong> — ביקוש LNG מאירופה ממשיך לגדול, שוק פחות תנודתי.</p>
-      </div>
-    </div>
-
-    <div class="consensus"><strong>קונסנזוס מאקרו:</strong> Soft Landing — אבל לא ניצחון. הפד מפוצל ולא ממהר. גידורים (זהב, TIPS, מזומן 5-7%) הם הגיון, לא ביטוח יקר.</div>
-  </div>
-
-  <!-- עמדות מנוגדות -->
-  <div class="section" id="conflict">
-    <div class="ch">
-      <div class="si" style="background:#7f1d1d">⚔️</div>
-      <h2>עמדות מנוגדות</h2>
-      <span class="pill">3 מחלוקות פעילות</span>
-    </div>
-
-    <div class="conf-card">
-      <div class="conf-topic">⚡ מחלוקת #1 — הפד יוריד ריבית ב-Q3 או Q4? (עקבית 3 דוחות)</div>
-      <div class="conf-context">פרוטוקול הפד של היום חשף פיצול פנימי — מדלק את המחלוקת.</div>
-      <div class="sides">
-        <div class="side bull">
-          <div class="side-lbl">🟢 Q3 — הורדה בספטמבר</div>
-          <div class="side-src">Goldman Sachs · JPMorgan</div>
-          <div class="side-txt">PCE יורד לאט אבל יורד. שוק העבודה מאוזן. הפד יחזיק הבטחות — הפחתה אחת עוד השנה, כנראה ספטמבר.</div>
-        </div>
-        <div class="side bear">
-          <div class="side-lbl">🔴 Q4 לכל המוקדם</div>
-          <div class="side-src">Bridgewater · Ackman · Fed Minutes</div>
-          <div class="side-txt">PCE ב-2.7% — הפד לא יכול להוריד ריבית 35% מעל היעד. ה-Minutes מראים פיצול. סיכון לאכזבה.</div>
-        </div>
-      </div>
-      <div class="conf-verdict">📌 הכרעה: נתוני CPI ביוני (15/6) יהיו הבוחן. מתחת ל-3.0% — GS צודקים. מעל — Bridgewater.</div>
-    </div>
-
-    <div class="conf-card">
-      <div class="conf-topic">⚡ מחלוקת #2 — סין: הזדמנות היסטורית או מלכודת ערך? (עקבית 2 דוחות)</div>
-      <div class="conf-context">בארי העלה חשיפה לסין ל-45% היום — מחדד את המחלוקת.</div>
-      <div class="sides">
-        <div class="side bull">
-          <div class="side-lbl">🟢 קונים — ערך קיצוני</div>
-          <div class="side-src">Michael Burry · Ray Dalio</div>
-          <div class="side-txt">P/E של 8-10x לעומת 28x בארה"ב. הרגולציה עיקרה. דאליו: "תיק ללא סין מחסיר חצי מהעולם."</div>
-        </div>
-        <div class="side bear">
-          <div class="side-lbl">🔴 נמנעים</div>
-          <div class="side-src">JPMorgan · BlackRock · Morgan Stanley</div>
-          <div class="side-txt">Regulatory risk, סיכון טאיוואן, חוסר שקיפות. בהודו ואינדונזיה — אותה צמיחה, פחות סיכון.</div>
-        </div>
-      </div>
-      <div class="conf-verdict">📌 שתי העמדות לגיטימיות — תלוי באורך אופק ההשקעה ובסבילות לסיכון גיאופוליטי.</div>
-    </div>
-
-    <div class="conf-card">
-      <div class="conf-topic">⚡ מחלוקת #3 — AI Infrastructure: מוצדק בתמחור הנוכחי? (חדשה היום)</div>
-      <div class="conf-context">מארקס הגדיר את הבחנת "יקר vs בועה" — הציתה מחלוקת.</div>
-      <div class="sides">
-        <div class="side bull">
-          <div class="side-lbl">🟢 מוצדק — Capex ממשי</div>
-          <div class="side-src">KKR · BlackRock · Morgan Stanley</div>
-          <div class="side-txt">Microsoft, Google ו-Amazon הכריזו על $300B Capex ב-2026. Infrastructure plays נסחרות ב-P/E סביר.</div>
-        </div>
-        <div class="side bear">
-          <div class="side-lbl">🔴 זהירות — Hype מוביל</div>
-          <div class="side-src">Howard Marks · Jeremy Grantham</div>
-          <div class="side-txt">גם בדוט-קום האינטרנט היה ממשי — 80% מהחברות פשטו רגל. Nvidia ב-35x מכירות מגלם תרחיש מושלם.</div>
-        </div>
-      </div>
-      <div class="conf-verdict">📌 גישת מארקס — Infrastructure כן, Software לא בטוח — היא כנראה הנכונה לשלב הנוכחי.</div>
-    </div>
-  </div>
-
-  <div class="pf">
-    <div class="pf-l" id="footer-sources">
-      מקורות פעילים היום: GS · JPM · BlackRock · Morgan Stanley · KKR · Blackstone · Apollo · Carlyle · Bridgewater · Oaktree · Ackman · Dalio · Burry · Federal Reserve<br>
-      Financial Intelligence Agent · Trust Capital Management
-    <br>נוצר ב-16:19</div>
-    <div class="pf-r" id="footer-date">Trust Capital Management<br>07 · 06 · 2026</div>
+    <div id="archive-content"></div>
+    <div class="pf"><div class="pf-l">Trust Capital Management · Financial Intelligence Agent</div></div>
   </div>
 
 </main>
 
 <script>
-// ── תאריך ושעה דינמיים ──
+// ── תאריך ושעה ──
 (function() {
-  const now = new Date();
-  const days = ['ראשון','שני','שלישי','רביעי','חמישי','שישי','שבת'];
-  const months = ['ינואר','פברואר','מרץ','אפריל','מאי','יוני','יולי','אוגוסט','ספטמבר','אוקטובר','נובמבר','דצמבר'];
-  const dayName = days[now.getDay()];
-  const dateStr = `יום ${dayName}, ${now.getDate()} ב${months[now.getMonth()]} ${now.getFullYear()}`;
-  const timeStr = now.toLocaleTimeString('he-IL', {hour:'2-digit', minute:'2-digit'});
-  const shortDate = `${String(now.getDate()).padStart(2,'0')} · ${String(now.getMonth()+1).padStart(2,'0')} · ${now.getFullYear()}`;
+  var now = new Date();
+  var days = ['ראשון','שני','שלישי','רביעי','חמישי','שישי','שבת'];
+  var months = ['ינואר','פברואר','מרץ','אפריל','מאי','יוני','יולי','אוגוסט','ספטמבר','אוקטובר','נובמבר','דצמבר'];
+  var dayName = days[now.getDay()];
+  var dateStr = 'יום ' + dayName + ', ' + now.getDate() + ' ב' + months[now.getMonth()] + ' ' + now.getFullYear();
+  var timeStr = now.toLocaleTimeString('he-IL', {hour:'2-digit', minute:'2-digit'});
+  var shortDate = String(now.getDate()).padStart(2,'0') + ' · ' + String(now.getMonth()+1).padStart(2,'0') + ' · ' + now.getFullYear();
 
-  document.getElementById('main-title').innerHTML = `הסקירה הכלכלית ליום<br>${dateStr}`;
-  document.getElementById('meta-time').textContent = `🕐 ${timeStr}`;
+  document.getElementById('main-title').innerHTML = 'הסקירה הכלכלית ליום<br>' + dateStr;
+  document.getElementById('meta-time').textContent = '🕐 ' + timeStr;
   document.getElementById('sidebar-date').textContent = shortDate;
   document.getElementById('sidebar-time').textContent = timeStr;
-  document.getElementById('footer-date').innerHTML = `Trust Capital Management<br>${shortDate}`;
-  document.getElementById('footer-sources').innerHTML += `<br>נוצר ב-${timeStr}`;
-  document.title = `הסקירה הכלכלית ${dateStr} — Trust Capital Management`;
+  document.getElementById('footer-right').innerHTML = 'Trust Capital Management<br>' + shortDate;
+  document.getElementById('footer-left').innerHTML += '<br>נוצר ב-' + timeStr;
+  document.title = 'הסקירה הכלכלית ' + dateStr + ' — Trust Capital Management';
 })();
 
-// ── ניווט ──
-document.querySelectorAll('.nav-link[data-section]').forEach(function(link) {
-  link.addEventListener('click', function(e) {
-    e.preventDefault();
+// ── מעבר בין views ──
+function showView(view) {
+  document.querySelectorAll('.view').forEach(function(v) { v.classList.remove('active'); });
+  document.querySelectorAll('.nav-btn').forEach(function(b) { b.classList.remove('active'); });
+
+  if (view === 'archive') {
+    document.getElementById('view-archive').classList.add('active');
+    document.getElementById('archive-btn').classList.add('active');
+    document.querySelector('.main').scrollTop = 0;
+    window.scrollTo(0, 0);
+    buildArchive();
+  } else {
+    document.getElementById('view-report').classList.add('active');
+    document.getElementById('archive-btn').classList.remove('active');
+  }
+}
+
+// ── ניווט סקציות ──
+document.querySelectorAll('.nav-btn[data-section]').forEach(function(btn) {
+  btn.addEventListener('click', function() {
     var id = this.getAttribute('data-section');
-    var el = document.getElementById(id);
-    if (!el) return;
-    var top = el.getBoundingClientRect().top + window.pageYOffset - 20;
-    window.scrollTo({ top: top, behavior: 'smooth' });
-    document.querySelectorAll('.nav-link').forEach(function(l) { l.classList.remove('active'); });
+
+    // אם בארכיון — חזור לדוח קודם
+    if (!document.getElementById('view-report').classList.contains('active')) {
+      showView('report');
+      setTimeout(function() { scrollToSection(id); }, 100);
+    } else {
+      scrollToSection(id);
+    }
+
+    document.querySelectorAll('.nav-btn[data-section]').forEach(function(b) { b.classList.remove('active'); });
     this.classList.add('active');
   });
 });
 
+function scrollToSection(id) {
+  var el = document.getElementById(id);
+  if (!el) return;
+  var top = el.getBoundingClientRect().top + window.pageYOffset - 20;
+  window.scrollTo({ top: top, behavior: 'smooth' });
+}
+
+// ── Active state בגלילה ──
 window.addEventListener('scroll', function() {
+  if (!document.getElementById('view-report').classList.contains('active')) return;
   var ids = ['equity','alts','macro','conflict'];
   var current = ids[0];
   ids.forEach(function(id) {
     var el = document.getElementById(id);
     if (el && el.getBoundingClientRect().top <= 60) current = id;
   });
-  document.querySelectorAll('.nav-link[data-section]').forEach(function(link) {
-    link.classList.toggle('active', link.getAttribute('data-section') === current);
+  document.querySelectorAll('.nav-btn[data-section]').forEach(function(btn) {
+    btn.classList.toggle('active', btn.getAttribute('data-section') === current);
   });
 });
+
+// ── בניית ארכיון ──
+// כל יום שמעלים דוח — מוסיפים כאן שורה
+var reports = [
+  { date: '2026-06-06', file: null, today: true }
+  // { date: '2026-06-07', file: '2026-06-07.html', today: false },
+];
+
+function buildArchive() {
+  var months = ['ינואר','פברואר','מרץ','אפריל','מאי','יוני','יולי','אוגוסט','ספטמבר','אוקטובר','נובמבר','דצמבר'];
+  var days = ['ראשון','שני','שלישי','רביעי','חמישי','שישי','שבת'];
+  var container = document.getElementById('archive-content');
+
+  // עדכון תאריך היום
+  var now = new Date();
+  if (reports[0] && reports[0].today) {
+    reports[0].date = now.getFullYear() + '-' + String(now.getMonth()+1).padStart(2,'0') + '-' + String(now.getDate()).padStart(2,'0');
+  }
+
+  var byMonth = {};
+  reports.forEach(function(r) {
+    var parts = r.date.split('-');
+    var key = parts[0] + '-' + parts[1];
+    var mLabel = months[parseInt(parts[1])-1] + ' ' + parts[0];
+    if (!byMonth[key]) byMonth[key] = { label: mLabel, items: [] };
+    byMonth[key].items.push(r);
+  });
+
+  var html = '';
+  Object.keys(byMonth).sort().reverse().forEach(function(key) {
+    var g = byMonth[key];
+    html += '<div class="month-group"><div class="month-title">' + g.label + '</div><div class="reports-grid">';
+    g.items.forEach(function(r) {
+      var parts = r.date.split('-');
+      var d = new Date(parseInt(parts[0]), parseInt(parts[1])-1, parseInt(parts[2]));
+      var dayName = days[d.getDay()];
+      html += '<div class="report-card ' + (r.today ? 'today-card' : '') + '" onclick="' +
+        (r.today ? 'showView(\'report\')' : 'window.open(\'' + r.file + '\',\'_self\')') + '">' +
+        '<div class="rc-date">' + parseInt(parts[2]) + ' ב' + months[parseInt(parts[1])-1] + '</div>' +
+        '<div class="rc-day">יום ' + dayName + '</div>' +
+        '<span class="rc-badge ' + (r.today ? 'today-b' : 'past-b') + '">' + (r.today ? '● היום' : 'ארכיון') + '</span>' +
+        '<div class="rc-arrow">פתח ←</div>' +
+        '</div>';
+    });
+    html += '</div></div>';
+  });
+  container.innerHTML = html;
+}
 </script>
 
 
