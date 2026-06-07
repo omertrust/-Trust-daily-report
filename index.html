@@ -38,22 +38,29 @@ html[dir="ltr"] .nav-archive-btn { text-align: left; }
 .nav-archive-btn.active { background: rgba(201,168,76,.22); }
 .nav-archive-btn span { font-size: 11px; color: var(--gold-light); font-weight: 600; }
 
-/* ── LANG TOGGLE ── */
-.lang-toggle-btn {
-  margin-top: 10px;
-  background: rgba(201,168,76,.12);
-  border: 1px solid rgba(201,168,76,.5);
-  color: var(--gold);
-  border-radius: 20px;
-  padding: 5px 0;
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 1.5px;
+/* ── LANG TOGGLE — floating flag button ── */
+.lang-toggle-btn { display: none; } /* legacy, unused */
+.flag-toggle {
+  position: fixed;
+  bottom: 28px;
+  left: 28px;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,.25);
+  background: var(--navy);
+  font-size: 26px;
+  line-height: 1;
   cursor: pointer;
-  transition: background .15s;
-  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 3px 14px rgba(0,0,0,.35);
+  transition: transform .15s, box-shadow .15s;
+  z-index: 999;
 }
-.lang-toggle-btn:hover { background: rgba(201,168,76,.28); }
+.flag-toggle:hover { transform: scale(1.12); box-shadow: 0 5px 20px rgba(0,0,0,.45); }
+html[dir="ltr"] .flag-toggle { left: auto; right: 28px; }
 
 .sf { margin-top: auto; text-align: center; }
 .sf-d { font-size: 10px; color: rgba(255,255,255,.3); }
@@ -182,6 +189,132 @@ html[dir="ltr"] .report-card.today-card { border-left-color: #16a34a; }
 .pf-l { font-size: 11px; color: var(--muted); line-height: 1.8; }
 .pf-r { font-size: 11px; color: var(--gold); font-weight: 700; text-align: left; }
 
+/* mobile-toprow: column on desktop, row on mobile */
+.mobile-toprow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+@media (max-width: 768px) {
+  .mobile-toprow {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 6px;
+  }
+  .desktop-lang-toggle { display: none !important; }
+}
+
+/* ── MOBILE RESPONSIVE ── */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: fixed;
+    right: 0; left: 0; top: 0; bottom: auto;
+    flex-direction: column;
+    padding: 10px 12px 6px;
+    z-index: 100;
+    overflow: visible;
+  }
+  html[dir="ltr"] .sidebar { right: 0; left: 0; }
+
+  /* top row: logo + title + lang toggle */
+  .mobile-toprow {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    margin-bottom: 6px;
+  }
+  .logo-shield { width: 38px; height: 38px; margin-bottom: 0; }
+  .logo-shield { width: 38px !important; height: 38px !important; margin-bottom: 0 !important; }
+  .logo-trust { font-size: 12px; letter-spacing: 2px; margin-top: 0; }
+  .logo-sub { display: none; }
+  .logo-div { display: none; }
+  /* show lang toggle inside mobile-toprow on mobile */
+  .mobile-toprow .lang-toggle-btn { display: block; margin-top: 0; width: auto; padding: 5px 12px; }
+
+  /* nav: horizontal scroll row */
+  #section-nav {
+    flex-direction: row !important;
+    overflow-x: auto;
+    gap: 2px !important;
+    width: 100%;
+    padding-bottom: 2px;
+  }
+  #section-nav::-webkit-scrollbar { display: none; }
+  .nav-btn {
+    flex-shrink: 0;
+    padding: 6px 9px;
+    width: auto;
+    background: rgba(201,168,76,.08);
+    border-radius: 6px;
+  }
+  .nav-btn span { font-size: 10px; white-space: nowrap; }
+  .nav-btn.active { background: rgba(201,168,76,.22); }
+
+  .nav-section-divider { display: none; }
+  .nav-archive-btn {
+    display: none; /* accessible via bottom of page */
+  }
+  .lang-toggle-btn {
+    margin-top: 0;
+    width: auto;
+    padding: 5px 12px;
+    flex-shrink: 0;
+    margin-right: auto;
+  }
+  html[dir="ltr"] .lang-toggle-btn { margin-right: 0; margin-left: auto; }
+  .sf { display: none; }
+
+  /* main content */
+  .main {
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+    padding: 115px 14px 40px;
+    max-width: 100%;
+  }
+
+  /* header */
+  .ph h1 { font-size: 20px; }
+  .ph-meta { gap: 10px; font-size: 11px; }
+  .overline { font-size: 9px; }
+
+  /* key insight */
+  .key-insight { padding: 16px 18px; }
+  .ki-title { font-size: 15px; }
+  .ki-body { font-size: 12px; }
+
+  /* stats: 2x2 grid */
+  .stats { grid-template-columns: repeat(2,1fr); gap: 8px; }
+  .stat .n { font-size: 22px; }
+  .stat .l { font-size: 9px; }
+
+  /* sections */
+  .sh h2 { font-size: 15px; }
+  .card { padding: 14px 16px; }
+  .card-title { font-size: 13px; }
+  .card-body { font-size: 12px; }
+  .data-row { gap: 12px; }
+  .data-item .val { font-size: 16px; }
+
+  /* conflicts: stack vertically */
+  .sides { flex-direction: column; gap: 8px; }
+
+  /* disclaimer */
+  .disclaimer { font-size: 11px; padding: 14px 16px; }
+
+  /* footer */
+  .pf { flex-direction: column; gap: 8px; align-items: flex-start; }
+  .pf-r { text-align: right; }
+  html[dir="ltr"] .pf-r { text-align: left; }
+
+  /* archive cards */
+  .reports-grid { grid-template-columns: repeat(2,1fr); }
+}
+
 /* ── LANG CONTENT ── */
 .en-content { display: none; }
 .he-content { display: block; }
@@ -198,9 +331,27 @@ html[dir="ltr"] span.he-content { display: none; }
 
 <!-- SIDEBAR -->
 <aside class="sidebar">
-  <img class="logo-shield" src="./index_files/logo.png" alt="Trust Capital Management">
-  <div class="logo-trust">TRUST</div>
-  <div class="logo-sub">CAPITAL<br>MANAGEMENT</div>
+  <!-- mobile top row wrapper -->
+  <div class="mobile-toprow">
+    <img class="logo-shield" id="logo-img" src="./index_files/logo.png" alt="Trust Capital Management" onerror="this.style.display=&#39;none&#39;;document.getElementById(&#39;logo-svg&#39;).style.display=&#39;block&#39;">
+    <svg id="logo-svg" class="logo-shield" style="display:none" viewBox="0 0 72 84" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M36 2C36 2 8 10 8 10L8 42C8 62 20 74 36 82C52 74 64 62 64 42L64 10Z" fill="white" stroke="white" stroke-width="0.5"></path>
+      <clippath id="sc"><path d="M36 2C36 2 8 10 8 10L8 42C8 62 20 74 36 82C52 74 64 62 64 42L64 10Z"></path></clippath>
+      <rect x="8" y="2" width="56" height="42" fill="#0d1b2a" clip-path="url(#sc)"></rect>
+      <text x="22" y="28" font-size="8" fill="#c9a84c" text-anchor="middle">✦</text>
+      <text x="36" y="22" font-size="12" fill="#c9a84c" text-anchor="middle">✦</text>
+      <text x="50" y="28" font-size="8" fill="#c9a84c" text-anchor="middle">✦</text>
+      <polygon points="14,58 28,36 42,58" fill="#0d1b2a" clip-path="url(#sc)"></polygon>
+      <polygon points="30,58 44,42 58,58" fill="#0d1b2a" clip-path="url(#sc)"></polygon>
+      <polygon points="28,38 32,46 24,46" fill="white" clip-path="url(#sc)"></polygon>
+      <polygon points="44,44 48,50 40,50" fill="white" clip-path="url(#sc)"></polygon>
+      <path d="M36 2C36 2 8 10 8 10L8 42C8 62 20 74 36 82C52 74 64 62 64 42L64 10Z" fill="none" stroke="white" stroke-width="1.5"></path>
+    </svg>
+    <div>
+      <div class="logo-trust">TRUST</div>
+      <div class="logo-sub">CAPITAL<br>MANAGEMENT</div>
+    </div>
+  </div>
   <div class="logo-div"></div>
 
   <nav id="section-nav" style="width:100%;display:flex;flex-direction:column;gap:4px">
@@ -239,11 +390,9 @@ html[dir="ltr"] span.he-content { display: none; }
     <span class="en-content">🗂️ Archive</span>
   </button>
 
-  <button class="lang-toggle-btn" id="lang-toggle" onclick="toggleLang()">EN</button>
-
   <div class="sf">
     <div class="sf-d" id="sidebar-date">07 · 06 · 2026</div>
-    <div class="sf-t" id="sidebar-time">18:49</div>
+    <div class="sf-t" id="sidebar-time">19:00</div>
   </div>
 </aside>
 
@@ -266,7 +415,7 @@ html[dir="ltr"] span.he-content { display: none; }
         <span class="en-content">📊 15 insights</span>
         <span class="he-content">⚔️ 3 מחלוקות</span>
         <span class="en-content">⚔️ 3 conflicts</span>
-        <span id="meta-time">🕐 18:49</span>
+        <span id="meta-time">🕐 19:00</span>
       </div>
     </div>
 
@@ -409,10 +558,6 @@ html[dir="ltr"] span.he-content { display: none; }
         </div>
       </div>
 
-      <div class="consensus">
-        <div class="he-content"><strong>הערכתנו:</strong> יום קשה שממחיש שהשוק בנה ציפיות גבוהות מדי. דאליו אמר את זה לפני שלושה ימים — והשוק הוכיח אותו היום. JPM ו-GS ממשיכים אופטימיים לטווח הבינוני, אבל הירידה של היום היא תזכורת שתמחור גבוה לא סולח לאכזבות.</div>
-        <div class="en-content"><strong>Our Assessment:</strong> A tough day that illustrates the market had built excessive expectations. Dalio said this three days ago — and the market proved him right today. JPM and GS remain optimistic for the medium term, but today's decline is a reminder that high valuations forgive no disappointments.</div>
-      </div>
     </div>
 
     <!-- ── אלטרנטיביות / Alternatives ── -->
@@ -525,10 +670,6 @@ html[dir="ltr"] span.he-content { display: none; }
         </div>
       </div>
 
-      <div class="consensus">
-        <div class="he-content"><strong>הערכתנו:</strong> הכסף המוסדי הגדול זז ל-Private Markets. הפרמיה אמיתית, ו-ABL, לוגיסטיקה ותשתיות AI הם שלושת הנושאים שחוזרים שוב ושוב אצל כל הגופים הגדולים.</div>
-        <div class="en-content"><strong>Our Assessment:</strong> Big institutional money is moving to Private Markets. The premium is real, and ABL, logistics, and AI infrastructure are the three themes recurring across all major institutions.</div>
-      </div>
     </div>
 
     <!-- ── מאקרו / Macro ── -->
@@ -626,10 +767,6 @@ html[dir="ltr"] span.he-content { display: none; }
         </div>
       </div>
 
-      <div class="consensus">
-        <div class="he-content"><strong>הערכתנו:</strong> יום התעסוקה החזק, CPI ב-3.8% ויו"ר פד חדש שנחשב ניצי — מוחקים את ציפיות הריבית הנמוכה. דאליו אמר שהחוב עבר את הנקודה שממנה אין חזרה. הירידה של היום היא אות קטן לתמונה גדולה.</div>
-        <div class="en-content"><strong>Our Assessment:</strong> Strong jobs data, CPI at 3.8%, and a new hawkish-leaning Fed Chair wipe out rate-cut expectations. Dalio says the debt has passed the point of no return. Today's decline is a small signal of a much bigger picture.</div>
-      </div>
     </div>
 
     <!-- ── מניות בפוקוס / Stocks in Focus ── -->
@@ -822,7 +959,7 @@ html[dir="ltr"] span.he-content { display: none; }
       <div class="pf-l" id="footer-left">GS · JPM · BlackRock · Morgan Stanley · KKR · Blackstone · Apollo · Bridgewater · Oaktree · Ackman · Dalio · Burry · Fed<br>
         <span class="he-content">Financial Intelligence Agent · Trust Capital Management</span>
         <span class="en-content">Financial Intelligence Agent · Trust Capital Management</span>
-      <br><span class="he-content">נוצר ב-18:49</span><span class="en-content">Generated at 18:49</span></div>
+      <br><span class="he-content">נוצר ב-19:00</span><span class="en-content">Generated at 19:00</span></div>
       <div class="pf-r" id="footer-right">Trust Capital Management<br>07 · 06 · 2026</div>
     </div>
   </div>
@@ -846,6 +983,9 @@ html[dir="ltr"] span.he-content { display: none; }
   </div>
 
 </main>
+
+<!-- floating flag button -->
+<button class="flag-toggle" id="flag-btn" onclick="toggleLang()" title="Switch language">🇺🇸</button>
 
 <script>
 // ── תאריך ושעה ──
@@ -877,15 +1017,12 @@ function toggleLang() {
 
 function applyLang() {
   var html = document.documentElement;
-  if (currentLang === 'en') {
-    html.setAttribute('lang', 'en');
-    html.setAttribute('dir', 'ltr');
-    document.getElementById('lang-toggle').textContent = 'עב';
-  } else {
-    html.setAttribute('lang', 'he');
-    html.setAttribute('dir', 'rtl');
-    document.getElementById('lang-toggle').textContent = 'EN';
-  }
+  var isEn = currentLang === 'en';
+  html.setAttribute('lang', isEn ? 'en' : 'he');
+  html.setAttribute('dir', isEn ? 'ltr' : 'rtl');
+  // flag shows the OTHER language (click to switch to it)
+  var btn = document.getElementById('flag-btn');
+  if (btn) btn.textContent = isEn ? '🇮🇱' : '🇺🇸';
 }
 
 // ── מעבר בין views ──
