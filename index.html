@@ -16,9 +16,9 @@ body { font-family: Arial, sans-serif; background: var(--off); color: var(--navy
 
 /* ── SIDEBAR ── */
 .sidebar { width: var(--sw); background: var(--navy); position: fixed; right: 0; top: 0; bottom: 0; display: flex; flex-direction: column; align-items: center; padding: 28px 14px 24px; z-index: 100; }
-.logo-shield { width: 80px; height: 80px; margin-bottom: 8px; object-fit: contain; mix-blend-mode: screen; }
-.logo-trust { font-size: 15px; font-weight: 800; letter-spacing: 3px; color: #fff; }
-.logo-sub { font-size: 8px; letter-spacing: 2px; color: var(--gold); text-align: center; margin-top: 2px; line-height: 1.6; text-transform: uppercase; }
+.logo-shield { width: 140px; height: 140px; margin-bottom: 0px; object-fit: contain; mix-blend-mode: screen; }
+.logo-trust { font-size: 15px; font-weight: 800; letter-spacing: 3px; color: #fff; margin-top: -8px; }
+.logo-sub { font-size: 8px; letter-spacing: 2px; color: var(--gold); text-align: center; margin-top: 1px; line-height: 1.6; text-transform: uppercase; }
 .logo-div { width: 100%; height: 1px; background: var(--gold); opacity: .2; margin: 14px 0; }
 
 .nav-btn { display: flex; align-items: center; gap: 8px; padding: 9px 12px; border-radius: 7px; cursor: pointer; width: 100%; background: none; border: none; text-align: right; transition: background .15s; }
@@ -141,7 +141,7 @@ body { font-family: Arial, sans-serif; background: var(--off); color: var(--navy
 
 <!-- SIDEBAR -->
 <aside class="sidebar">
-  <img class="logo-shield" src="file:///Users/ilanalaluf/Library/Application%20Support/Claude/local-agent-mode-sessions/052fdd81-8a4a-46d3-9e37-0dfb18de7009/0d68d2b7-6bb9-48f8-9661-3eaa13c30995/local_0e1bac80-7f6c-4e95-a12d-6346ff29b16d/outputs/logo.png" alt="Trust Capital Management">
+  <img class="logo-shield" src="./index_files/logo.png" alt="Trust Capital Management">
   <div class="logo-trust">TRUST</div>
   <div class="logo-sub">CAPITAL<br>MANAGEMENT</div>
   <div class="logo-div"></div>
@@ -164,7 +164,7 @@ body { font-family: Arial, sans-serif; background: var(--off); color: var(--navy
 
   <div class="sf">
     <div class="sf-d" id="sidebar-date">07 · 06 · 2026</div>
-    <div class="sf-t" id="sidebar-time">17:38</div>
+    <div class="sf-t" id="sidebar-time">18:01</div>
   </div>
 </aside>
 
@@ -181,224 +181,272 @@ body { font-family: Arial, sans-serif; background: var(--off); color: var(--navy
         <span>📡 71 מקורות · 14 פרסמו היום</span>
         <span>📊 16 תובנות</span>
         <span>⚔️ 3 מחלוקות</span>
-        <span id="meta-time">🕐 17:38</span>
+        <span id="meta-time">🕐 18:01</span>
       </div>
     </div>
 
     <div class="key-insight">
       <div class="ki-label">⭐ המסקנה המרכזית של היום</div>
-      <div class="ki-title">הפד בדילמה: Soft Landing מאושר — אבל אינפלציה לא נוצחה</div>
-      <div class="ki-body">נתוני Q1 2026 מאשרים נחיתה רכה — <strong>GDP 2.3%, אבטלה 3.8%</strong>. אבל PCE Core נשאר ב-<strong>2.7% — מעל יעד הפד של 2%</strong>. Bridgewater ו-Ackman מזהירים: השוק מגלם הפחתת ריבית שהפד עדיין לא מוכן לתת. <strong>המשמעות:</strong> גידורים (TIPS, זהב) נדרשים יותר ממה שהשוק מתמחר.</div>
-      <div class="ki-source">מקורות: Goldman Sachs · Bridgewater · Bill Ackman · JPMorgan · Federal Reserve</div>
+      <div class="ki-title">ראלי של 9 שבועות נגמר ביום אחד — ונאסד"ק קרס 4%</div>
+      <div class="ki-body">שוק המניות חווה היום את הירידה החדה ביותר מאז אפריל 2025: ה-S&amp;P 500 איבד <strong>2.64%</strong> ונסגר ב-7,383, והנאסד"ק צנח <strong>4.18%</strong>. הטריגר: דאטת תעסוקה חזקה מדי דחפה את תשואות האג"ח מעלה ומחקה את ציפיות הורדת הריבית — בדיוק כשברודקום אכזבה בתחזית שבבי ה-AI. <strong>ובמקביל:</strong> Partners Group הקפיאה פדיונות בקרן Private Credit שלה, ומשכה KKR ו-Blackstone לירידות של ~4%. זהו יום שמזכיר שהשוק היה אופטימי מדי — בתמחור ובציפיות.</div>
+      <div class="ki-source">מקורות: Seeking Alpha · TheStreet · Bloomberg · CNBC · Federal Reserve · Fortune</div>
     </div>
 
     <div class="stats">
       <div class="stat"><div class="n">71</div><div class="l">מקורות כולל</div><div class="b"></div></div>
-      <div class="stat"><div class="n">14</div><div class="l">פרסמו היום</div><div class="b"></div></div>
-      <div class="stat"><div class="n g">16</div><div class="l">תובנות</div><div class="b"></div></div>
+      <div class="stat"><div class="n">12</div><div class="l">פרסמו היום</div><div class="b"></div></div>
+      <div class="stat"><div class="n g">15</div><div class="l">תובנות</div><div class="b"></div></div>
       <div class="stat"><div class="n">3</div><div class="l">מחלוקות</div><div class="b"></div></div>
     </div>
 
     <!-- שוק ההון -->
     <div class="section" id="equity">
       <div class="sh"><div class="si">📈</div><h2>שוק ההון</h2><span class="pill">5 תובנות</span></div>
+
       <div class="card">
-        <div class="card-tags"><span class="tag t1">Goldman Sachs</span><span class="tag t1">Bespoke</span></div>
-        <div class="card-title">S&amp;P 500 שובר 6,000 — גולדמן מעלה יעד ל-6,200</div>
+        <div class="card-tags"><span class="tag t1">TheStreet</span><span class="tag t1">Seeking Alpha</span></div>
+        <div class="card-title">S&amp;P 500 מאבד 2.64% ונאסד"ק קורס 4% — קץ הראלי של תשעה שבועות</div>
         <div class="card-body">
           <div class="data-row">
-            <div class="data-item"><span class="val up">+8%</span><span class="lbl">הפתעת EPS Q1</span></div>
-            <div class="data-item"><span class="val">6,047</span><span class="lbl">S&amp;P 500 נוכחי</span></div>
-            <div class="data-item"><span class="val up">68%</span><span class="lbl">מניות מעל MA200</span></div>
+            <div class="data-item"><span class="val down">-2.64%</span><span class="lbl">S&amp;P 500 סגירה היום</span></div>
+            <div class="data-item"><span class="val">7,383</span><span class="lbl">רמת S&amp;P 500</span></div>
+            <div class="data-item"><span class="val down">-4.18%</span><span class="lbl">נאסד"ק — ירידה חדה מאפריל 2025</span></div>
           </div>
-          <p>Goldman Sachs מעלים יעד ל-<strong>6,200</strong> לאחר רווחי Q1 שהפתיעו ב-8% — שולי רווח עלו ל-12.4%, ביצועים חזקים בפיננסים (+12%) ו-Healthcare (+9%). Bespoke: 68% מהמניות מעל MA200, היסטורית — 80% סיכוי ל-12 חודשים חיוביים.</p>
-          <div class="highlight">⚠️ Magnificent 7 = 33% מהמדד. ירידה 5% בהן → ירידה 1.65% במדד כולו.</div>
+          <p>תשעה שבועות של ראלי נגמרו היום בצורה חדה. ה-S&amp;P 500 ירד 2.64% לסגירה ב-7,383 — הדאו ספג 695 נקודות ירידה, והנאסד"ק קרס 4.18% בירידה שלא ראינו מאז אפריל 2025. מה הצית את זה? שני גורמים שפגשו זה את זה ברגע לא טוב: דאטת תעסוקה של מאי שהייתה חזקה בהרבה מהציפיות, ו-Broadcom שבאותו זמן לא הצליחה להעלות את תחזית שבבי ה-AI שלה.</p>
+          <p>השילוב הזה הפעיל את המנגנון שהשוק חשש ממנו: תעסוקה חזקה → הפד לא יוריד ריבית מהר → תשואות אג"ח עולות → מניות צמיחה ספגו. חמישה מתוך שנים עשר אינדיקטורים של Seeking Alpha מציגים כעת "צהוב" — אזהרה על שלב שיא אפשרי.</p>
+          <div class="highlight">⚠️ השוק נסחר ב-7,600 לפני שלושה ימים בלבד. ירידה של 3% בשבוע אחד אחרי ראלי ארוך היא תזכורת ברורה: בתמחור הנוכחי אין מרחב לאכזבות — ולו קטנות.</div>
         </div>
       </div>
+
       <div class="card">
-        <div class="card-tags"><span class="tag t1">Goldman Sachs</span><span class="tag t1">Bill Ackman</span></div>
-        <div class="card-title">ריכוזיות ב-Magnificent 7 — שניהם מזהירים לפזר</div>
-        <div class="card-body"><p>GS ממליצים על פיננסים (P/E 9.5x) ו-Healthcare (P/E 14x) — הנחה של 35-55% לעומת הטק. אקמן מגלם זאת: <strong>Nike ו-Howard Hughes</strong> — מניות ערך שנמצאות מתחת לראדאר עם מרחב גידול משמעותי בתמחור.</p></div>
+        <div class="card-tags"><span class="tag t1">Bloomberg</span><span class="tag t1">Fortune</span></div>
+        <div class="card-title">דאליו: שוק המניות מתקרב לרמות 1929 ו-2000 — ובועת AI בדרך</div>
+        <div class="card-body">
+          <p>ב-3 ביוני, שלושה ימים לפני הקריסה של היום, Ray Dalio אמר ל-Bloomberg Television שהשוק האמריקאי מתקרב לרמות הערכה שנראו לפני שני הקריסות הגדולות בהיסטוריה — 1929 ו-2000. הוא לא קרא לקריסה מיידית, אבל אמר בפירוש שהפרמיה בסיכון נמוכה מדי ביחס לסיכונים המבניים.</p>
+          <p>לגבי ה-AI, דאליו הכיר בכוחה הטרנספורמטיבי — אבל אמר שלחץ תחרותי מכריח חברות להוציא הוצאות עצומות ללא נקודת סיום ברורה, ומשקיעים מבלבלים בין ההבטחה של הטכנולוגיה לבין שווי המניות הנוכחי. <strong>בניסוח שלו:</strong> "AI ישנה את העולם — אבל זה לא אומר שהמניות של היום מגלמות תמחור הגיוני."</p>
+        </div>
       </div>
+
       <div class="card">
-        <div class="card-tags"><span class="tag t1">Bespoke</span></div>
-        <div class="card-title">בנקים +2.3% — Stress Tests פותחים דלת לרכישות עצמיות</div>
+        <div class="card-tags"><span class="tag t1">Goldman Sachs</span><span class="tag t1">JPMorgan</span></div>
+        <div class="card-title">שני הגופים מחזיקים בתחזיות חיוביות — למרות הירידה של היום</div>
         <div class="card-body">
           <div class="data-row">
-            <div class="data-item"><span class="val up">+2.3%</span><span class="lbl">ביצוע שבועי</span></div>
-            <div class="data-item"><span class="val">9.5x</span><span class="lbl">P/E Forward</span></div>
-            <div class="data-item"><span class="val up">3.2%</span><span class="lbl">Dividend Yield</span></div>
+            <div class="data-item"><span class="val up">2.8%</span><span class="lbl">תחזית צמיחה גלובלית GS</span></div>
+            <div class="data-item"><span class="val up">13-15%</span><span class="lbl">תחזית EPS growth JPM</span></div>
           </div>
-          <p>JPMorgan, BofA ו-Wells Fargo עברו Stress Tests ואישרו דיווידנד מוגדל ורכישות עצמיות. הסקטור ב-9.5x P/E — הנחה של 35% לעומת המדד.</p>
+          <p>Goldman Sachs ממשיכים לצפות לצמיחה גלובלית של 2.8% ב-2026, מעל קונסנזוס של 2.5%. הם constructive על מניות אבל מציינים שהתשואות יהיו נמוכות מ-2025. JPMorgan מציגים תמונה אופטימית יותר: ה-AI Super Cycle אמור להניע צמיחת רווחים של 13-15% לפחות בשנתיים הקרובות.</p>
+          <p>מה שמעניין הוא הפער בין שני הגופים לבין דאליו — GS ו-JPM מסתכלים על הנתונים הפונדמנטליים וממשיכים אופטימיים; דאליו מסתכל על המבנה הכלכלי ארוך הטווח ומזהיר. שניהם יכולים להיות צודקים בטווח זמן שונה.</p>
         </div>
       </div>
+
       <div class="card">
-        <div class="card-tags"><span class="tag t1">BlackRock</span><span class="tag t1">Morgan Stanley</span></div>
-        <div class="card-title">יפן Overweight — הין, רפורמות, תמחור אטרקטיבי</div>
+        <div class="card-tags"><span class="tag t1">BlackRock</span></div>
+        <div class="card-title">AI Capex מתקרב לטריליון דולר עד 2028 — גם בלאקרוק רואים "שני כוחות גדולים"</div>
         <div class="card-body">
-          <div class="data-row">
-            <div class="data-item"><span class="val up">+18%</span><span class="lbl">Nikkei YTD</span></div>
-            <div class="data-item"><span class="val">1.3x</span><span class="lbl">P/B יפן</span></div>
-            <div class="data-item"><span class="val">4.2x</span><span class="lbl">P/B ארה"ב</span></div>
-          </div>
-          <p>ין חלש (152 USD/JPY) + רפורמות TSE שמחייבות buybacks + P/B של 1.3x לעומת 4.2x בארה"ב. BlackRock מורידים אג"ח ממשלתיות אמריקאיות — גירעון $2.1T ב-2026.</p>
+          <p>BlackRock מנסחים את האתגר של 2026 כהתנגשות בין שני Mega Forces: ה-AI Buildout מצד אחד, והפיצול הגיאופוליטי מצד שני. ה-Capex המתוכנן על AI מתקרב ל-$1 טריליון בשנה עד 2028 — מספר שמשנה את כל חישובי הביקוש לחשמל, שבבים ותשתיות.</p>
+          <div class="highlight">💡 BlackRock: Private Markets קריטיות לפיתוח תשתיות ה-AI — Private Credit ו-Digital Infrastructure מציגים פוטנציאל צמיחה גדול גם בסביבת תנודתיות.</div>
         </div>
       </div>
+
       <div class="card">
         <div class="card-tags"><span class="tag t1">Michael Burry</span></div>
-        <div class="card-title">בארי: 45% מהתיק בסין — Conviction קיצוני</div>
+        <div class="card-title">בארי מגדיל חשיפה לסין ל-45% מהתיק — מהלך שאי אפשר להתעלם ממנו</div>
         <div class="card-body">
           <div class="data-row">
-            <div class="data-item"><span class="val">45%</span><span class="lbl">חשיפה לסין</span></div>
-            <div class="data-item"><span class="val">8x</span><span class="lbl">P/E JD.com</span></div>
-            <div class="data-item"><span class="val up">+40%</span><span class="lbl">רווח Shift4</span></div>
+            <div class="data-item"><span class="val">45%</span><span class="lbl">חשיפה לסין בתיק</span></div>
+            <div class="data-item"><span class="val">8x</span><span class="lbl">P/E של JD.com</span></div>
+            <div class="data-item"><span class="val up">+40%</span><span class="lbl">רווח ממומש Shift4</span></div>
           </div>
-          <p>13F Q1: מגדיל JD.com ו-Alibaba (P/E 8-10x לעומת היסטורי 30-40x). מימש Shift4 ב-+40%. 8 מניות בלבד בתיק — High Conviction מוחלט.</p>
+          <p>הגשת 13F ל-Q1 2026 של Scion Asset Management חושפת תמונה מעניינת: בארי הגדיל את הפוזיציות שלו ב-JD.com ו-Alibaba עד שסין מהווה כמעט מחצית מהתיק כולו. JD.com נסחרת ב-P/E של 8x — שבר מהתמחור ההיסטורי שלה שעמד על 30-40x. בארי מוכן להיות לא נוח ולא בקונצנזוס כשהוא מאמין בנתון.</p>
+          <p>במקביל הוא מימש לחלוטין את Shift4 Payments לאחר עלייה של 40% תוך 9 חודשים. התיק שלו כולל כיום 8 מניות בלבד — גישת High Conviction שמאלצת אותו להיות בטוח עמוקות בכל בחירה. בארי לא מגוון; הוא מרכז.</p>
         </div>
       </div>
-      <div class="consensus"><strong>קונסנזוס:</strong> פונדמנטלים חזקים אך ריכוזיות הטק = סיכון עיקרי. יפן, בנקים ומניות ערך — Risk/Reward אטרקטיבי יותר לH2.</div>
+
+      <div class="consensus"><strong>הערכתנו:</strong> יום קשה שממחיש שהשוק בנה ציפיות גבוהות מדי. דאליו אמר את זה לפני שלושה ימים — והשוק הוכיח אותו היום. JPM ו-GS ממשיכים אופטימיים לטווח הבינוני, אבל הירידה של היום היא תזכורת שתמחור גבוה לא סולח לאכזבות.</div>
     </div>
 
     <!-- אלטרנטיביות -->
     <div class="section" id="alts">
       <div class="sh"><div class="si">🏛️</div><h2>השקעות אלטרנטיביות</h2><span class="pill">5 תובנות</span></div>
+
       <div class="card">
-        <div class="card-tags"><span class="tag t1">KKR</span><span class="tag t1">Blackstone</span><span class="tag t1">Howard Marks</span></div>
-        <div class="card-title">Private Markets: פרמיה 300–400 bps — שלושה ענקים, אותה מסקנה</div>
+        <div class="card-tags"><span class="tag t1">CNBC</span><span class="tag t1">Fortune</span></div>
+        <div class="card-title">משבר Private Credit: Partners Group הקפיאה פדיונות — KKR וBlackstone ירדו 4%</div>
         <div class="card-body">
           <div class="data-row">
-            <div class="data-item"><span class="val">300-400</span><span class="lbl">bps פרמיה</span></div>
-            <div class="data-item"><span class="val">$8B</span><span class="lbl">ABL פרוס Oaktree</span></div>
+            <div class="data-item"><span class="val down">-4%</span><span class="lbl">KKR היום</span></div>
+            <div class="data-item"><span class="val down">-4%</span><span class="lbl">Blackstone היום</span></div>
+            <div class="data-item"><span class="val down">-3%</span><span class="lbl">Blue Owl היום</span></div>
           </div>
-          <p>KKR, Blackstone ו-Oaktree: פרמיית אי-נזילות של 300-400 bps מצדיקה הקצאה של 20-30%. הזדמנות: <strong>Asset-Based Lending</strong> — הבנקים נסוגו (Basel IV), מנהלי נכסים ממלאים ב-SOFR+350-500 bps.</p>
+          <p>חדשות לא נעימות מעולם ה-Private Credit: Switzerland's Partners Group הודיעה על הגבלת פדיונות באחד מקרנותיה — וזה הספיק כדי למשוך את כל סקטור הפרייבט אקוויטי כלפי מטה. KKR ו-Blackstone ירדו כ-4% כל אחת, Blue Owl ירדה 3%. זהו הד לנושא רחב יותר: ה-Private Credit, שוק של $1.8 טריליון, עובר 2026 סוערת.</p>
+          <p>הסיפור המלא: BlackRock TCP ספגה מחיקות של $35 מיליון ברבעון הראשון, הפחיתה NAV ב-19% בינואר, ועוד 5% בהמשך. Apollo שוקלת למכור את קרן $3 מיליארד MidCap Financial. זה לא משבר מערכתי — אבל זו תזכורת שגם "הנכסים האלטרנטיביים הבטוחים" יכולים לאכזב.</p>
         </div>
       </div>
+
       <div class="card">
         <div class="card-tags"><span class="tag t1">Howard Marks</span></div>
-        <div class="card-title">מזכר: "On Bubble Watch" — יקר ≠ בועה</div>
+        <div class="card-title">המזכר החדש של מארקס: איך להבחין בין שוק יקר לבין בועה אמיתית</div>
         <div class="card-body">
-          <p>מארקס: לא בבועה קלאסית, אך Second-Level Thinking נדרש: "כולם יודעים ש-AI ישנה הכל — מי ירוויח?"</p>
-          <div class="highlight">💡 AI Infrastructure (חשמל, קירור, Data Centers) &gt; AI Software מבחינת Risk/Reward.</div>
+          <p>אחת השאלות שהשוק שואל כל הזמן היא האם ה-AI הוא בועה. מארקס מנסה לענות עליה בצורה מדויקת: לדעתו, לא — אבל "יקר" ו"בועה" הן מילים שונות לחלוטין. בועה דורשת לוגיקה מעגלית ("יעלה כי יעלה"), מינוף מופרז וספקולציה רחבה. אלה לא קיימים ברמה מסוכנת כיום.</p>
+          <p>הנקודה החכמה שלו היא ה-Second-Level Thinking: "כולם יודעים שה-AI ישנה הכל. השאלה היא מי ישלם ומי ירוויח." מארקס מאמין שחברות ה-Infrastructure — ספקיות חשמל, חברות קירור, מפעילי Data Centers — עשויות להרוויח יותר מחברות ה-AI עצמן, ובתמחור הרבה יותר סביר.</p>
+          <div class="highlight">💡 מסקנת מארקס: AI Infrastructure (חשמל, קירור, Data Centers) &gt; AI Software מבחינת Risk/Reward בשלב הנוכחי.</div>
         </div>
       </div>
+
       <div class="card">
         <div class="card-tags"><span class="tag t1">Blackstone</span></div>
-        <div class="card-title">$1.2B לוגיסטיקה, BREIT מתאושש</div>
+        <div class="card-title">נדל"ן לוגיסטי: $1.2B באוסטין ו-BREIT שמתאושש בשקט</div>
         <div class="card-body">
           <div class="data-row">
-            <div class="data-item"><span class="val">$1.2B</span><span class="lbl">עסקת אוסטין</span></div>
-            <div class="data-item"><span class="val">5.2%</span><span class="lbl">Cap Rate</span></div>
-            <div class="data-item"><span class="val up">7.2%</span><span class="lbl">BREIT YTD</span></div>
+            <div class="data-item"><span class="val">$1.2B</span><span class="lbl">עסקת מרכז הפצה</span></div>
+            <div class="data-item"><span class="val">5.2%</span><span class="lbl">Cap Rate — 80bps מעל שוק ציבורי</span></div>
+            <div class="data-item"><span class="val up">7.2%</span><span class="lbl">תשואת BREIT מתחילת שנה</span></div>
           </div>
-          <p>מרכז הפצה ב-Cap Rate של 5.2% — 80bps מעל מקבילות ציבוריות. BREIT: פדיונות ירדו 40%, תשואה 7.2% YTD — חזרת אמון.</p>
+          <p>Blackstone Real Estate השלימה רכישה משמעותית — מרכז הפצה באוסטין, טקסס ב-$1.2 מיליארד. ה-Cap Rate של 5.2% גבוה ב-80 נקודות בסיס ממקבילות בשוק הציבורי, מה שמשקף את הפרמיה שבלאקסטון מצפה לקבל על אחזקה ישירה.</p>
+          <p>מה שמעניין יותר הוא BREIT — הקרן הפרטית לנדל"ן שעברה תקופה קשה ב-2024 עם גל פדיונות. כיום הפדיונות ירדו ב-40% מהשיא, והקרן מציגה תשואה של 7.2% מתחילת השנה. זהו שיפור מהותי שמסמן שהמשקיעים חוזרים לאמון בנדל"ן הפרטי.</p>
         </div>
       </div>
+
       <div class="card">
         <div class="card-tags"><span class="tag t1">KKR</span></div>
-        <div class="card-title">Infrastructure Super Cycle: $4.5T נדרשים</div>
-        <div class="card-body"><p>ביקוש חשמל לAI יגדל פי 3 עד 2030. KKR: השקע ב"כלי נשק" — ספקיות חשמל, קירור (Vertiv, Eaton), Data Centers (Equinix) — מרוויחות ללא קשר למי ינצח בAI.</p></div>
-      </div>
-      <div class="card">
-        <div class="card-tags"><span class="tag t1">Apollo</span><span class="tag t1">Carlyle</span></div>
-        <div class="card-title">IPO Window נפתח — גל הנפקות מתגבש</div>
+        <div class="card-title">$4.5 טריליון בתשתיות ב-10 שנים — KKR מכנים אותה "הזדמנות הדור"</div>
         <div class="card-body">
-          <div class="highlight">📌 כשגופי PE מנפיקים — הם מסמנים שהתמחור הציבורי גבוה מספיק. קטליזטור לגל רחב.</div>
+          <p>הדוח שKKR פרסמו היום מנתח את מה שהם מכנים Infrastructure Super Cycle: הביקוש לחשמל עבור מרכזי AI לבד צפוי לגדול פי שלושה עד 2030, ובסך הכל נדרשות השקעות של $4.5 טריליון בתשתיות גלובליות בעשור הקרוב.</p>
+          <p>ה-insight החכם של KKR הוא לא להשקיע ישירות בחברות AI, אלא ב"כלי הנשק של המלחמה" — ספקיות חשמל אזוריות, חברות קירור תעשייתי כמו Vertiv ו-Eaton, ומפעילי Data Centers כמו Equinix ו-Digital Realty. אלה מרוויחות ללא קשר לשאלה איזו חברת AI תנצח בסוף.</p>
         </div>
       </div>
-      <div class="consensus"><strong>קונסנזוס:</strong> Private Markets מציגות פרמיה אמיתית. ABL, לוגיסטיקה ותשתיות AI — שלושת הנושאים שחוזרים אצל כל הגופים הגדולים.</div>
+
+      <div class="card">
+        <div class="card-tags"><span class="tag t1">Apollo Global</span><span class="tag t1">Carlyle</span></div>
+        <div class="card-title">חלון ה-IPO נפתח מחדש — גל הנפקות מתגבש לH2 2026</div>
+        <div class="card-body">
+          <p>Apollo ו-Carlyle הצטרפו השבוע לKKR והכריזו על כוונות הנפקה בחצי השנה השנייה של 2026. שוק ה-IPO שהיה קפוא ברובו מאז 2022 מתחיל להראות סימני חיים אמיתיים — לא רק שמועות.</p>
+          <div class="highlight">📌 נקודה חשובה: כשגופי פרייבט אקוויטי גדולים מחליטים למכור — הם בעצם מסמנים שהתמחור הציבורי גבוה מספיק כדי להצדיק יציאה. זה קטליזטור פוטנציאלי לגל רחב יותר של הנפקות בשוק.</div>
+        </div>
+      </div>
+
+      <div class="consensus"><strong>הערכתנו:</strong> הכסף המוסדי הגדול זז ל-Private Markets, ולא בלי סיבה. הפרמיה אמיתית, ו-ABL, לוגיסטיקה ותשתיות AI הם שלושת הנושאים שחוזרים שוב ושוב אצל כל הגופים הגדולים. חלון ה-IPO מוסיף הזדמנות לחשיפה לנכסים שלא היו נגישים שנים.</div>
     </div>
 
     <!-- מאקרו -->
     <div class="section" id="macro">
       <div class="sh"><div class="si">🌍</div><h2>מאקרו כלכלה</h2><span class="pill">6 תובנות</span></div>
+
       <div class="card">
-        <div class="card-tags"><span class="tag t1">Goldman Sachs</span><span class="tag t1">JPMorgan</span></div>
-        <div class="card-title">Soft Landing מאושר — הפד לא ממהר</div>
+        <div class="card-tags"><span class="tag t1">Federal Reserve</span><span class="tag t1">Polymarket</span></div>
+        <div class="card-title">יו"ר פד חדש, CPI ב-3.8% — ואין ציפייה להורדת ריבית ב-16-17 יוני</div>
         <div class="card-body">
           <div class="data-row">
-            <div class="data-item"><span class="val up">2.3%</span><span class="lbl">GDP Q1</span></div>
-            <div class="data-item"><span class="val">3.8%</span><span class="lbl">אבטלה</span></div>
-            <div class="data-item"><span class="val">+180K</span><span class="lbl">משרות מאי</span></div>
+            <div class="data-item"><span class="val down">3.8%</span><span class="lbl">CPI אפריל YoY</span></div>
+            <div class="data-item"><span class="val">3.5-3.75%</span><span class="lbl">ריבית פד נוכחית</span></div>
+            <div class="data-item"><span class="val">16-17/6</span><span class="lbl">ישיבת FOMC הקרובה</span></div>
           </div>
-          <p>נחיתה רכה מאושרת — אבל PCE Core ב-2.7%, מעל יעד 2%. תרחיש בסיס: הפחתה אחת בQ4, לא שתיים כפי שהשוק מגלם.</p>
+          <p>שינוי גדול שלא כולם שמו לב אליו: קווין וורש החליף את ג'ירום פאוול כיו"ר הפד ב-15 במאי. זהו שינוי שמוסיף אי-ודאות מדינית לתמונה כבר מורכבת. הריבית עומדת על 3.5-3.75% מאז ישיבת אפריל, ושוק ה-Polymarket מגלם כמעט אפס סיכוי להורדה בישיבה הקרובה ב-16-17 יוני.</p>
+          <p>למה? כי ה-CPI של אפריל עמד על 3.8% — גבוה ממה שהיה צפוי, ובחלקו הגדול בגלל עלייה של 17.9% במחירי האנרגיה. זה לא המצב שבו הפד מרגיש בנוח להוריד ריבית. וורש, שנחשב לניצי יותר מפאוול, כנראה לא ימהר להפתיע.</p>
         </div>
       </div>
+
       <div class="card">
-        <div class="card-tags"><span class="tag t1">Bridgewater</span><span class="tag t1">Bill Ackman</span></div>
-        <div class="card-title">"אשליית הרגיעה" — שוק האג"ח אופטימי מדי</div>
-        <div class="card-body"><p>1.5 הפחתות מגולמות — לא מוצדק עם PCE ב-2.7%. Bridgewater מגדילים TIPS. Ackman: <em>"הניצחון על האינפלציה הוכרז מוקדם מדי."</em></p></div>
-      </div>
-      <div class="card">
-        <div class="card-tags"><span class="tag t1">Ray Dalio</span><span class="tag t1">Bridgewater</span></div>
-        <div class="card-title">הדולר בשחיקה ארוכת טווח — זהב ו-Hard Assets</div>
+        <div class="card-tags"><span class="tag t1">Ray Dalio</span><span class="tag t1">Bloomberg</span></div>
+        <div class="card-title">דאליו: חוב ארה"ב עבר "את הנקודה שממנה אין חזרה" — $7T הוצאות מול $5T הכנסות</div>
         <div class="card-body">
           <div class="data-row">
-            <div class="data-item"><span class="val">7.5%</span><span class="lbl">גירעון/GDP</span></div>
-            <div class="data-item"><span class="val up">+18%</span><span class="lbl">זהב YTD</span></div>
+            <div class="data-item"><span class="val down">$7T</span><span class="lbl">הוצאות ממשל ארה"ב</span></div>
+            <div class="data-item"><span class="val">$5T</span><span class="lbl">הכנסות ממשל ארה"ב</span></div>
+            <div class="data-item"><span class="val down">$2T</span><span class="lbl">גירעון שנתי</span></div>
           </div>
-          <p>דאליו: שלב 5 של מחזור החוב הגדול. גירעון $2.1T. המלצה: <strong>10-15% בזהב ו-Hard Assets</strong> — תהליך עשרות שנים, לא קריסה.</p>
+          <p>דאליו הופיע בפני Summit של Forbes וקבע שארה"ב עברה את הסף הקריטי של החוב — מצב שעלול לאלץ את הפד לנקוט מדיניות דומה לשנות ה-30: ריביות מלאכותית נמוכות כדי לשמור על עלויות המימון של הממשל בגבולות סבירים.</p>
+          <p>ה-gap פשוט: $7T הוצאות מול $5T הכנסות. $2T גירעון שנתי. לשם הקשר, זה 7.5% מהתמ"ג — רמה שהיסטורית מתואמת עם ירידה ארוכת טווח של ערך המטבע. דאליו לא קורא לקריסה; הוא מדבר על תהליך ש<strong>כבר מתרחש</strong>.</p>
         </div>
       </div>
-      <div class="card">
-        <div class="card-tags"><span class="tag t1">Federal Reserve</span></div>
-        <div class="card-title">Minutes FOMC: הפד מפוצל — לא ממהר</div>
-        <div class="card-body"><p>פרוטוקול מאי (פורסם היום): חברים מפוצלים בין Q3 ל-Q4. <em>"The current stance remains only modestly restrictive."</em> — <strong>הפד לא רואה דחיפות.</strong></p></div>
-      </div>
+
       <div class="card">
         <div class="card-tags"><span class="tag t1">JPMorgan</span></div>
-        <div class="card-title">מפת סיכונים H2: טאיוואן, מזרח תיכון, אירופה</div>
+        <div class="card-title">מפת הסיכונים הגיאופוליטית לH2: שלושה מוקדי לחץ שכדאי לעקוב אחריהם</div>
         <div class="card-body">
-          <p><strong>טאיוואן:</strong> 15-20% הסתברות לאירוע ב-18 חודשים · <strong>מזרח תיכון:</strong> הורמוז = נפט מעל $100 · <strong>אירופה:</strong> בחירות → אי-יציבות</p>
-          <div class="highlight">🛡️ גידור: אופציות S&amp;P + מזומן 5-7% + זהב ונפט.</div>
+          <p>JPMorgan פרסמו עדכון גיאופוליטי רבעוני עם שלושה מוקדים שמציגים סיכון אמיתי בחצי השנה הקרוב: <strong>טאיוואן</strong> — פעילות צבאית סינית מוגברת מגדילה את ההסתברות לאירוע בשוגג; <strong>מזרח תיכון</strong> — חוסר יציבות מתמשך שמאיים על זרימת הנפט במיצר הורמוז; <strong>אירופה</strong> — בחירות בגרמניה ובצרפת עלולות להביא לאי-יציבות פוליטית שתשפיע על גוש האירו.</p>
+          <div class="highlight">🛡️ ההמלצה של JPMorgan: גידור חלקי דרך אופציות על ה-S&amp;P, שמירה על מזומן בשיעור 5-7% מהתיק, וחשיפה מתונה לזהב ונפט כגידור אירועי קצה.</div>
         </div>
       </div>
+
       <div class="card">
         <div class="card-tags"><span class="tag t1">Goldman Sachs</span><span class="tag t1">BlackRock</span></div>
-        <div class="card-title">נפט $72 — ביקוש סין מאכזב, גז עדיף</div>
+        <div class="card-title">נפט תקוע ב-$72 — הביקוש הסיני מאכזב, וגז טבעי נראה אטרקטיבי יותר</div>
         <div class="card-body">
           <div class="data-row">
-            <div class="data-item"><span class="val">$72</span><span class="lbl">Brent</span></div>
-            <div class="data-item"><span class="val">$68-75</span><span class="lbl">תחזית GS Q3</span></div>
+            <div class="data-item"><span class="val">$72</span><span class="lbl">מחיר Brent כיום</span></div>
+            <div class="data-item"><span class="val">$68-75</span><span class="lbl">תחזית GS לQ3</span></div>
+            <div class="data-item"><span class="val down">2.1%</span><span class="lbl">צמיחת ביקוש סין (vs 4% צפוי)</span></div>
           </div>
-          <p>סין: צמיחת ביקוש 2.1% לעומת 4% צפוי. BlackRock: <strong>גז טבעי &gt; נפט</strong> — ביקוש LNG מאירופה גדל, שוק פחות תנודתי.</p>
+          <p>הנפט תקוע ומאכזב. OPEC+ ניסה לתמוך במחיר, אבל הביקוש מסין גדל רק 2.1% לעומת 4% שהיה צפוי — פער משמעותי. גולדמן מורידים את תחזית Q3 לטווח של $68-75, מה שמשקף סביבה של היצע ביקוש מאוזן יחסית ללא צמיחת ביקוש חזקה.</p>
+          <p>BlackRock מציעים כיוון מעניין לעקוף את הבעיה: גז טבעי, ובמיוחד LNG. הביקוש האירופי לגז טבעי ממשיך לגדול כתחליף לגז הרוסי, ושוק ה-LNG יציב יותר ופחות תלוי בסין. Cheniere Energy ו-QatarEnergy מוצגות כחשיפות מועדפות.</p>
         </div>
       </div>
-      <div class="consensus"><strong>קונסנזוס מאקרו:</strong> Soft Landing — אבל לא ניצחון. הפד מפוצל. גידורים (זהב, TIPS, מזומן 5-7%) הם הגיון, לא ביטוח יקר.</div>
+
+      <div class="consensus"><strong>הערכתנו:</strong> יום התעסוקה החזק של היום, בשילוב עם CPI ב-3.8% ויו"ר פד חדש שמוכר כניצי — מוחק את ציפיות הריבית הנמוכה לשנה הקרובה. דאליו אמר שהחוב עבר את הנקודה שממנה אין חזרה. הירידה של היום היא אות קטן לתמונה גדולה.</div>
     </div>
 
     <!-- מחלוקות -->
     <div class="section" id="conflict">
-      <div class="ch"><div class="si" style="background:#7f1d1d">⚔️</div><h2>עמדות מנוגדות</h2><span class="pill">3 מחלוקות</span></div>
+      <div class="ch"><div class="si" style="background:#7f1d1d">⚔️</div><h2>עמדות מנוגדות</h2><span class="pill">3 מחלוקות פעילות</span></div>
+
       <div class="conf-card">
-        <div class="conf-topic">⚡ הפד יוריד ריבית ב-Q3 או Q4? (עקבית 3 דוחות)</div>
-        <div class="conf-context">Minutes הפד של היום חשפו פיצול פנימי.</div>
+        <div class="conf-topic">⚡ מחלוקת #1 — הפד יוריד ריבית ב-Q3 או Q4? (עקבית שלושה דוחות ברציפות)</div>
+        <div class="conf-context">פרוטוקול ה-FOMC שפורסם היום חשף פיצול פנימי בין חברי הועדה — מה שמדלק מחדש את הדיון הזה.</div>
         <div class="sides">
-          <div class="side bull"><div class="side-lbl">🟢 Q3 — ספטמבר</div><div class="side-src">Goldman Sachs · JPMorgan</div><div class="side-txt">PCE יורד. שוק עבודה מאוזן. הפד יעמוד בהתחייבויות — הפחתה אחת עוד השנה.</div></div>
-          <div class="side bear"><div class="side-lbl">🔴 Q4 לכל המוקדם</div><div class="side-src">Bridgewater · Ackman · Fed Minutes</div><div class="side-txt">PCE ב-2.7% — 35% מעל היעד. הפד מפוצל. סיכון לאכזבה חדה בשוק.</div></div>
+          <div class="side bull">
+            <div class="side-lbl">🟢 הפחתה בספטמבר</div>
+            <div class="side-src">Goldman Sachs · JPMorgan</div>
+            <div class="side-txt">ה-PCE יורד בעקביות גם אם לאט. שוק העבודה מאוזן ולא מייצר לחצי שכר. הפד יצטרך לתת אות של ביטחון לשוק לפני סוף השנה — ספטמבר הוא חלון הזמן הסביר ביותר.</div>
+          </div>
+          <div class="side bear">
+            <div class="side-lbl">🔴 Q4 בסבירות גבוהה, אולי 2027</div>
+            <div class="side-src">Bridgewater · Ackman · Fed Minutes</div>
+            <div class="side-txt">PCE ב-2.7% הוא 35% מעל היעד. ה-Minutes מראים שהפד מפוצל ולא ממהר. הפחתה בספטמבר תהיה מסוכנת — אם האינפלציה תחזור, זה ייראה כטעות מדינית גדולה.</div>
+          </div>
         </div>
-        <div class="conf-verdict">📌 בוחן: CPI ביוני (15/6). מתחת 3.0% → GS צודקים. מעל → Bridgewater.</div>
+        <div class="conf-verdict">📌 נקודת הכרעה: נתוני CPI ביוני (15/6). מתחת ל-3.0% — GS צודקים ויש הפחתה בספטמבר. מעל — Bridgewater נכונים ו-Q4 הוא תרחיש הבסיס.</div>
       </div>
+
       <div class="conf-card">
-        <div class="conf-topic">⚡ סין: הזדמנות או מלכודת? (עקבית 2 דוחות)</div>
-        <div class="conf-context">בארי העלה חשיפה ל-45% היום.</div>
+        <div class="conf-topic">⚡ מחלוקת #2 — סין: הזדמנות היסטורית או מלכודת ערך? (עקבית שני דוחות, מתחדדת היום)</div>
+        <div class="conf-context">בארי הגדיל את החשיפה לסין ל-45% מהתיק היום — מהלך שמחריף את המחלוקת עם הגישה הזהירה של JPM ו-BlackRock.</div>
         <div class="sides">
-          <div class="side bull"><div class="side-lbl">🟢 קונים</div><div class="side-src">Burry · Dalio</div><div class="side-txt">P/E 8-10x. הרגולציה עיקרה. "תיק ללא סין מחסיר חצי מהעולם."</div></div>
-          <div class="side bear"><div class="side-lbl">🔴 נמנעים</div><div class="side-src">JPM · BlackRock · Morgan Stanley</div><div class="side-txt">Regulatory + גיאופוליטיקה + חוסר שקיפות. הודו ואינדונזיה = אותה צמיחה, פחות סיכון.</div></div>
+          <div class="side bull">
+            <div class="side-lbl">🟢 קונים — ערך שקשה להתעלם ממנו</div>
+            <div class="side-src">Michael Burry · Ray Dalio</div>
+            <div class="side-txt">P/E של 8-10x לעומת 28x בארה"ב — הנחה של 65-70%. הרגולציה הסינית עיקרה את עצמה. דאליו: "תיק בלי סין מחסיר חצי מהעולם." בארי כבר מצביע ברגליים.</div>
+          </div>
+          <div class="side bear">
+            <div class="side-lbl">🔴 נמנעים — סיכון שלא ניתן לכמת</div>
+            <div class="side-src">JPMorgan · BlackRock · Morgan Stanley</div>
+            <div class="side-txt">Regulatory risk שחוזר, סיכון גיאופוליטי מול טאיוואן, וחוסר שקיפות בנתוני מאקרו. הודו ואינדונזיה מציעות צמיחה דומה עם פחות סיכון מבני. למה לקחת את ה-headache הסיני?</div>
+          </div>
         </div>
-        <div class="conf-verdict">📌 תלוי באופק השקעה ובסבילות לסיכון גיאופוליטי.</div>
+        <div class="conf-verdict">📌 שתי העמדות לגיטימיות ומבוססות — הן תלויות באופק ההשקעה ובסבילות לסיכון שאינו ניתן לכימות. מחלוקת שתמשיך ללוות אותנו.</div>
       </div>
+
       <div class="conf-card">
-        <div class="conf-topic">⚡ AI Infrastructure: מוצדק בתמחור? (חדשה היום)</div>
+        <div class="conf-topic">⚡ מחלוקת #3 — AI Infrastructure: הזדמנות אמיתית או Hype שמחכה לפוצץ? (חדשה — עלתה היום)</div>
         <div class="sides">
-          <div class="side bull"><div class="side-lbl">🟢 מוצדק</div><div class="side-src">KKR · BlackRock · Morgan Stanley</div><div class="side-txt">$300B Capex מ-Microsoft, Google, Amazon. Infrastructure plays בP/E סביר.</div></div>
-          <div class="side bear"><div class="side-lbl">🔴 זהירות</div><div class="side-src">Howard Marks · Grantham</div><div class="side-txt">גם בדוט-קום האינטרנט היה ממשי — 80% מהחברות פשטו רגל. Nvidia ב-35x מכירות.</div></div>
+          <div class="side bull">
+            <div class="side-lbl">🟢 הזדמנות אמיתית</div>
+            <div class="side-src">KKR · BlackRock · Morgan Stanley</div>
+            <div class="side-txt">Microsoft, Google ו-Amazon הכריזו על $300 מיליארד Capex ב-2026. זה לא ספקולציה — אלה הזמנות קיימות. חברות ה-Infrastructure נסחרות ב-P/E סביר ומרוויחות מהמחזור ללא תלות במי ינצח.</div>
+          </div>
+          <div class="side bear">
+            <div class="side-lbl">🔴 זהירות — היסטוריה חוזרת</div>
+            <div class="side-src">Howard Marks · Jeremy Grantham</div>
+            <div class="side-txt">גם בבועת הדוט-קום האינטרנט היה ממשי לחלוטין — ובכל זאת 80% מהחברות פשטו רגל. Nvidia נסחרת ב-35x מכירות, שזה תמחור שמניח תרחיש מושלם ומגלם אפס מרחב לטעות.</div>
+          </div>
         </div>
-        <div class="conf-verdict">📌 גישת מארקס — Infrastructure כן, Software לא בטוח — נכונה לשלב הנוכחי.</div>
+        <div class="conf-verdict">📌 גישת הביניים — Infrastructure כן, Software AI ישירות בזהירות — נראית הנבונה ביותר לשלב הנוכחי. מארקס מנסח את זה הכי טוב.</div>
       </div>
     </div>
 
     <div class="pf">
-      <div class="pf-l" id="footer-left">GS · JPM · BlackRock · Morgan Stanley · KKR · Blackstone · Apollo · Bridgewater · Oaktree · Ackman · Dalio · Burry · Fed<br>Financial Intelligence Agent · Trust Capital Management<br>נוצר ב-17:38</div>
+      <div class="pf-l" id="footer-left">GS · JPM · BlackRock · Morgan Stanley · KKR · Blackstone · Apollo · Bridgewater · Oaktree · Ackman · Dalio · Burry · Fed<br>Financial Intelligence Agent · Trust Capital Management<br>נוצר ב-18:01</div>
       <div class="pf-r" id="footer-right">Trust Capital Management<br>07 · 06 · 2026</div>
     </div>
   </div>
