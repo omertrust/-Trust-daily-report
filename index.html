@@ -100,6 +100,8 @@ html[dir="ltr"] .card{border-right:1px solid var(--border);border-left:3px solid
 .card:hover{box-shadow:var(--shadow-lg);transform:translateY(-1px)}
 .card-tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
 .tag{font-size:9.5px;font-weight:700;padding:3px 10px;border-radius:5px;background:#eef3ff;color:#1e40af;border:1px solid #c7d7fd;letter-spacing:.3px;text-transform:uppercase}
+.tag-up{background:#dcfce7;color:#15803d;border-color:#bbf7d0}
+.tag-down{background:#fee2e2;color:#b91c1c;border-color:#fecaca}
 .tag.gray{background:var(--bg);color:var(--muted);border-color:var(--border);text-transform:none}
 .card-title{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:14px;line-height:1.45;letter-spacing:-.1px}
 .card-body{font-size:13.5px;color:var(--text-2);line-height:1.85}
@@ -225,6 +227,7 @@ html[dir="ltr"] .flag-toggle{left:auto;right:28px}
   <div class="nav-section-label en-content">NAVIGATE</div>
   <nav class="nav-list" id="section-nav">
     <button class="nav-btn active" data-section="equity"><span class="nav-icon">📈</span><span class="nav-label he-content">שוק ההון</span><span class="nav-label en-content">Markets</span></button>
+    <button class="nav-btn" data-section="stocks"><span class="nav-icon">🎯</span><span class="nav-label he-content">מניות בפוקוס</span><span class="nav-label en-content">Stocks Focus</span></button>
     <button class="nav-btn" data-section="alts"><span class="nav-icon">🏛️</span><span class="nav-label he-content">אלטרנטיביות</span><span class="nav-label en-content">Alternatives</span></button>
     <button class="nav-btn" data-section="macro"><span class="nav-icon">🌍</span><span class="nav-label he-content">מאקרו</span><span class="nav-label en-content">Macro</span></button>
     <button class="nav-btn" data-section="conflict"><span class="nav-icon">⚔️</span><span class="nav-label he-content">מחלוקות</span><span class="nav-label en-content">Conflicts</span></button>
@@ -237,7 +240,7 @@ html[dir="ltr"] .flag-toggle{left:auto;right:28px}
   </button>
   <div class="sidebar-foot">
     <div class="sidebar-date">08 · 06 · 2026</div>
-    <div class="sidebar-time" id="sb-time">21:58</div>
+    <div class="sidebar-time" id="sb-time">22:07</div>
   </div>
 </aside>
 
@@ -247,6 +250,7 @@ html[dir="ltr"] .flag-toggle{left:auto;right:28px}
   <span class="mobile-brand">TRUST</span>
   <nav class="mobile-nav-scroll" id="mobile-nav">
     <button class="mobile-nav-btn active" data-section="equity"><span class="he-content">📈 שוק ההון</span><span class="en-content">📈 Markets</span></button>
+    <button class="mobile-nav-btn" data-section="stocks"><span class="he-content">🎯 מניות</span><span class="en-content">🎯 Stocks</span></button>
     <button class="mobile-nav-btn" data-section="alts"><span class="he-content">🏛️ אלטרנטיביות</span><span class="en-content">🏛️ Alts</span></button>
     <button class="mobile-nav-btn" data-section="macro"><span class="he-content">🌍 מאקרו</span><span class="en-content">🌍 Macro</span></button>
     <button class="mobile-nav-btn" data-section="conflict"><span class="he-content">⚔️ מחלוקות</span><span class="en-content">⚔️ Conflicts</span></button>
@@ -271,7 +275,7 @@ html[dir="ltr"] .flag-toggle{left:auto;right:28px}
       <span class="ph-meta-item en-content">📊 <strong>19</strong> insights</span>
       <span class="ph-meta-item he-content">⚔️ <strong>4</strong> מחלוקות</span>
       <span class="ph-meta-item en-content">⚔️ <strong>4</strong> conflicts</span>
-      <span class="ph-meta-item" id="meta-time">🕐 21:58</span>
+      <span class="ph-meta-item" id="meta-time">🕐 22:07</span>
     </div>
   </div>
 
@@ -473,6 +477,108 @@ html[dir="ltr"] .flag-toggle{left:auto;right:28px}
             <div class="highlight">📌 Ackman chose to IPO near market highs — a classic signal that he views his platform's valuation as attractive. A $5B transaction is also a confidence statement to the market.</div>
           </div>
         </div>
+      </div>
+    </div>
+
+    <!-- ── מניות בפוקוס ── -->
+    <div class="section" id="stocks">
+      <div class="section-head">
+        <div class="section-icon">🎯</div>
+        <h2 class="section-title"><span class="he-content">מניות בפוקוס</span><span class="en-content">Stocks in Focus</span></h2>
+        <span class="section-pill"><span class="he-content">9 מניות</span><span class="en-content">9 Stocks</span></span>
+      </div>
+      <div class="cards-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px">
+
+        <!-- Nvidia -->
+        <div class="card">
+          <div class="card-tags"><span class="tag">NVDA</span><span class="tag tag-up">+2% היום</span></div>
+          <div class="card-title"><span class="he-content">Nvidia</span><span class="en-content">Nvidia</span></div>
+          <div class="card-body">
+            <div class="he-content"><p>Bridgewater רכשה $695M ב-Q1 2026 — כניסה מחדש אחרי מכירה ב-2024. דאליו ציין NVDA כ-Core Holding בתזת ה-AI שלו. ריבאונד +2% יום שני הוביל את קבוצת שבבי ה-AI יחד עם MU ו-MRVL. GS: ביקוש שרתי AI +40% ב-2026.</p></div>
+            <div class="en-content"><p>Bridgewater bought $695M in Q1 2026 — re-entry after 2024 sale. Dalio cited NVDA as core AI holding. Led Monday's chip rebound +2% alongside MU and MRVL. GS: AI server demand +40% in 2026.</p></div>
+          </div>
+        </div>
+
+        <!-- Micron -->
+        <div class="card">
+          <div class="card-tags"><span class="tag">MU</span><span class="tag tag-up">+4% היום</span></div>
+          <div class="card-title"><span class="he-content">Micron</span><span class="en-content">Micron</span></div>
+          <div class="card-body">
+            <div class="he-content"><p>+4% יום שני. Goldman Sachs: ביקוש AI לשרתים יגדל 40% ב-2026 — MU מוטב ישיר. Q2 2026 EPS הכה תחזיות ב-18%. ה-Cycle של HBM Memory ב-Upcycle ראשון מאז 2021.</p></div>
+            <div class="en-content"><p>+4% Monday. Goldman Sachs: AI server demand +40% in 2026 — MU direct beneficiary. Q2 2026 EPS beat estimates by 18%. HBM memory cycle in first upcycle since 2021.</p></div>
+          </div>
+        </div>
+
+        <!-- Marvell -->
+        <div class="card">
+          <div class="card-tags"><span class="tag">MRVL</span><span class="tag tag-up">+4% היום</span></div>
+          <div class="card-title"><span class="he-content">Marvell</span><span class="en-content">Marvell</span></div>
+          <div class="card-body">
+            <div class="he-content"><p>+4% יום שני. מפתחת Custom AI Silicon עבור Google ו-Amazon — חוזים רב-שנתיים ב-$2B+. Morgan Stanley: Overweight, יעד $120. Data Center Revenue גדל 78% YoY ב-Q1 2026.</p></div>
+            <div class="en-content"><p>+4% Monday. Develops custom AI silicon for Google and Amazon — multi-year contracts $2B+. Morgan Stanley: Overweight, target $120. Data center revenue +78% YoY in Q1 2026.</p></div>
+          </div>
+        </div>
+
+        <!-- Corning -->
+        <div class="card">
+          <div class="card-tags"><span class="tag">GLW</span><span class="tag tag-up">+74% YTD</span></div>
+          <div class="card-title"><span class="he-content">Corning</span><span class="en-content">Corning</span></div>
+          <div class="card-body">
+            <div class="he-content"><p>+74% מתחילת 2026. ספקית סיבים אופטיים לחיבורי Data Center — הכרחי לכל פרויקט AI infrastructure. Q1 2026 Revenue: $3.86B (+17% YoY). Backlog שיא של $16B. Preqin: Top AI Infrastructure pick 2026.</p></div>
+            <div class="en-content"><p>+74% YTD. Optical fiber supplier for data center interconnects — essential to every AI infrastructure project. Q1 2026 Revenue: $3.86B (+17% YoY). Record backlog $16B. Preqin: Top AI Infrastructure pick 2026.</p></div>
+          </div>
+        </div>
+
+        <!-- Aehr -->
+        <div class="card">
+          <div class="card-tags"><span class="tag">AEHR</span><span class="tag tag-up">+327% YTD</span></div>
+          <div class="card-title"><span class="he-content">Aehr Test Systems</span><span class="en-content">Aehr Test Systems</span></div>
+          <div class="card-body">
+            <div class="he-content"><p>+327% מתחילת 2026. ציוד בדיקה לשבבי SiC — סיינה חוזים עם Onsemi ו-Wolfspeed ב-Q1. Revenue guidance הועלתה פעמיים ב-2026. Float קטן ($380M) מגביר כל תנועה. Bespoke: Top Momentum Q2 2026.</p></div>
+            <div class="en-content"><p>+327% YTD. SiC chip test equipment — signed contracts with Onsemi and Wolfspeed in Q1. Revenue guidance raised twice in 2026. Small float ($380M) amplifies moves. Bespoke: Top Momentum Q2 2026.</p></div>
+          </div>
+        </div>
+
+        <!-- Amazon -->
+        <div class="card">
+          <div class="card-tags"><span class="tag">AMZN</span><span class="tag">Pershing #1</span></div>
+          <div class="card-title"><span class="he-content">Amazon</span><span class="en-content">Amazon</span></div>
+          <div class="card-body">
+            <div class="he-content"><p>Holding גדול ב-Pershing Square IPO ($5B, אפריל 2026). AWS צמח +17% YoY ב-Q1. Operating Income של $18.4B — שיא. אקמן: "הפלטפורמה הכי קשה לשחזור בעולם."</p></div>
+            <div class="en-content"><p>Largest holding in Pershing Square IPO ($5B, April 2026). AWS grew +17% YoY in Q1. Operating income $18.4B — record. Ackman: "The hardest platform to replicate in the world."</p></div>
+          </div>
+        </div>
+
+        <!-- Microsoft -->
+        <div class="card">
+          <div class="card-tags"><span class="tag">MSFT</span><span class="tag">MS · Pershing #4</span></div>
+          <div class="card-title"><span class="he-content">Microsoft</span><span class="en-content">Microsoft</span></div>
+          <div class="card-body">
+            <div class="he-content"><p>Morgan Stanley: Overweight, יעד S&amp;P 8,000 — MSFT משקל עיקרי. CapEx: $800B ב-2026, $1.16T ב-2027. Azure AI גדל +35% YoY. אקמן: Top 4 ב-Pershing. Copilot Enterprise: 85,000 לקוחות משלמים.</p></div>
+            <div class="en-content"><p>Morgan Stanley: Overweight, S&amp;P target 8,000 — MSFT core weight. CapEx: $800B in 2026, $1.16T in 2027. Azure AI +35% YoY. Ackman: Top 4 in Pershing. Copilot Enterprise: 85,000 paying customers.</p></div>
+          </div>
+        </div>
+
+        <!-- Uber -->
+        <div class="card">
+          <div class="card-tags"><span class="tag">UBER</span><span class="tag">Pershing #2</span></div>
+          <div class="card-title"><span class="he-content">Uber</span><span class="en-content">Uber</span></div>
+          <div class="card-body">
+            <div class="he-content"><p>Top 2 ב-Pershing Square. Gross Bookings: $42B ב-Q1 2026 (+24% YoY). Free Cash Flow: $2.1B — פעם ראשונה שלוש רבעונים רצופים חיובי. אקמן: "Autonomous Vehicles יגדילו את ה-TAM, לא יאיימו עליו."</p></div>
+            <div class="en-content"><p>Top 2 in Pershing Square. Gross Bookings: $42B in Q1 2026 (+24% YoY). Free Cash Flow: $2.1B — first three consecutive positive quarters. Ackman: "Autonomous vehicles expand the TAM, they don't threaten it."</p></div>
+          </div>
+        </div>
+
+        <!-- Brookfield -->
+        <div class="card">
+          <div class="card-tags"><span class="tag">BN</span><span class="tag">Pershing #3</span></div>
+          <div class="card-title"><span class="he-content">Brookfield</span><span class="en-content">Brookfield</span></div>
+          <div class="card-body">
+            <div class="he-content"><p>Top 3 ב-Pershing Square. $1T+ AUM — תשתיות, נדל"ן, Renewable Energy ו-Data Centers. Fee-Related Earnings גדלו 22% YoY. אקמן: "Brookfield היא ה-Compounder הכי נסתר בשוק."</p></div>
+            <div class="en-content"><p>Top 3 in Pershing Square. $1T+ AUM — infrastructure, real estate, renewable energy and data centers. Fee-related earnings +22% YoY. Ackman: "Brookfield is the most underappreciated compounder in the market."</p></div>
+          </div>
+        </div>
+
       </div>
     </div>
 
@@ -880,7 +986,7 @@ document.querySelectorAll('[data-section]').forEach(function(btn){
 });
 window.addEventListener('scroll', function(){
   if(!document.getElementById('view-report').classList.contains('active')) return;
-  var ids=['equity','alts','macro','conflict'], cur=ids[0], off=window.innerWidth<=768?80:130;
+  var ids=['equity','stocks','alts','macro','conflict'], cur=ids[0], off=window.innerWidth<=768?80:130;
   ids.forEach(function(id){var el=document.getElementById(id);if(el&&el.getBoundingClientRect().top<=off)cur=id;});
   setActive(cur);
 });
