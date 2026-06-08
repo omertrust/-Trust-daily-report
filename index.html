@@ -237,7 +237,7 @@ html[dir="ltr"] .flag-toggle{left:auto;right:28px}
   </button>
   <div class="sidebar-foot">
     <div class="sidebar-date">08 · 06 · 2026</div>
-    <div class="sidebar-time" id="sb-time">21:51</div>
+    <div class="sidebar-time" id="sb-time">21:58</div>
   </div>
 </aside>
 
@@ -271,7 +271,7 @@ html[dir="ltr"] .flag-toggle{left:auto;right:28px}
       <span class="ph-meta-item en-content">📊 <strong>19</strong> insights</span>
       <span class="ph-meta-item he-content">⚔️ <strong>4</strong> מחלוקות</span>
       <span class="ph-meta-item en-content">⚔️ <strong>4</strong> conflicts</span>
-      <span class="ph-meta-item" id="meta-time">🕐 21:51</span>
+      <span class="ph-meta-item" id="meta-time">🕐 21:58</span>
     </div>
   </div>
 
@@ -757,16 +757,6 @@ html[dir="ltr"] .flag-toggle{left:auto;right:28px}
     <h1 class="en-content" style="color:#fff">🗂️ Report Archive</h1>
   </div>
   <div class="arch-content">
-    <!-- iframe viewer -->
-    <div id="arch-viewer" style="display:none;margin-bottom:28px">
-      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px">
-        <span id="arch-viewer-title" style="font-size:13px;font-weight:700;color:var(--navy)"></span>
-        <button onclick="closeArchiveViewer()" style="background:var(--navy);color:#fff;border:none;border-radius:8px;padding:6px 16px;font-size:12px;font-weight:600;cursor:pointer">
-          <span class="he-content">✕ סגור</span><span class="en-content">✕ Close</span>
-        </button>
-      </div>
-      <iframe id="arch-iframe" src="./index_files/saved_resource.html" style="width:100%;height:80vh;border:1px solid var(--border);border-radius:var(--radius);background:#fff"></iframe>
-    </div>
 
     <div class="month-group">
       <div class="month-title he-content">יוני 2026</div>
@@ -782,7 +772,7 @@ html[dir="ltr"] .flag-toggle{left:auto;right:28px}
           <div class="rc-arrow he-content">פתח ←</div>
           <div class="rc-arrow en-content">Open →</div>
         </div>
-        <div class="report-card" onclick="openArchiveReport(&#39;report_2026-06-07.html&#39;,&#39;7 יוני 2026&#39;)" style="cursor:pointer">
+        <div class="report-card" onclick="openArchiveReport(&#39;report_2026-06-07.html&#39;,&#39;סקירה יומית — 7 יוני 2026&#39;)" style="cursor:pointer">
           <div class="rc-date he-content">7 יוני</div>
           <div class="rc-date en-content">June 7</div>
           <div class="rc-day he-content">ראשון</div>
@@ -801,6 +791,19 @@ html[dir="ltr"] .flag-toggle{left:auto;right:28px}
 </div>
 
 </main>
+
+<!-- ═══ ARCHIVE MODAL ═══ -->
+<div id="arch-modal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(10,22,40,.85);backdrop-filter:blur(4px)">
+  <div style="position:absolute;inset:0;display:flex;flex-direction:column">
+    <div style="background:var(--navy);padding:14px 20px;display:flex;align-items:center;justify-content:space-between;border-bottom:2px solid var(--gold);flex-shrink:0">
+      <span id="arch-modal-title" style="font-size:14px;font-weight:700;color:var(--gold-light)"></span>
+      <button onclick="closeArchiveModal()" style="background:rgba(255,255,255,.12);color:#fff;border:none;border-radius:8px;padding:7px 18px;font-size:13px;font-weight:600;cursor:pointer">
+        <span class="he-content">✕ חזרה לאתר</span><span class="en-content">✕ Back to site</span>
+      </button>
+    </div>
+    <iframe id="arch-modal-iframe" src="./index_files/saved_resource.html" style="flex:1;width:100%;border:none;background:#fff"></iframe>
+  </div>
+</div>
 
 <button class="flag-toggle" id="flag-btn" onclick="toggleLang()" title="Switch language">🇺🇸</button>
 
@@ -832,21 +835,22 @@ function showView(v){
   window.scrollTo(0,0);
 }
 
-// Archive viewer
+// Archive modal
 function openArchiveReport(url, title){
-  var viewer = document.getElementById('arch-viewer');
-  var iframe = document.getElementById('arch-iframe');
-  var titleEl = document.getElementById('arch-viewer-title');
+  var modal = document.getElementById('arch-modal');
+  var iframe = document.getElementById('arch-modal-iframe');
+  var titleEl = document.getElementById('arch-modal-title');
   if(titleEl) titleEl.textContent = '📄 ' + title;
   iframe.src = url;
-  viewer.style.display = 'block';
-  viewer.scrollIntoView({behavior:'smooth'});
+  modal.style.display = 'block';
+  document.body.style.overflow = 'hidden';
 }
-function closeArchiveViewer(){
-  var viewer = document.getElementById('arch-viewer');
-  var iframe = document.getElementById('arch-iframe');
-  viewer.style.display = 'none';
+function closeArchiveModal(){
+  var modal = document.getElementById('arch-modal');
+  var iframe = document.getElementById('arch-modal-iframe');
+  modal.style.display = 'none';
   iframe.src = '';
+  document.body.style.overflow = '';
 }
 
 // Nav
